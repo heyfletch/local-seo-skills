@@ -1,0 +1,10 @@
+{
+  "name": "local-seo",
+  "version": "1.0.0",
+  "description": "Comprehensive local SEO toolkit for service-area and local businesses. 8 specialized skills covering audits, strategic planning, service pages, area pages, GBP optimization, schema markup, review management, and content strategy.",
+  "author": {
+    "name": "Joe Fletcher"
+  },
+  "license": "MIT",
+  "keywords": ["local-seo", "seo", "google-business-profile", "schema", "reviews", "content-strategy"]
+}

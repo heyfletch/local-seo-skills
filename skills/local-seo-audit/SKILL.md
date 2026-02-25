@@ -1,0 +1,278 @@
+---
+name: local-seo-audit
+description: Comprehensive local SEO audit for service-area and local businesses. Use when the user wants to audit, review, diagnose, or assess local SEO performance, Google Business Profile optimization, citation consistency, review health, local rankings, or AI search visibility. Also triggers for "local SEO check", "how's my local SEO", "GBP audit", "map pack analysis", "local visibility report", or any mention of auditing a local business website.
+---
+
+# Local SEO Audit Skill
+
+Perform a comprehensive local SEO audit across all ranking signal groups. Output a prioritized action plan with effort/impact scoring.
+
+## 2026 Algorithm Weighting Reference
+
+Use these weights to prioritize findings:
+
+| Signal Group | Local Pack/Map | Local Organic | AI Search |
+|---|---|---|---|
+| **GBP** | **32%** | 7% | 12% |
+| **Reviews** | 20% | 5% | 16% |
+| **On-Page** | 15% | **33%** | **24%** |
+| **Links** | 12% | 24% | 13% |
+| **Behavioral** | 9% | 10% | 4% |
+| **Citations** | 7% | 5% | 13% |
+
+## Audit Process
+
+### Step 1: Gather Information
+
+Ask questions ONE AT A TIME in a conversational flow. Do NOT list all questions at once.
+
+**Flow:**
+1. First, ask: "What business should I audit? (name, URL, or both)"
+2. Once you have the business name/URL, use web search to auto-discover as much as possible: website URL, GBP listing, industry, location, services, competitors.
+3. Present what you found and ask the user to confirm or correct.
+4. Only ask follow-up questions for information you couldn't discover — ask each one individually, not as a list.
+
+**Information needed** (discover via research, only ask user if you can't find it):
+- Business website URL
+- Google Business Profile URL or business name + city
+- Business type / industry
+- Service area (cities/regions served)
+- Primary services offered
+- Top 3-5 competitors (or discover them)
+- Current monthly organic traffic (if available from GA4/GSC)
+- Number of locations (single vs multi-location)
+
+### Step 2: Audit Categories
+
+Run through each category below. Score each 0-100 and flag issues.
+
+#### A. Google Business Profile Audit (Weight: 32% of local pack)
+
+Check and score:
+
+1. **Profile Completeness**
+   - Business name (exact match to legal name, no keyword stuffing)
+   - Primary category (most specific available — e.g., "Personal Injury Attorney" not "Law Firm")
+   - Secondary categories (all relevant ones added, up to 9)
+   - Business description (750 chars, keywords, service area, differentiators, CTA)
+   - Service area defined (if SAB) or address visible (if storefront)
+   - Phone number (local number preferred over toll-free)
+   - Website URL
+   - Appointment URL
+   - Business hours (including special hours for holidays)
+   - Opening date
+   - All applicable attributes checked
+
+2. **GBP Predefined Services** ⚠️ NEW 2026
+   - Are Google-suggested services added? (directly impacts keyword rankings)
+   - Each service should have: name, description (300 chars), price (if applicable), link to relevant page
+   - Cross-reference with the GBP Services list for the business category
+
+3. **Photos & Visual Content**
+   - Profile photo and cover photo set
+   - Minimum 10+ photos (exterior, interior, team, at-work)
+   - Photos added monthly (5-10/month target)
+   - Video content present (increases profile dwell time)
+   - Photo quality (well-lit, properly oriented, 720px+ width)
+
+4. **Posts Activity**
+   - Posting frequency (target: 2-3/week minimum)
+   - Post types mix (updates, offers, events)
+   - Post quality (value-driven, not just promotional)
+   - CTA usage in posts
+   - Last post date (stale profiles lose ranking)
+
+5. **Q&A Section**
+   - Seeded questions present (5-10 common questions)
+   - All questions answered
+   - Response time to new questions
+   - Keywords used naturally in answers
+
+6. **"Open Now" Factor** ⚠️ NEW 2026
+   - Hours accurate and up to date
+   - Holiday hours set
+   - Note: Rankings slip ~1 hour before closing and drop when closed
+
+7. **Map Pin Location**
+   - Pin is correctly placed
+   - Monitor for competitor-driven pin edits (can move pin to wrong location)
+
+#### B. Review Audit (Weight: 20% of local pack)
+
+Check and score:
+
+1. **Review Volume** — Total review count vs competitors
+2. **Review Rating** — Average rating (4.5+ is competitive)
+3. **Review Recency** — Reviews in last 30/60/90 days (recency > volume in 2026)
+4. **Review Velocity** — Reviews per month trend
+5. **Review Responses** — % of reviews responded to, response time, response quality
+6. **Review Diversity** — Reviews mention different services/locations
+7. **Keyword Content** — Do reviews naturally mention services/location?
+8. **Platform Distribution** — Reviews on Google, Yelp, industry-specific sites
+9. **Negative Review Handling** — How are 1-3 star reviews addressed?
+10. **Review Generation System** — Is there a systematic process in place?
+
+#### C. On-Page / Website Audit (Weight: 33% of local organic)
+
+Check and score:
+
+1. **Service Pages**
+   - Dedicated page for EVERY individual service (not one combined page)
+   - Each page 1,500-2,500 words
+   - Target keyword in H1, first 100 words, 1-2 H2s
+   - Keyword density 1-2% (natural, not stuffed)
+   - FAQs with thorough answers (5-10 per page)
+   - Real testimonials with attribution
+   - Clear CTAs (above fold + bottom)
+   - Internal links to related services (3-5)
+   - Pricing transparency (specific or range)
+
+2. **Location/Service Area Pages**
+   - Dedicated page for each major service area
+   - ⚠️ CRITICAL: Pages must have genuinely unique local content
+   - NOT cookie-cutter pages with city names swapped (Google penalizes these in 2026)
+   - Include: local landmarks, demographics, neighborhoods, local partnerships
+   - Local testimonials from that area
+   - Embedded Google Map specific to that area
+   - Neighborhood and zip code coverage
+
+3. **Technical On-Page**
+   - Title tags: Include primary keyword + location + brand (can be up to 270 chars — Google indexes hidden portion for ranking even though display truncates at ~60)
+   - Meta descriptions: 150-160 chars with keyword + CTA
+   - H1-H3 hierarchy (one H1 per page)
+   - Image optimization (WebP, compressed <200KB, descriptive alt text)
+   - Internal linking structure
+   - Mobile responsiveness
+   - Core Web Vitals: LCP <2.5s, INP <200ms, CLS <0.1
+   - Page speed score >85
+
+4. **E-E-A-T Signals**
+   - Author bios with credentials
+   - About page with team details
+   - Certifications and licenses displayed
+   - Professional association memberships
+   - Case studies or portfolio
+   - Contact information prominent
+   - Privacy policy and terms present
+
+5. **Content Quality**
+   - Original, helpful content (not AI slop or competitor copies)
+   - Answers specific "People Also Ask" queries
+   - Scannable format (H2s/H3s, short paragraphs)
+   - Write content competitors haven't written (differentiation > copying)
+
+#### D. Link Profile Audit (Weight: 24% of local organic)
+
+Check and score:
+
+1. **Domain Authority/Rating** — Current DA/DR
+2. **Total Referring Domains** — Count and quality
+3. **Local Links** — Links from local businesses, chambers, associations
+4. **Industry Links** — Links from industry directories, associations
+5. **Competitor Comparison** — Link gap analysis
+6. **Toxic Links** — Spammy or harmful backlinks
+7. **Anchor Text Distribution** — Natural vs over-optimized
+
+Note: Backlink weight is DECLINING for local pack rankings in 2026 but still matters for local organic results.
+
+#### E. Citation Audit (Weight: 7% local pack, 13% AI search)
+
+Check and score:
+
+1. **NAP Consistency** — Name, Address, Phone exactly the same everywhere
+2. **Tier 1 Citations** — Google, Bing, Apple Maps, Facebook, Yelp, BBB, YP, Foursquare
+3. **Tier 2 Citations** — Nextdoor, industry-specific directories
+4. **Industry-Specific Directories** — More important than general NAP citations for AI search in 2026
+5. **Data Aggregators** — Neustar Localeze, Foursquare, Data Axle
+6. **"Best Of" Lists** — LLMs heavily cite "Best [Service] in [City]" lists for AI recommendations
+7. **Duplicate Listings** — Identify and resolve
+
+#### F. AI Search Visibility Audit ⚠️ NEW 2026
+
+Check and score:
+
+1. **AI Overview Appearance** — Does business appear in Google AI Overviews for key terms?
+2. **ChatGPT Visibility** — Does ChatGPT mention business? (uses Bing, Wikipedia, Yelp, BBB, Foursquare — NOT Google)
+3. **Structured Data** — Schema markup present and valid (feeds AI Knowledge Graph)
+4. **First-Party Testimonials** — LLMs crawl website testimonial pages to verify reputation
+5. **Content Citability** — Is content structured so AI can extract and cite it?
+6. **Industry Directory Presence** — More impactful than generic NAP for AI citations
+7. **Brand SERP** — What appears when someone searches the business name?
+
+#### G. Competitor Analysis
+
+For top 3-5 competitors, compare:
+
+| Metric | Client | Comp A | Comp B | Comp C |
+|---|---|---|---|---|
+| Domain Authority | | | | |
+| Organic Traffic | | | | |
+| Keywords Ranking | | | | |
+| GBP Reviews (count) | | | | |
+| GBP Rating | | | | |
+| Blog Posts (90 days) | | | | |
+| Service Pages | | | | |
+| Location Pages | | | | |
+| GBP Post Frequency | | | | |
+| Schema Markup | | | | |
+
+### Step 3: Scoring & Prioritization
+
+Score each category 0-100. Calculate weighted overall score.
+
+Use this priority matrix for recommendations:
+
+| Impact | Low Effort (<2hr) | Medium (2-8hr) | High (>8hr) |
+|---|---|---|---|
+| **High** | **10 - DO NOW** | **8 - THIS WEEK** | **6 - THIS MONTH** |
+| **Medium** | **7 - THIS WEEK** | **5 - THIS MONTH** | **3 - EVALUATE** |
+| **Low** | **4 - IF TIME** | **2 - BACKLOG** | **1 - SKIP** |
+
+### Step 4: Output Format
+
+```markdown
+# Local SEO Audit Report: [Business Name]
+
+**Date:** [Date]
+**Website:** [URL]
+**Industry:** [Type]
+**Service Area:** [Area]
+
+## Overall Score: [X/100]
+
+| Category | Score | Weight | Weighted |
+|---|---|---|---|
+| GBP Optimization | /100 | 32% | |
+| Reviews | /100 | 20% | |
+| On-Page SEO | /100 | 15% | |
+| Links | /100 | 12% | |
+| Behavioral Signals | /100 | 9% | |
+| Citations | /100 | 7% | |
+| AI Visibility | /100 | 5% | |
+
+## Priority Actions
+
+### 🔴 Critical (Do This Week)
+[Priority 8-10 items]
+
+### 🟡 Important (This Month)
+[Priority 5-7 items]
+
+### 🟢 Growth (Next Quarter)
+[Priority 3-4 items]
+
+## Detailed Findings
+[Category-by-category breakdown with specific recommendations]
+
+## Competitor Comparison
+[Comparison table and gap analysis]
+```
+
+## Tools to Use
+
+- **Ahrefs MCP** — Domain rating, backlinks, organic keywords, competitor analysis
+- **Google Search Console** — Current rankings, impressions, clicks
+- **BrightLocal** — Citation audit, local rank tracking, review monitoring
+- **PageSpeed Insights** — Core Web Vitals
+- **Google Rich Results Test** — Schema validation
+- **Web fetch** — Crawl competitor pages for content analysis
