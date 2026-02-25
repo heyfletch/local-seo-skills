@@ -12,12 +12,14 @@ Plan and execute ongoing content that builds topical authority, supports local r
 ### What Works
 - Commercial/transactional intent keywords (less affected by AI Overviews)
 - Original research, proprietary data, real case studies
+- **Customer stories with full narratives** (highest-performing content type — see Tier 3a)
 - Content competitors haven't written (differentiation > copying)
 - Answers to specific "People Also Ask" queries
 - Scannable format: H2/H3s, short paragraphs, direct answers
 - Tools, calculators, interactive content (AI can't replicate these)
 - Video content (YouTube + embedded, increases dwell time)
 - First-party experience signals (E-E-A-T)
+- **Real photos of people, actual work, and real results** (383-image study: people photos convert best, infographics get most clicks; AI-generated images showed initial gains then declined)
 
 ### What's Declining
 - Thin "what is X" informational articles (AI answers these directly, CTR down 15-40%)
@@ -43,9 +45,20 @@ Plan and execute ongoing content that builds topical authority, supports local r
 ### Tier 3: Blog/Resource Content (Ongoing)
 - Answer real customer questions
 - Target long-tail and KGR keywords
-- 1,000-2,000 words
+- 1,000-2,000 words (guideline, not KPI — shorter is fine if it answers the question fully)
 - Build topical authority
 - Content that competitors haven't written
+
+### Tier 3a: Customer Stories (HIGH PRIORITY)
+Customer stories dramatically outperform all other content types. These are NOT short testimonials — they're full narratives with specific details. Tested results: +57% conversions (dentist), +350% traffic (painter), outperformed AI content head-to-head.
+
+**How to create:** Interview customers. Cover: the problem, why they chose you, what happened during service, the outcome. Include real photos, actual costs, and timeframes. 200-400 words per story. Add to service pages AND as standalone blog posts.
+
+### Tier 3b: "Honest Review" Pages (MEDIUM PRIORITY)
+Create review pages for tools, products, or vendors relevant to your industry. Adding "honest" to title tags produced +58% to +264% traffic increases in tests. Title format: "[Brand Name] Honest Review — [Your Take]". Works best for businesses that use identifiable tools/brands (agencies, consultants, SaaS). Less applicable for pure service businesses (plumber, painter) unless reviewing equipment or suppliers.
+
+### Tier 3c: Interactive Tools
+Calculators, quizzes, and assessment tools can rank with minimal or zero text content. If the service involves numbers or decisions, consider a tool instead of (or alongside) a blog post.
 
 ### Tier 4: Social & GBP Content (Ongoing)
 - GBP posts (2-3/week)

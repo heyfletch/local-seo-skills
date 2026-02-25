@@ -197,3 +197,36 @@ LLMs crawl your website's testimonial page. To maximize AI citation:
 4. Include specific service mentions in displayed reviews
 5. Mark up with Review schema (see local-seo-schema skill)
 6. Keep testimonial page updated regularly
+
+## Testimonials Page Title Optimization (QUICK WIN)
+
+Most businesses title their testimonials page "Testimonials" — a massive missed opportunity. Changing the title tag to **"[Brand Name] Reviews"** can take the #1 position for "[brand] reviews" searches, displacing Yelp, Reddit, and other third-party sites.
+
+**Implementation:**
+- Title tag: `[Brand Name] Reviews — What Our [Clients/Patients/Customers] Say`
+- H1: `[Brand Name] Reviews`
+- URL: `/reviews` (not `/testimonials`)
+- Include actual review content with names, locations, dates
+- Link to Google review profile for fresh reviews
+- This controls your brand's review narrative in both Google and AI search
+
+**Why it matters:** Reddit threads for "[brand] reviews" now frequently appear in Google results and tend to be negative. Your optimized reviews page can outrank these.
+
+## Reputation Defense: Reddit AMA Strategy
+
+For businesses with some existing recognition, a Reddit AMA (Ask Me Anything) creates a high-engagement thread that ranks for brand + review queries.
+
+**When to use:** Best for established businesses, agency owners, or professionals building a personal brand. NOT suitable for brand new businesses with no recognition.
+
+**How:**
+1. Find a relevant subreddit (r/[your city], r/[your industry], niche subreddits)
+2. Post an AMA: "I'm a [role] in [city] who specializes in [service] — AMA"
+3. Answer questions thoroughly and honestly
+4. High engagement makes the thread sticky and hard to displace
+5. Can outrank negative Reddit threads in search results
+
+**Rules:**
+- Be genuine — Reddit users detect and punish marketing attempts
+- Do NOT create fake accounts or astroturf
+- Do NOT coordinate upvotes
+- Provide real value in answers, not sales pitches

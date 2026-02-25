@@ -80,6 +80,18 @@ Ask questions ONE AT A TIME in a conversational flow. Do NOT list all questions 
 <!-- List 4-8 cities/areas served. Brief note per area if applicable.
      Link to service area pages if they exist. -->
 
+<h2>Featured Customer Story</h2>
+<!-- THIS SECTION IS HIGH PRIORITY. Customer stories dramatically outperform
+     all other content types (tested: +57% conversions, +350% traffic).
+     NOT a short testimonial — a full narrative:
+     - The problem/situation the customer faced
+     - Why they chose this business
+     - What happened during service (specific details, timeline)
+     - The outcome/result (with numbers if possible)
+     - Include real photos, costs, and timeframes
+     Structure as a mini case study (200-400 words).
+     Interview customers to get these stories. -->
+
 <h2>Customer Reviews</h2>
 <!-- 2-3 real testimonials with name and city attribution. Link to full reviews page. -->
 
@@ -91,10 +103,11 @@ Ask questions ONE AT A TIME in a conversational flow. Do NOT list all questions 
 
 ## Content Requirements
 
-- **Word count:** 1,500-2,500 words (more for competitive keywords)
+- **Word count:** 1,500-2,500 words as a guideline (not a KPI). Shorter is fine if it fully addresses user intent. Completeness > length. Interactive tools (calculators, quizzes) can rank with minimal text.
 - **Keyword density:** 1-2% (natural, never forced)
 - **Tone:** Second person (you/your). Professional yet approachable.
 - **Voice:** Write for humans first. Specific > generic. Data > claims.
+- **Images:** Prioritize real photos of people, actual work, and real results. Infographics for data. Be cautious with AI-generated imagery — it can undermine authenticity and E-E-A-T signals.
 
 ## On-Page SEO Checklist
 
@@ -104,6 +117,7 @@ Ask questions ONE AT A TIME in a conversational flow. Do NOT list all questions 
 - [ ] Keyword in 1-2 H2s naturally
 - [ ] 6-10 FAQs with thorough answers
 - [ ] Real testimonials with attribution
+- [ ] Featured customer story (full narrative with details/photos/costs — NOT just a quote)
 - [ ] CTA above the fold
 - [ ] CTA at bottom
 - [ ] 3-5 internal links to related services/pages

@@ -7,6 +7,12 @@ description: Strategic local SEO planning for service-area and local businesses.
 
 Create a comprehensive local SEO strategy including site architecture, keyword research, traffic projections, and prioritized action plan.
 
+## 2026 Context
+
+**AI Search Reality Check:** ChatGPT has <1% of daily searches and drives <1% of referral traffic. Most prompts are not search behavior. For local businesses, AI queries with local intent trigger web search (RAG) behind the scenes — so ranking well in traditional search drives AI visibility too. Use AI buzz as a conversation starter with clients, but deliver solid local SEO fundamentals.
+
+**SERP Reality:** Ads are compressing organic space. LSAs capture ~5% CTR average (20%+ for high-trust verticals like lawyers). Map pack: mid-teens CTR per position. First organic result: low-to-mid twenties (down from 30%+). Consider recommending a paid ads partner for clients in LSA-heavy industries.
+
 ## Planning Process
 
 ### Step 1: Discovery
@@ -140,7 +146,8 @@ Meta Description: (155 chars with keyword + CTA)
 H1: [Single, includes primary keyword]
 
 Content Requirements:
-- Word count: 1,500-2,500 for service pages, 1,000-2,000 for blog
+- Word count: 1,500-2,500 guideline for service pages, 1,000-2,000 for blog (completeness > length)
+- Customer stories: At least 1 per service page (full narrative, not just a quote)
 - FAQs: 5-10 with thorough answers
 - Schema: [Service, FAQPage, LocalBusiness]
 - Internal links to: [related pages]
@@ -191,8 +198,10 @@ Structure as weekly priorities:
 **Weeks 3-4: Core Content**
 - Create/optimize top 3-5 service pages
 - Optimize homepage with primary keywords
-- Add testimonials/reviews page
+- Add reviews page (title: "[Brand Name] Reviews" — NOT "Testimonials")
 - Set up review generation system
+- **Entity consistency check:** Google the brand, ask ChatGPT "Who is [brand]?" — fix inconsistencies across website, GBP, LinkedIn, directories
+- Begin collecting customer stories (interview 2-3 clients for full narratives with photos/costs/outcomes)
 
 **Weeks 5-8: Expansion**
 - Create remaining service pages

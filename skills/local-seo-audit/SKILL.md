@@ -111,6 +111,7 @@ Check and score:
 8. **Platform Distribution** — Reviews on Google, Yelp, industry-specific sites
 9. **Negative Review Handling** — How are 1-3 star reviews addressed?
 10. **Review Generation System** — Is there a systematic process in place?
+11. **Testimonials Page Title** — ⚡ QUICK WIN: Is the testimonials/reviews page optimized with `[Brand Name] Reviews` as the title tag? (Most businesses use "Testimonials" — changing to "[Brand] Reviews" can rank #1 for brand + reviews, displacing Yelp/Reddit)
 
 #### C. On-Page / Website Audit (Weight: 33% of local organic)
 
@@ -118,14 +119,16 @@ Check and score:
 
 1. **Service Pages**
    - Dedicated page for EVERY individual service (not one combined page)
-   - Each page 1,500-2,500 words
+   - Each page 1,500-2,500 words (guideline — completeness > length)
    - Target keyword in H1, first 100 words, 1-2 H2s
    - Keyword density 1-2% (natural, not stuffed)
    - FAQs with thorough answers (5-10 per page)
    - Real testimonials with attribution
+   - **Customer stories present** (full narratives with details/photos/costs — highest-performing content type)
    - Clear CTAs (above fold + bottom)
    - Internal links to related services (3-5)
    - Pricing transparency (specific or range)
+   - **Real photos** (people, actual work, results — NOT AI-generated images)
 
 2. **Location/Service Area Pages**
    - Dedicated page for each major service area
@@ -189,6 +192,8 @@ Check and score:
 
 #### F. AI Search Visibility Audit ⚠️ NEW 2026
 
+**Context:** AI search (ChatGPT, Gemini) is growing but still <1% of daily searches and <1% of referral traffic. For local businesses, AI queries with local intent almost always trigger web search (RAG) — so ranking well in traditional search drives AI visibility too. Don't panic, but don't ignore it.
+
 Check and score:
 
 1. **AI Overview Appearance** — Does business appear in Google AI Overviews for key terms?
@@ -198,6 +203,15 @@ Check and score:
 5. **Content Citability** — Is content structured so AI can extract and cite it?
 6. **Industry Directory Presence** — More impactful than generic NAP for AI citations
 7. **Brand SERP** — What appears when someone searches the business name?
+8. **Entity Consistency Check** — Google the brand name, ask ChatGPT "Who is [brand]?" — is the description accurate? Are bio, titles, services consistent across website, LinkedIn, GBP, directories? AI triangulates identity from multiple sources; inconsistencies cause confusion.
+
+#### F2. SERP Landscape Check
+
+For top 5-10 target keywords, check the SERP layout:
+1. **Local Service Ads (LSAs) present?** — If yes, note that LSAs capture ~5% average CTR (up to 20%+ for high-trust verticals like lawyers). Consider recommending a paid ads partner.
+2. **Map pack position** — Inside or outside visible results?
+3. **AI Overview present?** — Informational queries most affected
+4. **Number of organic results visible** — Ads increasingly compress organic space
 
 #### G. Competitor Analysis
 
@@ -273,6 +287,7 @@ Use this priority matrix for recommendations:
 - **DataForSEO MCP** (if available) — SERP rankings, Google Maps data, keyword volumes, GBP data, backlinks, on-page crawl. Preferred source for quantitative data.
 - **Ahrefs MCP** (if available) — Domain rating, backlinks, organic keywords, competitor analysis
 - **Google Search Console** — Current rankings, impressions, clicks
+- **BrightLocal** — Citation audit, local rank tracking, review monitoring
 - **PageSpeed Insights** — Core Web Vitals
 - **Google Rich Results Test** — Schema validation
 - **Web search/fetch** — Crawl competitor pages, discover citations, check listings
