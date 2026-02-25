@@ -237,3 +237,12 @@ When generating a content calendar, format as:
 |---|---|---|---|
 | [URL] | [update/expand/consolidate] | [reason] | [high/med/low] |
 ```
+
+## Output & Delivery
+
+Save output to `~/Desktop/`:
+- **Markdown**: `~/Desktop/YYYY-MM-DD-content-plan-[business-slug].md`
+- **HTML Report** (recommended for client delivery): Use the template at `${CLAUDE_PLUGIN_ROOT}/references/html-report-template.html`. Save to `~/Desktop/YYYY-MM-DD-content-plan-[business-slug].html`
+- **PDF**: Convert from HTML via `wkhtmltopdf` or tell user to use the "Save as PDF" button.
+
+Default to HTML if user doesn't specify.

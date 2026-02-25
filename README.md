@@ -42,6 +42,37 @@ Skills activate automatically based on context. Ask about any local SEO topic an
 | `local-seo-reviews` | "get more reviews", "respond to this review", "review strategy" |
 | `local-seo-content` | "content calendar", "blog topics", "what should I blog about" |
 
+## Data Integrations
+
+### DataForSEO (included)
+
+The plugin ships with a DataForSEO MCP server config for SERP rankings, keyword data, Google Maps listings, GBP data, backlinks, and on-page auditing.
+
+**Setup:**
+
+1. Get API credentials at [dataforseo.com](https://dataforseo.com) ($50 minimum, pay-as-you-go, credits never expire)
+2. Add credentials to your shell profile (`~/.zshrc`):
+   ```bash
+   echo 'export DATAFORSEO_USERNAME="your_username"' >> ~/.zshrc
+   echo 'export DATAFORSEO_PASSWORD="your_password"' >> ~/.zshrc
+   source ~/.zshrc
+   ```
+3. The MCP server starts automatically when the plugin loads.
+
+### Ahrefs (optional)
+
+If you have the Ahrefs MCP server configured separately, the skills will use both DataForSEO and Ahrefs for richer data.
+
+## Report Output
+
+Reports save to `~/Desktop/` in your choice of format:
+
+| Format | Best For |
+|---|---|
+| **HTML** (default) | Client delivery — professional report with print-to-PDF button |
+| **Markdown** | Quick reference, internal use |
+| **PDF** | Email attachments — generated from HTML via wkhtmltopdf or browser print |
+
 ## 2026 Local SEO Landscape
 
 These skills incorporate the latest 2026 ranking factors:

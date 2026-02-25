@@ -270,9 +270,32 @@ Use this priority matrix for recommendations:
 
 ## Tools to Use
 
-- **Ahrefs MCP** — Domain rating, backlinks, organic keywords, competitor analysis
+- **DataForSEO MCP** (if available) — SERP rankings, Google Maps data, keyword volumes, GBP data, backlinks, on-page crawl. Preferred source for quantitative data.
+- **Ahrefs MCP** (if available) — Domain rating, backlinks, organic keywords, competitor analysis
 - **Google Search Console** — Current rankings, impressions, clicks
-- **BrightLocal** — Citation audit, local rank tracking, review monitoring
 - **PageSpeed Insights** — Core Web Vitals
 - **Google Rich Results Test** — Schema validation
-- **Web fetch** — Crawl competitor pages for content analysis
+- **Web search/fetch** — Crawl competitor pages, discover citations, check listings
+
+Use whichever data tools are available. DataForSEO and Ahrefs complement each other — use both when available.
+
+## Output & Delivery
+
+Always save reports as files to `~/Desktop/`. Ask the user which format(s) they want:
+
+### Markdown (default)
+- Save to `~/Desktop/YYYY-MM-DD-audit-[business-slug].md`
+
+### HTML Report (recommended for client delivery)
+- Use the HTML template at `${CLAUDE_PLUGIN_ROOT}/references/html-report-template.html`
+- Generate a self-contained HTML file with all CSS inline
+- Save to `~/Desktop/YYYY-MM-DD-audit-[business-slug].html`
+- The template includes a "Save as PDF" button that triggers browser print
+
+### PDF
+- After generating the HTML report, convert to PDF:
+  - Try: `wkhtmltopdf ~/Desktop/[file].html ~/Desktop/[file].pdf`
+  - If wkhtmltopdf not available, tell the user to open the HTML and use the "Save as PDF" button (Cmd+P)
+- Save to `~/Desktop/YYYY-MM-DD-audit-[business-slug].pdf`
+
+Always confirm the output format with the user before generating. Default to HTML if they don't specify.

@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>{{REPORT_TITLE}}</title>
+<style>
+  @page { margin: 0.75in; size: letter; }
+  @media print {
+    body { font-size: 11pt; }
+    .page-break { page-break-before: always; }
+    .no-print { display: none; }
+    .score-card { break-inside: avoid; }
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    line-height: 1.6;
+    color: #1a1a2e;
+    background: #f8f9fa;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 2rem;
+  }
+
+  /* Header */
+  .report-header {
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+    color: white;
+    padding: 2.5rem;
+    border-radius: 12px;
+    margin-bottom: 2rem;
+  }
+  .report-header h1 {
+    font-size: 1.75rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+  }
+  .report-header .subtitle {
+    opacity: 0.85;
+    font-size: 1rem;
+  }
+  .report-meta {
+    display: flex;
+    gap: 2rem;
+    margin-top: 1.5rem;
+    font-size: 0.875rem;
+    opacity: 0.8;
+  }
+  .report-meta span { display: flex; align-items: center; gap: 0.35rem; }
+
+  /* Overall Score */
+  .overall-score {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    background: white;
+    padding: 2rem;
+    border-radius: 12px;
+    margin-bottom: 2rem;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+  }
+  .score-circle {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    font-weight: 800;
+    color: white;
+    flex-shrink: 0;
+  }
+  .score-excellent { background: linear-gradient(135deg, #10b981, #059669); }
+  .score-good { background: linear-gradient(135deg, #3b82f6, #2563eb); }
+  .score-fair { background: linear-gradient(135deg, #f59e0b, #d97706); }
+  .score-poor { background: linear-gradient(135deg, #ef4444, #dc2626); }
+
+  /* Score Cards */
+  .score-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1rem;
+    margin-bottom: 2rem;
+  }
+  .score-card {
+    background: white;
+    padding: 1.25rem;
+    border-radius: 10px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+    border-left: 4px solid #e5e7eb;
+  }
+  .score-card.critical { border-left-color: #ef4444; }
+  .score-card.warning { border-left-color: #f59e0b; }
+  .score-card.good { border-left-color: #10b981; }
+  .score-card h3 {
+    font-size: 0.875rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: #6b7280;
+    margin-bottom: 0.5rem;
+  }
+  .score-card .score-value {
+    font-size: 1.75rem;
+    font-weight: 700;
+  }
+  .score-card .score-label {
+    font-size: 0.8rem;
+    color: #9ca3af;
+  }
+
+  /* Sections */
+  .section {
+    background: white;
+    padding: 2rem;
+    border-radius: 12px;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+  }
+  .section h2 {
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    padding-bottom: 0.75rem;
+    border-bottom: 2px solid #f3f4f6;
+  }
+  .section h3 {
+    font-size: 1rem;
+    font-weight: 600;
+    margin: 1.25rem 0 0.5rem;
+  }
+
+  /* Priority Items */
+  .priority-list { list-style: none; }
+  .priority-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75rem;
+    padding: 0.75rem 0;
+    border-bottom: 1px solid #f3f4f6;
+  }
+  .priority-item:last-child { border-bottom: none; }
+  .priority-badge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 28px;
+    height: 28px;
+    border-radius: 6px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: white;
+    flex-shrink: 0;
+  }
+  .priority-critical { background: #ef4444; }
+  .priority-high { background: #f59e0b; }
+  .priority-medium { background: #3b82f6; }
+  .priority-low { background: #6b7280; }
+
+  /* Tables */
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1rem 0;
+    font-size: 0.875rem;
+  }
+  th {
+    background: #f9fafb;
+    font-weight: 600;
+    text-align: left;
+    padding: 0.75rem;
+    border-bottom: 2px solid #e5e7eb;
+  }
+  td {
+    padding: 0.625rem 0.75rem;
+    border-bottom: 1px solid #f3f4f6;
+  }
+  tr:hover td { background: #f9fafb; }
+
+  /* Status indicators */
+  .status-pass { color: #059669; font-weight: 600; }
+  .status-fail { color: #dc2626; font-weight: 600; }
+  .status-warn { color: #d97706; font-weight: 600; }
+
+  /* Progress bar */
+  .progress-bar {
+    height: 8px;
+    background: #e5e7eb;
+    border-radius: 4px;
+    overflow: hidden;
+    margin-top: 0.5rem;
+  }
+  .progress-fill {
+    height: 100%;
+    border-radius: 4px;
+    transition: width 0.3s;
+  }
+
+  /* Footer */
+  .report-footer {
+    text-align: center;
+    padding: 2rem;
+    font-size: 0.8rem;
+    color: #9ca3af;
+  }
+
+  /* Print button */
+  .print-btn {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    background: #1a1a2e;
+    color: white;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 8px;
+    font-size: 0.875rem;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    z-index: 100;
+  }
+  .print-btn:hover { background: #0f3460; }
+</style>
+</head>
+<body>
+
+<!-- INSTRUCTIONS FOR CLAUDE:
+  This is the HTML report template for local-seo plugin outputs.
+
+  TO USE THIS TEMPLATE:
+  1. Copy this entire HTML structure
+  2. Replace all {{PLACEHOLDER}} values with real data
+  3. Populate sections with audit/plan/report findings
+  4. Add/remove sections as needed for the specific report type
+  5. Save as a self-contained .html file to ~/Desktop/
+
+  FILE NAMING: YYYY-MM-DD-[report-type]-[business-name-slug].html
+  Example: 2026-02-24-audit-fletcher-digital.html
+
+  FOR PDF: After saving the HTML, also save a PDF version using:
+  /opt/homebrew/bin/wkhtmltopdf (if available) or
+  python3 with weasyprint, or tell user to open HTML and Cmd+P > Save as PDF
+
+  SCORE COLORS:
+  - 80-100: score-excellent / good
+  - 60-79: score-good / good
+  - 40-59: score-fair / warning
+  - 0-39: score-poor / critical
+-->
+
+<div class="report-header">
+  <h1>{{REPORT_TITLE}}</h1>
+  <p class="subtitle">{{REPORT_SUBTITLE}}</p>
+  <div class="report-meta">
+    <span>{{DATE}}</span>
+    <span>{{BUSINESS_URL}}</span>
+    <span>{{INDUSTRY}}</span>
+  </div>
+</div>
+
+<div class="overall-score">
+  <div class="score-circle score-fair">{{SCORE}}</div>
+  <div>
+    <h2>Overall Score</h2>
+    <p>{{SCORE_SUMMARY}}</p>
+  </div>
+</div>
+
+<div class="score-grid">
+  <!-- Repeat for each category -->
+  <div class="score-card warning">
+    <h3>{{CATEGORY_NAME}}</h3>
+    <div class="score-value">{{CATEGORY_SCORE}}/100</div>
+    <div class="score-label">Weight: {{WEIGHT}}%</div>
+    <div class="progress-bar">
+      <div class="progress-fill" style="width: {{CATEGORY_SCORE}}%; background: {{COLOR}};"></div>
+    </div>
+  </div>
+</div>
+
+<div class="section">
+  <h2>Priority Actions</h2>
+  <ul class="priority-list">
+    <li class="priority-item">
+      <span class="priority-badge priority-critical">10</span>
+      <div>
+        <strong>{{ACTION_TITLE}}</strong>
+        <p>{{ACTION_DESCRIPTION}}</p>
+      </div>
+    </li>
+  </ul>
+</div>
+
+<div class="section">
+  <h2>{{SECTION_TITLE}}</h2>
+  <!-- Section content: tables, findings, recommendations -->
+</div>
+
+<div class="section">
+  <h2>Competitor Comparison</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>Metric</th>
+        <th>{{BUSINESS}}</th>
+        <th>{{COMPETITOR_1}}</th>
+        <th>{{COMPETITOR_2}}</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>{{METRIC}}</td>
+        <td>{{VALUE}}</td>
+        <td>{{VALUE}}</td>
+        <td>{{VALUE}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="report-footer">
+  <p>Generated by Local SEO Plugin for Claude Code</p>
+  <p>{{DATE}}</p>
+</div>
+
+<button class="print-btn no-print" onclick="window.print()">Save as PDF</button>
+
+</body>
+</html>

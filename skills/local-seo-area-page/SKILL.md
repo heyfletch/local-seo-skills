@@ -203,3 +203,9 @@ Include LocalBusiness schema with `areaServed`:
 ```
 
 For service-area businesses (no storefront), intentionally OMIT the `address` property and use `areaServed` instead. This is correct schema practice for hidden-address SABs.
+
+## Output Format
+
+Save output to `~/Desktop/`:
+- **Markdown**: `~/Desktop/YYYY-MM-DD-area-[city-slug].md`
+- **HTML** (recommended): Self-contained semantic HTML ready for CMS insertion, with schema JSON-LD in a `<script>` tag. Save to `~/Desktop/YYYY-MM-DD-area-[city-slug].html`

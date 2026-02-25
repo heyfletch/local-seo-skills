@@ -250,6 +250,24 @@ Structure as weekly priorities:
 - n8n for automation workflows
 ```
 
+## Tools to Use
+
+- **DataForSEO MCP** (if available) — Keyword volumes, SERP data, competitor analysis, Google Maps rankings. Preferred for keyword research.
+- **Ahrefs MCP** (if available) — Domain metrics, organic keywords, competitor gaps
+- **Web search/fetch** — Competitor research, content gap analysis
+
+Use whichever data tools are available.
+
+## Output & Delivery
+
+Always save reports as files to `~/Desktop/`. Ask the user which format(s) they want:
+
+- **Markdown**: Save to `~/Desktop/YYYY-MM-DD-plan-[business-slug].md`
+- **HTML Report** (recommended): Use the template at `${CLAUDE_PLUGIN_ROOT}/references/html-report-template.html`. Save to `~/Desktop/YYYY-MM-DD-plan-[business-slug].html`
+- **PDF**: Convert from HTML via `wkhtmltopdf` or tell user to use the "Save as PDF" button in the HTML report.
+
+Default to HTML if user doesn't specify.
+
 ## Multi-Location Strategy Notes
 
 For businesses with 2+ locations:

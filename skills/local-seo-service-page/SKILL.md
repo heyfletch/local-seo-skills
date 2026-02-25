@@ -178,9 +178,15 @@ Do NOT:
 
 ## Output Format
 
-Deliver the complete page as markdown with:
+Deliver the complete page with:
 1. Full page content following the template structure
 2. Meta title and meta description
 3. Schema markup code (JSON-LD) — Service + FAQPage
 4. 3-5 internal linking suggestions with anchor text
 5. Image suggestions with recommended alt text
+
+Save output to `~/Desktop/`:
+- **Markdown**: `~/Desktop/YYYY-MM-DD-service-[service-slug].md`
+- **HTML** (recommended): Self-contained HTML ready to paste into CMS. Save to `~/Desktop/YYYY-MM-DD-service-[service-slug].html`
+
+For service pages, HTML output should be clean semantic HTML (not a report template) — ready for CMS insertion with the schema JSON-LD in a `<script>` tag at the bottom.
