@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>{{REPORT_TITLE}}</title>
+<style>
+  @page { margin: 0.75in; size: letter; }
+  @media print {
+    body { font-size: 11pt; }
+    .page-break { page-break-before: always; }
+    .no-print { display: none; }
+    .milestone { break-inside: avoid; }
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    line-height: 1.6;
+    color: #1a1a2e;
+    background: #f8f9fa;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 2rem;
+  }
+
+  /* Header */
+  .report-header {
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+    color: white;
+    padding: 2.5rem;
+    border-radius: 12px;
+    margin-bottom: 2rem;
+  }
+  .report-header h1 {
+    font-size: 1.75rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+  }
+  .report-header .subtitle {
+    opacity: 0.85;
+    font-size: 1rem;
+  }
+  .report-meta {
+    display: flex;
+    gap: 2rem;
+    margin-top: 1.5rem;
+    font-size: 0.875rem;
+    opacity: 0.8;
+  }
+  .report-meta span { display: flex; align-items: center; gap: 0.35rem; }
+
+  /* Executive Summary */
+  .exec-summary {
+    background: white;
+    padding: 2rem;
+    border-radius: 12px;
+    margin-bottom: 2rem;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+    border-left: 4px solid #0f3460;
+  }
+  .exec-summary h2 {
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+  }
+  .exec-summary ul { padding-left: 1.25rem; }
+  .exec-summary li { margin-bottom: 0.5rem; }
+
+  /* Timeline */
+  .timeline {
+    position: relative;
+    margin: 2rem 0;
+    padding-left: 2rem;
+  }
+  .timeline::before {
+    content: '';
+    position: absolute;
+    left: 0.5rem;
+    top: 0;
+    bottom: 0;
+    width: 3px;
+    background: linear-gradient(to bottom, #0f3460, #10b981);
+    border-radius: 3px;
+  }
+  .timeline-item {
+    position: relative;
+    background: white;
+    padding: 1.5rem;
+    border-radius: 10px;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+  }
+  .timeline-item::before {
+    content: '';
+    position: absolute;
+    left: -1.75rem;
+    top: 1.75rem;
+    width: 12px;
+    height: 12px;
+    background: #0f3460;
+    border-radius: 50%;
+    border: 3px solid #f8f9fa;
+  }
+  .timeline-item.active::before { background: #10b981; }
+  .timeline-item h3 {
+    font-size: 1rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+  }
+  .timeline-label {
+    display: inline-block;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    padding: 0.2rem 0.6rem;
+    border-radius: 4px;
+    margin-bottom: 0.75rem;
+  }
+  .label-foundation { background: #dbeafe; color: #1e40af; }
+  .label-build { background: #fef3c7; color: #92400e; }
+  .label-growth { background: #d1fae5; color: #065f46; }
+  .label-authority { background: #ede9fe; color: #5b21b6; }
+
+  /* Milestone markers */
+  .milestone {
+    background: white;
+    padding: 1.25rem;
+    border-radius: 10px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+    margin-bottom: 1rem;
+    border-left: 4px solid #10b981;
+  }
+  .milestone h4 {
+    font-size: 0.875rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: #059669;
+    margin-bottom: 0.25rem;
+  }
+
+  /* 90-Day Calendar Grid */
+  .calendar-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
+    margin: 1.5rem 0;
+  }
+  .calendar-week {
+    background: white;
+    padding: 1rem;
+    border-radius: 8px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+    font-size: 0.85rem;
+  }
+  .calendar-week h4 {
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: #6b7280;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+    margin-bottom: 0.5rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid #f3f4f6;
+  }
+  .calendar-week ul {
+    list-style: none;
+    padding: 0;
+  }
+  .calendar-week li {
+    padding: 0.25rem 0;
+    border-bottom: 1px solid #f9fafb;
+    font-size: 0.8rem;
+  }
+  .calendar-week li:last-child { border-bottom: none; }
+
+  /* Sections */
+  .section {
+    background: white;
+    padding: 2rem;
+    border-radius: 12px;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+  }
+  .section h2 {
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    padding-bottom: 0.75rem;
+    border-bottom: 2px solid #f3f4f6;
+  }
+  .section h3 {
+    font-size: 1rem;
+    font-weight: 600;
+    margin: 1.25rem 0 0.5rem;
+  }
+
+  /* Tables */
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1rem 0;
+    font-size: 0.875rem;
+  }
+  th {
+    background: #f9fafb;
+    font-weight: 600;
+    text-align: left;
+    padding: 0.75rem;
+    border-bottom: 2px solid #e5e7eb;
+  }
+  td {
+    padding: 0.625rem 0.75rem;
+    border-bottom: 1px solid #f3f4f6;
+  }
+  tr:hover td { background: #f9fafb; }
+
+  /* Priority badges */
+  .priority-badge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 28px;
+    height: 28px;
+    border-radius: 6px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: white;
+    flex-shrink: 0;
+  }
+  .priority-critical { background: #ef4444; }
+  .priority-high { background: #f59e0b; }
+  .priority-medium { background: #3b82f6; }
+  .priority-low { background: #6b7280; }
+
+  /* Keyword table enhancements */
+  .kgr-good { color: #059669; font-weight: 600; }
+  .kgr-ok { color: #d97706; font-weight: 600; }
+  .kgr-hard { color: #dc2626; font-weight: 600; }
+
+  /* Sitemap tree */
+  .sitemap-tree {
+    font-family: 'SF Mono', 'Fira Code', monospace;
+    font-size: 0.85rem;
+    background: #f9fafb;
+    padding: 1.5rem;
+    border-radius: 8px;
+    line-height: 1.8;
+    overflow-x: auto;
+  }
+
+  /* Footer */
+  .report-footer {
+    text-align: center;
+    padding: 2rem;
+    font-size: 0.8rem;
+    color: #9ca3af;
+  }
+
+  /* Print button */
+  .print-btn {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    background: #1a1a2e;
+    color: white;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 8px;
+    font-size: 0.875rem;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    z-index: 100;
+  }
+  .print-btn:hover { background: #0f3460; }
+</style>
+</head>
+<body>
+
+<!-- INSTRUCTIONS FOR CLAUDE:
+  This is the HTML PLAN template for local-seo roadmap/strategy outputs.
+
+  TO USE THIS TEMPLATE:
+  1. Copy this entire HTML structure
+  2. Replace all {{PLACEHOLDER}} values with real data
+  3. Use the timeline component for phased action plans
+  4. Use the calendar-grid for 90-day week-by-week plans
+  5. Use milestone markers for key checkpoints
+  6. Save as a self-contained .html file to ~/Desktop/
+
+  FILE NAMING: YYYY-MM-DD-plan-[business-name-slug].html
+
+  TIMELINE LABELS:
+  - label-foundation (blue): Weeks 1-2 setup tasks
+  - label-build (amber): Weeks 3-8 content/optimization
+  - label-growth (green): Weeks 9-12 authority building
+  - label-authority (purple): Ongoing maintenance
+-->
+
+<div class="report-header">
+  <h1>{{REPORT_TITLE}}</h1>
+  <p class="subtitle">{{REPORT_SUBTITLE}}</p>
+  <div class="report-meta">
+    <span>{{DATE}}</span>
+    <span>{{BUSINESS_URL}}</span>
+    <span>{{INDUSTRY}}</span>
+  </div>
+</div>
+
+<div class="exec-summary">
+  <h2>Executive Summary</h2>
+  <ul>
+    <li><strong>Current State:</strong> {{CURRENT_STATE}}</li>
+    <li><strong>Primary Opportunity:</strong> {{OPPORTUNITY}}</li>
+    <li><strong>Biggest Challenge:</strong> {{CHALLENGE}}</li>
+    <li><strong>90-Day Focus:</strong> {{FOCUS}}</li>
+  </ul>
+</div>
+
+<div class="section">
+  <h2>Strategic Roadmap</h2>
+  <div class="timeline">
+    <div class="timeline-item">
+      <span class="timeline-label label-foundation">Weeks 1-2: Foundation</span>
+      <h3>{{PHASE_TITLE}}</h3>
+      <p>{{PHASE_DESCRIPTION}}</p>
+      <ul>
+        <li>{{TASK}}</li>
+      </ul>
+    </div>
+    <div class="timeline-item">
+      <span class="timeline-label label-build">Weeks 3-8: Build</span>
+      <h3>{{PHASE_TITLE}}</h3>
+      <p>{{PHASE_DESCRIPTION}}</p>
+      <ul>
+        <li>{{TASK}}</li>
+      </ul>
+    </div>
+    <div class="timeline-item active">
+      <span class="timeline-label label-growth">Weeks 9-12: Growth</span>
+      <h3>{{PHASE_TITLE}}</h3>
+      <p>{{PHASE_DESCRIPTION}}</p>
+      <ul>
+        <li>{{TASK}}</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<div class="section">
+  <h2>90-Day Calendar</h2>
+  <div class="calendar-grid">
+    <div class="calendar-week">
+      <h4>Week 1</h4>
+      <ul>
+        <li>{{TASK}}</li>
+      </ul>
+    </div>
+    <!-- Repeat for weeks 2-12 -->
+  </div>
+</div>
+
+<div class="section">
+  <h2>Milestones</h2>
+  <div class="milestone">
+    <h4>Milestone 1 — {{MILESTONE_DATE}}</h4>
+    <p>{{MILESTONE_DESCRIPTION}}</p>
+  </div>
+</div>
+
+<div class="section">
+  <h2>Keyword Strategy</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>Keyword</th>
+        <th>Volume</th>
+        <th>KD</th>
+        <th>KGR</th>
+        <th>Intent</th>
+        <th>Target Page</th>
+        <th>Priority</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>{{KEYWORD}}</td>
+        <td>{{VOLUME}}</td>
+        <td>{{KD}}</td>
+        <td class="kgr-good">{{KGR}}</td>
+        <td>{{INTENT}}</td>
+        <td>{{PAGE}}</td>
+        <td><span class="priority-badge priority-critical">{{SCORE}}</span></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="section">
+  <h2>Site Architecture</h2>
+  <div class="sitemap-tree">
+{{SITEMAP_TREE}}
+  </div>
+</div>
+
+<div class="section">
+  <h2>Traffic Projections</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>Timeframe</th>
+        <th>Estimated Monthly Traffic</th>
+        <th>Assumptions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>3 months</td>
+        <td>{{TRAFFIC_3MO}}</td>
+        <td>{{ASSUMPTIONS_3MO}}</td>
+      </tr>
+      <tr>
+        <td>6 months</td>
+        <td>{{TRAFFIC_6MO}}</td>
+        <td>{{ASSUMPTIONS_6MO}}</td>
+      </tr>
+      <tr>
+        <td>12 months</td>
+        <td>{{TRAFFIC_12MO}}</td>
+        <td>{{ASSUMPTIONS_12MO}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="section">
+  <h2>{{SECTION_TITLE}}</h2>
+  <!-- Additional sections as needed -->
+</div>
+
+<div class="report-footer">
+  <p>Generated by Local SEO Plugin for Claude Code</p>
+  <p>{{DATE}}</p>
+</div>
+
+<button class="print-btn no-print" onclick="window.print()">Save as PDF</button>
+
+</body>
+</html>

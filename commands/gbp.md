@@ -9,8 +9,16 @@ allowed-tools:
   - Write
   - Glob
   - Grep
+  - AskUserQuestion
+  - TaskCreate
+  - TaskUpdate
+  - TaskList
+  - Bash
+  - ToolSearch
 ---
 
-Optimize a Google Business Profile using the `local-seo:local-seo-gbp` skill. Invoke the skill, then follow the relevant section based on what the user needs (full optimization, posting strategy, Q&A setup, etc.).
+Optimize a Google Business Profile using the `local-seo:local-seo-gbp` skill. Invoke the skill, then follow its four-phase process exactly: Discovery → Execute → Compile Results → Output.
 
-If the user provided a business name or specific task as an argument, use that to begin. Otherwise, determine what GBP work is needed.
+CRITICAL: Follow the HARD-GATE enforcement in each phase. Do not dump checklists or posts into the terminal — generate the HTML deliverable.
+
+If the user provided a business name or specific task as an argument, use that to begin Phase 1 discovery. Otherwise, use AskUserQuestion to identify the business and GBP task.

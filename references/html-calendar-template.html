@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>{{REPORT_TITLE}}</title>
+<style>
+  @page { margin: 0.75in; size: letter landscape; }
+  @media print {
+    body { font-size: 10pt; }
+    .page-break { page-break-before: always; }
+    .no-print { display: none; }
+    .week-row { break-inside: avoid; }
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    line-height: 1.5;
+    color: #1a1a2e;
+    background: #f8f9fa;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 2rem;
+  }
+
+  /* Header */
+  .report-header {
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+    color: white;
+    padding: 2.5rem;
+    border-radius: 12px;
+    margin-bottom: 2rem;
+  }
+  .report-header h1 {
+    font-size: 1.75rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+  }
+  .report-header .subtitle {
+    opacity: 0.85;
+    font-size: 1rem;
+  }
+  .report-meta {
+    display: flex;
+    gap: 2rem;
+    margin-top: 1.5rem;
+    font-size: 0.875rem;
+    opacity: 0.8;
+  }
+  .report-meta span { display: flex; align-items: center; gap: 0.35rem; }
+
+  /* Content Type Legend */
+  .legend {
+    display: flex;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+    background: white;
+    padding: 1.25rem;
+    border-radius: 10px;
+    margin-bottom: 2rem;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+  }
+  .legend-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.85rem;
+  }
+  .legend-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 3px;
+    flex-shrink: 0;
+  }
+  .type-blog { background: #3b82f6; }
+  .type-gbp { background: #10b981; }
+  .type-social { background: #8b5cf6; }
+  .type-refresh { background: #f59e0b; }
+  .type-service { background: #ef4444; }
+  .type-area { background: #06b6d4; }
+
+  /* Calendar Table */
+  .calendar-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+    margin-bottom: 2rem;
+  }
+  .calendar-table th {
+    background: #1a1a2e;
+    color: white;
+    font-weight: 600;
+    text-align: left;
+    padding: 0.75rem 1rem;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+  }
+  .calendar-table td {
+    padding: 0.625rem 0.75rem;
+    border-bottom: 1px solid #f3f4f6;
+    vertical-align: top;
+    font-size: 0.85rem;
+  }
+  .calendar-table tr:hover td { background: #f9fafb; }
+  .week-label {
+    font-weight: 700;
+    color: #6b7280;
+    white-space: nowrap;
+    width: 80px;
+  }
+
+  /* Content items in cells */
+  .content-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.4rem;
+    padding: 0.3rem 0;
+  }
+  .content-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 2px;
+    flex-shrink: 0;
+    margin-top: 0.35rem;
+  }
+  .content-item .content-text {
+    font-size: 0.8rem;
+    line-height: 1.4;
+  }
+  .content-item .content-keyword {
+    font-size: 0.7rem;
+    color: #9ca3af;
+  }
+
+  /* Monthly Summary */
+  .month-header {
+    background: white;
+    padding: 1.5rem 2rem;
+    border-radius: 12px;
+    margin-bottom: 1rem;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .month-header h2 {
+    font-size: 1.25rem;
+    font-weight: 700;
+  }
+  .month-stats {
+    display: flex;
+    gap: 1.5rem;
+  }
+  .month-stat {
+    text-align: center;
+  }
+  .month-stat .stat-value {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #0f3460;
+  }
+  .month-stat .stat-label {
+    font-size: 0.7rem;
+    color: #9ca3af;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  /* Sections */
+  .section {
+    background: white;
+    padding: 2rem;
+    border-radius: 12px;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+  }
+  .section h2 {
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    padding-bottom: 0.75rem;
+    border-bottom: 2px solid #f3f4f6;
+  }
+
+  /* GBP Post Calendar */
+  .gbp-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 0.5rem;
+    margin: 1rem 0;
+  }
+  .gbp-day-header {
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: #6b7280;
+    text-transform: uppercase;
+    text-align: center;
+    padding: 0.5rem 0;
+  }
+  .gbp-day {
+    background: #f9fafb;
+    border-radius: 6px;
+    padding: 0.5rem;
+    min-height: 60px;
+    font-size: 0.75rem;
+  }
+  .gbp-day.has-post { background: #ecfdf5; border: 1px solid #a7f3d0; }
+  .gbp-day .day-number {
+    font-weight: 600;
+    font-size: 0.7rem;
+    color: #9ca3af;
+    margin-bottom: 0.25rem;
+  }
+
+  /* Tables */
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1rem 0;
+    font-size: 0.875rem;
+  }
+  th {
+    background: #f9fafb;
+    font-weight: 600;
+    text-align: left;
+    padding: 0.75rem;
+    border-bottom: 2px solid #e5e7eb;
+  }
+  td {
+    padding: 0.625rem 0.75rem;
+    border-bottom: 1px solid #f3f4f6;
+  }
+  tr:hover td { background: #f9fafb; }
+
+  /* Footer */
+  .report-footer {
+    text-align: center;
+    padding: 2rem;
+    font-size: 0.8rem;
+    color: #9ca3af;
+  }
+
+  /* Print button */
+  .print-btn {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    background: #1a1a2e;
+    color: white;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 8px;
+    font-size: 0.875rem;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    z-index: 100;
+  }
+  .print-btn:hover { background: #0f3460; }
+</style>
+</head>
+<body>
+
+<!-- INSTRUCTIONS FOR CLAUDE:
+  This is the HTML CALENDAR template for local-seo content calendar outputs.
+
+  TO USE THIS TEMPLATE:
+  1. Copy this entire HTML structure
+  2. Replace all {{PLACEHOLDER}} values with real data
+  3. Use the calendar-table for weekly blog/content schedules
+  4. Use the gbp-grid for monthly GBP post calendars
+  5. Color-code content types using the legend/dot classes
+  6. Save as a self-contained .html file to ~/Desktop/
+
+  FILE NAMING: YYYY-MM-DD-content-calendar-[business-name-slug].html
+
+  CONTENT TYPE COLORS:
+  - type-blog (blue): Blog posts
+  - type-gbp (green): GBP posts
+  - type-social (purple): Social media
+  - type-refresh (amber): Content refreshes
+  - type-service (red): Service page creation
+  - type-area (cyan): Area page creation
+-->
+
+<div class="report-header">
+  <h1>{{REPORT_TITLE}}</h1>
+  <p class="subtitle">{{REPORT_SUBTITLE}}</p>
+  <div class="report-meta">
+    <span>{{DATE}}</span>
+    <span>{{BUSINESS_URL}}</span>
+    <span>{{PERIOD}}</span>
+  </div>
+</div>
+
+<div class="legend">
+  <div class="legend-item"><div class="legend-dot type-blog"></div> Blog Posts</div>
+  <div class="legend-item"><div class="legend-dot type-gbp"></div> GBP Posts</div>
+  <div class="legend-item"><div class="legend-dot type-social"></div> Social Media</div>
+  <div class="legend-item"><div class="legend-dot type-refresh"></div> Content Refresh</div>
+  <div class="legend-item"><div class="legend-dot type-service"></div> Service Pages</div>
+  <div class="legend-item"><div class="legend-dot type-area"></div> Area Pages</div>
+</div>
+
+<div class="month-header">
+  <h2>{{MONTH_NAME}}</h2>
+  <div class="month-stats">
+    <div class="month-stat">
+      <div class="stat-value">{{BLOG_COUNT}}</div>
+      <div class="stat-label">Blog Posts</div>
+    </div>
+    <div class="month-stat">
+      <div class="stat-value">{{GBP_COUNT}}</div>
+      <div class="stat-label">GBP Posts</div>
+    </div>
+    <div class="month-stat">
+      <div class="stat-value">{{SOCIAL_COUNT}}</div>
+      <div class="stat-label">Social Posts</div>
+    </div>
+  </div>
+</div>
+
+<table class="calendar-table">
+  <thead>
+    <tr>
+      <th>Week</th>
+      <th>Blog / Content</th>
+      <th>GBP Posts</th>
+      <th>Social Media</th>
+      <th>Other</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr class="week-row">
+      <td class="week-label">Week 1</td>
+      <td>
+        <div class="content-item">
+          <div class="content-dot type-blog"></div>
+          <div>
+            <div class="content-text">{{TOPIC}}</div>
+            <div class="content-keyword">{{KEYWORD}}</div>
+          </div>
+        </div>
+      </td>
+      <td>
+        <div class="content-item">
+          <div class="content-dot type-gbp"></div>
+          <div class="content-text">{{GBP_POST}}</div>
+        </div>
+      </td>
+      <td>
+        <div class="content-item">
+          <div class="content-dot type-social"></div>
+          <div class="content-text">{{SOCIAL_POST}}</div>
+        </div>
+      </td>
+      <td>{{OTHER}}</td>
+    </tr>
+    <!-- Repeat for additional weeks -->
+  </tbody>
+</table>
+
+<div class="section">
+  <h2>Content Refresh Schedule</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>Page</th>
+        <th>Action</th>
+        <th>Reason</th>
+        <th>Priority</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>{{PAGE_URL}}</td>
+        <td>{{ACTION}}</td>
+        <td>{{REASON}}</td>
+        <td>{{PRIORITY}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="section">
+  <h2>{{SECTION_TITLE}}</h2>
+  <!-- Additional sections as needed -->
+</div>
+
+<div class="report-footer">
+  <p>Generated by Local SEO Plugin for Claude Code</p>
+  <p>{{DATE}}</p>
+</div>
+
+<button class="print-btn no-print" onclick="window.print()">Save as PDF</button>
+
+</body>
+</html>

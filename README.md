@@ -69,13 +69,15 @@ If you have the Ahrefs MCP server configured separately, the skills will use bot
 
 ## Report Output
 
-Reports save to `~/Desktop/` in your choice of format:
+All analysis skills automatically generate HTML reports saved to `~/Desktop/` and auto-opened in the browser. No format selection needed — HTML is always the default.
 
-| Format | Best For |
-|---|---|
-| **HTML** (default) | Client delivery — professional report with print-to-PDF button |
-| **Markdown** | Quick reference, internal use |
-| **PDF** | Email attachments — generated from HTML via wkhtmltopdf or browser print |
+| Template | Used By | Optimized For |
+|---|---|---|
+| **Report** (`html-report-template.html`) | Audit, Reviews, Agency, GBP | Score cards, priority lists, findings tables |
+| **Plan** (`html-plan-template.html`) | Plan | Timeline sections, milestone markers, 90-day calendar grid |
+| **Calendar** (`html-calendar-template.html`) | Content | Weekly grid layout, color-coded content types |
+
+All templates share the same CSS design system (colors, fonts, print button) and include a "Save as PDF" button for client delivery. Terminal output is kept to a 3-5 bullet summary + file path.
 
 ## 2026 Local SEO Landscape
 

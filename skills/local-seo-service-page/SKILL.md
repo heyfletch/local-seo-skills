@@ -5,235 +5,114 @@ description: Build SEO-optimized service pages for local businesses. Use when th
 
 # Local SEO Service Page Builder
 
-Create high-converting, SEO-optimized service pages for local businesses. Each service MUST have its own dedicated page — never combine multiple services on one page.
+## Iron Law
 
-## Before Writing
+NO PAGE OUTPUT WITHOUT COMPLETING ALL FOUR PHASES. Do not skip research. Do not generate content without keyword targeting. Each service MUST have its own dedicated page — never combine multiple services on one page.
 
-Ask questions ONE AT A TIME in a conversational flow. Do NOT list all questions at once.
+---
 
-**Flow:**
-1. First, ask: "What service and business is this page for?"
-2. Once you know the business and service, use web search to research: the business website, competitor pages for this service keyword, and common questions about the service.
-3. Present what you found and propose a target keyword + secondary keywords.
-4. Then ask remaining questions individually — skip any already answered:
-   - "What makes your [service] different from competitors?" (3-4 specific differentiators)
-   - "Walk me through your process — what are the steps?"
-   - "What's the pricing?" (specific, range, or "contact for quote")
-   - "Any testimonials from clients who used this service?"
-   - "What CTA do you want?" (call, book online, fill out form)
+## Phase 1: Discovery
 
-**Information needed** (discover via research, only ask user if you can't find it):
+<HARD-GATE>
+DO NOT proceed to Phase 2 until the business, service, and target keywords are confirmed.
+</HARD-GATE>
+
+### Step 1: Identify the service
+
+Use AskUserQuestion:
+
+**Question:** "What service and business is this page for?"
+- Options: "I'll describe the service", "I'll provide a URL to an existing page to optimize", "I'll provide both"
+
+### Step 2: Auto-discover and research
+
+Use WebSearch to research: the business website, competitor pages for this service keyword, common questions about the service. Present findings and propose a target keyword + secondary keywords via AskUserQuestion for confirmation.
+
+### Step 3: Gather differentiators
+
+Use AskUserQuestion for each (skip any already answered):
+
+**Question:** "What makes your [service] different from competitors?"
+- "Unique process or approach"
+- "Pricing advantage"
+- "Experience / credentials"
+- "I'm not sure — help me find differentiators"
+
+**Question:** "What CTA do you want on this page?"
+- "Phone call"
+- "Online booking / scheduling"
+- "Contact form submission"
+- "Multiple options"
+
+### Information needed (discover via research, only ask user if undiscoverable)
 - Business name and location(s)
 - Service name and description
 - Target keyword and secondary keywords
-- Target audience for this specific service
 - Unique selling points (3-4 specific differentiators)
 - Service process (step-by-step)
 - Pricing info (specific, range, or "contact for quote")
-- Common questions/objections about this service
-- Competitor pages for this keyword (for differentiation)
+- Common questions/objections
 - Testimonials related to this service
 - Service area/cities served
-- Desired CTA (call, book, form, etc.)
+- Desired CTA
 
-## Page Structure Template
+---
 
-```html
-<!-- H1: Include primary keyword naturally. One H1 only. -->
-<h1>[Service Name] in [City/Area]</h1>
+## Phase 2: Research
 
-<!-- Opening: 100-150 words. Keyword in first 100 words. Address visitor's
-     main question immediately. Who you are, what you do, primary benefit. -->
+Read the differentiation guide from `${CLAUDE_PLUGIN_ROOT}/skills/local-seo-service-page/references/service-page-differentiation.md`.
 
-<h2>Why Choose [Company] for [Service]?</h2>
-<!-- 4 differentiators. Each must be SPECIFIC and MEASURABLE.
-     NOT: "We provide high quality service"
-     YES: "With 15+ years and 500+ [procedures] completed, we [specific outcome]" -->
+1. Analyze top 3-5 competitor pages for the target keyword
+2. Identify content gaps — what competitors don't cover
+3. Research PAA questions for the service keyword
+4. Identify LLM sub-query attributes to include for AI discoverability
+5. Note competitor schema markup usage
 
-<h2>Our [Service] Process</h2>
-<!-- 3-5 steps. Each step: name + 2-3 sentences explaining what happens,
-     what's required, and timeline. Reduces anxiety, builds trust. -->
+---
 
-<h2>Who Benefits from [Service]?</h2>
-<!-- 3 ideal client types. Each with specific pain points and how service helps. -->
+## Phase 3: Content Generation
 
-<h2>[Service] Pricing</h2>
-<!-- Be as transparent as possible. Options:
-     - Specific prices/packages
-     - Starting price + what affects cost
-     - Price range + factors
-     Even "Contact for custom quote" is better than no pricing section. -->
+Read the page template from `${CLAUDE_PLUGIN_ROOT}/skills/local-seo-service-page/references/service-page-template.md`.
 
-<h2>What to Expect During [Service]</h2>
-<!-- 150-300 words. Walkthrough of the experience from client perspective.
-     Timeline, what they'll see/feel, preparation needed. -->
+1. Follow the HTML page structure template exactly
+2. Apply the on-page SEO checklist to every element
+3. Write 1,500-2,500 words of unique, differentiated content
+4. Include 6-10 FAQs addressing real objections
+5. Generate meta title (front-load conversion copy, back-load SEO keywords up to 270 chars)
+6. Generate meta description (150-160 chars with keyword + CTA)
+7. Generate Service + FAQPage JSON-LD schema markup
+8. Suggest 3-5 internal linking targets with anchor text
+9. Suggest image placements with alt text
 
-<h2>Frequently Asked Questions</h2>
-<!-- 6-10 FAQs. Structure each as:
-     - Address common objection/concern
-     - Answer technical/process questions
-     - Address comparison/alternative questions
-     - Address timing/scheduling questions
-     Each answer: 3-5 sentences with keyword variations naturally. -->
+---
 
-<h2>[Service] in [Nearby Areas]</h2>
-<!-- List 4-8 cities/areas served. Brief note per area if applicable.
-     Link to service area pages if they exist. -->
+## Phase 4: Output
 
-<h2>Featured Customer Story</h2>
-<!-- THIS SECTION IS HIGH PRIORITY. Customer stories dramatically outperform
-     all other content types (tested: +57% conversions, +350% traffic).
-     NOT a short testimonial — a full narrative:
-     - The problem/situation the customer faced
-     - Why they chose this business
-     - What happened during service (specific details, timeline)
-     - The outcome/result (with numbers if possible)
-     - Include real photos, costs, and timeframes
-     Structure as a mini case study (200-400 words).
-     Interview customers to get these stories. -->
+<HARD-GATE>
+DO NOT skip output. ALWAYS save the page content as a file. Do not dump the full page into the terminal.
+</HARD-GATE>
 
-<h2>Customer Reviews</h2>
-<!-- 2-3 real testimonials with name and city attribution. Link to full reviews page. -->
+1. Generate clean semantic HTML ready for CMS insertion, with schema JSON-LD in a `<script>` tag at the bottom
+2. Save to `~/Desktop/YYYY-MM-DD-service-[service-slug].html`
+3. Run `open ~/Desktop/[filename].html` via Bash to auto-open in browser
+4. Print to terminal ONLY: meta title, meta description, word count, 3-5 key differentiators used, file path
 
-<h2>Ready to Get Started?</h2>
-<!-- 2-3 sentences creating urgency or emphasizing value.
-     Primary CTA: phone number (clickable on mobile) + booking link
-     Secondary CTA: download guide, free consultation, etc. -->
-```
+---
 
-## Content Requirements
+## Red Flags
 
-- **Word count:** 1,500-2,500 words as a guideline (not a KPI). Shorter is fine if it fully addresses user intent. Completeness > length. Interactive tools (calculators, quizzes) can rank with minimal text.
-- **Keyword density:** 1-2% (natural, never forced)
-- **Tone:** Second person (you/your). Professional yet approachable.
-- **Voice:** Write for humans first. Specific > generic. Data > claims.
-- **Images:** Prioritize real photos of people, actual work, and real results. Infographics for data. Be cautious with AI-generated imagery — it can undermine authenticity and E-E-A-T signals.
+| Thought | Reality |
+|---|---|
+| "I have enough info to start writing" | Complete ALL discovery questions. Missing differentiators = generic page. |
+| "I'll skip competitor research" | Without knowing what competitors cover, differentiation is impossible. |
+| "The user just wants a quick page" | Even quick pages need keyword targeting and structure. Follow the template. |
+| "I'll output the content as markdown" | Service pages need semantic HTML for CMS insertion. Always HTML. |
+| "FAQs aren't necessary for this service" | FAQs address objections and capture long-tail queries. Always include them. |
 
-## On-Page SEO Checklist
+---
 
-**Content:**
-- [ ] Target keyword in first 100 words
-- [ ] Target keyword in H1 (one H1 only)
-- [ ] Keyword in 1-2 H2s naturally
-- [ ] 6-10 FAQs with thorough answers
-- [ ] Real testimonials with attribution
-- [ ] Featured customer story (full narrative with details/photos/costs — NOT just a quote)
-- [ ] CTA above the fold
-- [ ] CTA at bottom
-- [ ] 3-5 in-content internal links to related services/pages (in-body anchor text links — NOT navigation menu links, which don't carry the same weight)
-- [ ] Pricing section present
+## Tools to Use
 
-**Technical:**
-- [ ] Meta title: Front-load conversion copy (primary keyword + location + brand in first ~60 chars for display), then back-load SEO keywords past the truncation point — extra service names, service areas, keyword variations (up to 270 chars indexed by Google even though users see "...")
-- [ ] Meta description: 150-160 chars with keyword + compelling CTA
-- [ ] Clean URL: /services/[service-name]
-- [ ] Images: WebP, compressed <200KB, descriptive alt text with keyword
-- [ ] Schema markup: Service + FAQPage + LocalBusiness (see local-seo-schema skill)
-- [ ] Mobile responsive
-- [ ] Page speed >85
-
-**Conversion:**
-- [ ] Phone number in header (clickable mobile)
-- [ ] Contact form visible without excessive scrolling
-- [ ] Trust signals visible (certifications, associations, review count)
-- [ ] Social proof (years in business, clients served, review rating)
-- [ ] Process clearly explained (reduces friction)
-
-### Topic Silo Internal Linking
-
-Internal links in body content (not navigation menus) are a top organic ranking factor. Build topic silos by interlinking related service pages:
-
-Example for a plumber:
-- **Hot water tank cluster:** repair page, installation page, types page — all interlinked with descriptive anchor text
-- **Drain cleaning cluster:** similar structure
-- Each cluster's pages link to each other and back to the main service page
-
-The key: descriptive anchor text within body paragraphs, not just links in navigation dropdowns.
-
-## Content Differentiation Rules
-
-**DO:**
-- Include original data, stats, or insights unique to this business
-- Reference specific local context when relevant
-- Address questions competitors don't answer
-- Include real case studies or anonymized client outcomes
-- Write content that demonstrates first-hand experience (E-E-A-T)
-
-**DON'T:**
-- Copy competitor page structure or content
-- Use generic filler ("We are committed to quality...")
-- Stuff keywords unnaturally
-- Use passive voice excessively
-- Write in first person (use second person: you/your)
-- Include "what is [service]" sections unless searchers genuinely need education
-
-### Information Gain for AI Discoverability
-
-For AI search visibility, include exhaustive business detail on every service page. People prompt LLMs with detailed, paragraph-long descriptions of what they want. The LLM matches businesses to those specific attributes — if you haven't mentioned it, you won't be recommended.
-
-Consider including: insurance accepted, certifications and licenses, years of experience, specific techniques or approaches used, equipment brands, pricing transparency, response times, guarantees, specializations, languages spoken, accessibility features, and any other attribute a potential customer might specify when asking an AI for recommendations.
-
-This is different from traditional SEO where you optimize for "[service] [city]." Now you also need to answer every possible attribute a customer might specify.
-
-### Understanding LLM Sub-Queries
-
-When someone asks an AI "recommend 5 dentists in Denver that accept Delta Dental," the LLM breaks this into 8+ sub-queries behind the scenes. Consider what sub-queries your target audience might trigger and ensure your service pages cover those topics. You can reveal these sub-queries using Chrome DevTools (Network tab > search "search_model_queries" for ChatGPT) or the Gemini Grounding API.
-
-## Service Page Refresh Protocol
-
-Service pages should be refreshed on a ~3 month cycle. A "significant" update means:
-- Change to the title tag
-- Change to the H1
-- Structural changes to H2s
-- ~30% of content updated
-
-Freshness signals tell Google the page is current and maintained. After building all service pages and sub-service pages, cycle back to refresh the earliest ones, then repeat. This continuous refresh cycle can be as impactful as blogging for rankings.
-
-## AI Content Generation Prompt
-
-When generating service page content, use this prompt structure:
-
-```
-Write a service page for [Business Name], a [business type] in [location].
-
-Service: [name]
-Target keyword: [keyword]
-Secondary keywords: [list]
-Target audience: [who this is for]
-USPs: [3-4 specific differentiators]
-Service process: [steps]
-Price range: [if applicable]
-Competitor gaps: [what competitors miss]
-
-Requirements:
-- 1,800-2,200 words
-- Second person (you/your)
-- Tone: [Professional yet approachable]
-- Specific, measurable claims (not generic)
-- Include keyword naturally 4-6 times
-- Follow the H1 > H2 structure from the template
-- 6-8 FAQs addressing real objections
-- Strong CTAs
-
-Do NOT:
-- Use generic filler content
-- Over-stuff keywords
-- Make unsubstantiated claims
-- Write in passive voice
-- Start sentences with "At [Company], we..."
-```
-
-## Output Format
-
-Deliver the complete page with:
-1. Full page content following the template structure
-2. Meta title and meta description
-3. Schema markup code (JSON-LD) — Service + FAQPage
-4. 3-5 internal linking suggestions with anchor text
-5. Image suggestions with recommended alt text
-
-Save output to `~/Desktop/`:
-- **Markdown**: `~/Desktop/YYYY-MM-DD-service-[service-slug].md`
-- **HTML** (recommended): Self-contained HTML ready to paste into CMS. Save to `~/Desktop/YYYY-MM-DD-service-[service-slug].html`
-
-For service pages, HTML output should be clean semantic HTML (not a report template) — ready for CMS insertion with the schema JSON-LD in a `<script>` tag at the bottom.
+- **DataForSEO MCP** (if available) — Keyword volumes, SERP data, on-page analysis of competitors
+- **Ahrefs MCP** (if available) — Keyword difficulty, content gap analysis
+- **WebSearch / WebFetch** — Competitor page analysis, PAA research, service-specific information

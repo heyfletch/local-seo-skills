@@ -9,10 +9,16 @@ allowed-tools:
   - Write
   - Glob
   - Grep
+  - AskUserQuestion
+  - TaskCreate
+  - TaskUpdate
+  - TaskList
+  - Bash
+  - ToolSearch
 ---
 
-Build a genuinely unique service area page using the `local-seo:local-seo-area-page` skill. Invoke the skill, then follow its full page-building process.
+Build a genuinely unique service area page using the `local-seo:local-seo-area-page` skill. Invoke the skill, then follow its four-phase process exactly: Discovery → Local Research → Content Generation → Output.
 
-If the user provided a city or area name as an argument, use that as the target location. Otherwise, ask for the required information as specified in the skill's "Before Writing" section.
+CRITICAL: Follow the HARD-GATE enforcement in each phase. Enforce the quality gate in Phase 1 — do not create thin/template pages that just swap city names. Do not dump the page into the terminal — save as semantic HTML file.
 
-IMPORTANT: Enforce the skill's quality gates — do not create thin/template pages that just swap city names.
+If the user provided a city or area name as an argument, use that to begin Phase 1 discovery. Otherwise, use AskUserQuestion to identify the target area.

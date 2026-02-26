@@ -5,287 +5,91 @@ description: Generate and validate schema markup (structured data) for local bus
 
 # Local SEO Schema Markup Skill
 
-Generate valid JSON-LD schema markup for local businesses. In 2026, schema is the primary language for feeding structured data to Google's Knowledge Graph. Schema drives rich results (star ratings, FAQs, breadcrumbs) in Google Search and feeds the Knowledge Graph. Note: while schema helps traditional SEO and rich result eligibility, research suggests LLMs strip all markup and read only raw page text — so schema alone does not directly increase AI/LLM citation. The real value is in rich results, Knowledge Graph presence, and helping Google understand your entity.
+## Iron Law
 
-## Schema Types by Page
+NO SCHEMA OUTPUT WITHOUT IDENTIFYING THE PAGE TYPE AND BUSINESS DETAILS. Do not generate generic templates. Every schema must be populated with real business data and validated before delivery.
 
-| Page Type | Required Schema | Optional Schema |
-|---|---|---|
-| Homepage | LocalBusiness, Organization | AggregateRating |
-| Service Page | Service, FAQPage | Offer, HowTo (if process-based) |
-| Service Area Page | LocalBusiness (with areaServed) | FAQPage |
-| About/Team | Person (for each team member) | Organization |
-| Reviews Page | LocalBusiness + Review | AggregateRating |
-| Blog Post | Article | FAQPage, HowTo |
-| Contact Page | LocalBusiness | PostalAddress |
-| FAQ Page | FAQPage | — |
-| All pages (except homepage) | BreadcrumbList | — |
+---
 
-## Schema Deprecation Awareness (2026)
+## Phase 1: Discovery
 
-- **HowTo:** Deprecated September 2023 (still indexed but no rich results)
-- **FAQ:** Restricted to government and health authority sites (August 2023) — still worth implementing for Knowledge Graph signals and content structure even without rich results
-- **SpecialAnnouncement:** Deprecated July 2025
+<HARD-GATE>
+DO NOT proceed to Phase 2 until the page type and business details are confirmed.
+</HARD-GATE>
 
-## Templates
+### Step 1: Identify the need
 
-### 1. LocalBusiness (Homepage)
+Use AskUserQuestion:
 
-Adjust `@type` for specific business type. Options: `ProfessionalService`, `FinancialService`, `LegalService`, `Dentist`, `Physician`, `Optician`, `Plumber`, `HomeAndConstructionBusiness`, etc.
+**Question:** "What page type needs schema markup?"
+- "Homepage (LocalBusiness)"
+- "Service page (Service + FAQPage)"
+- "Service area page (LocalBusiness + areaServed)"
+- "Multiple page types"
 
-```json
-{
-  "@context": "https://schema.org",
-  "@type": "[SPECIFIC_BUSINESS_TYPE]",
-  "name": "[Business Name]",
-  "image": "[logo URL]",
-  "description": "[Business description with primary keywords]",
-  "@id": "[website URL]",
-  "url": "[website URL]",
-  "telephone": "+1[phone]",
-  "priceRange": "$$",
-  "address": {
-    "@type": "PostalAddress",
-    "streetAddress": "[street]",
-    "addressLocality": "[city]",
-    "addressRegion": "[state code]",
-    "postalCode": "[zip]",
-    "addressCountry": "US"
-  },
-  "geo": {
-    "@type": "GeoCoordinates",
-    "latitude": [lat],
-    "longitude": [lng]
-  },
-  "openingHoursSpecification": [
-    {
-      "@type": "OpeningHoursSpecification",
-      "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"],
-      "opens": "09:00",
-      "closes": "17:00"
-    }
-  ],
-  "sameAs": [
-    "[facebook URL]",
-    "[linkedin URL]",
-    "[instagram URL]"
-  ],
-  "aggregateRating": {
-    "@type": "AggregateRating",
-    "ratingValue": "[rating]",
-    "reviewCount": "[count]"
-  },
-  "hasOfferCatalog": {
-    "@type": "OfferCatalog",
-    "name": "Services",
-    "itemListElement": [
-      {
-        "@type": "Offer",
-        "itemOffered": {
-          "@type": "Service",
-          "name": "[Service 1]"
-        }
-      },
-      {
-        "@type": "Offer",
-        "itemOffered": {
-          "@type": "Service",
-          "name": "[Service 2]"
-        }
-      }
-    ]
-  }
-}
-```
+### Step 2: Gather business details
 
-**For Service Area Businesses (hidden address):** OMIT the `address` property entirely. Instead add:
+Use AskUserQuestion:
 
-```json
-"areaServed": [
-  { "@type": "City", "name": "[City 1]" },
-  { "@type": "City", "name": "[City 2]" },
-  { "@type": "State", "name": "[State]" }
-]
-```
+**Question:** "How should I get your business details?"
+- "I'll provide the website URL — scrape the details"
+- "I'll type the details manually"
+- "Use details from a previous audit/plan in this session"
 
-### 2. Service Schema (Service Pages)
+If a URL is provided, use WebFetch to extract: business name, address, phone, services, hours, social profiles. Present findings and ask the user to confirm via AskUserQuestion.
 
-```json
-{
-  "@context": "https://schema.org",
-  "@type": "Service",
-  "serviceType": "[Service Name]",
-  "name": "[Service Name] in [City]",
-  "description": "[Service description 1-2 sentences]",
-  "provider": {
-    "@type": "[SPECIFIC_BUSINESS_TYPE]",
-    "name": "[Business Name]",
-    "url": "[website URL]"
-  },
-  "areaServed": {
-    "@type": "State",
-    "name": "[State(s)]"
-  },
-  "hasOfferCatalog": {
-    "@type": "OfferCatalog",
-    "name": "[Service Category]",
-    "itemListElement": [
-      {
-        "@type": "Offer",
-        "itemOffered": {
-          "@type": "Service",
-          "name": "[Sub-service 1]"
-        }
-      }
-    ]
-  }
-}
-```
+### Information needed
+- Business name and type (for @type selection)
+- Address (or service area if SAB)
+- Phone number
+- Website URL
+- Business hours
+- Services offered
+- Social media profiles
+- Review count and average rating (if applicable)
+- Team members (if About/Team page)
 
-### 3. FAQPage Schema
+---
 
-Implement on any page with FAQ sections. Still worth implementing for Knowledge Graph signals and content structure even though rich results are restricted.
+## Phase 2: Generate Schema
 
-```json
-{
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
-    {
-      "@type": "Question",
-      "name": "[Question text]",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "[Answer text — can include HTML links]"
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "[Question text]",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "[Answer text]"
-      }
-    }
-  ]
-}
-```
+Read the schema templates from `${CLAUDE_PLUGIN_ROOT}/skills/local-seo-schema/references/schema-templates.md`.
 
-### 4. BreadcrumbList Schema (All pages except homepage)
+1. Select the appropriate template(s) for the page type
+2. Populate ALL placeholder values with real business data
+3. For SABs: omit `address`, use `areaServed` instead
+4. Choose the most specific `@type` (e.g., "Dentist" not "LocalBusiness")
+5. Include all applicable nested schemas (e.g., Service + FAQPage + BreadcrumbList on service pages)
+6. Note any deprecation warnings (HowTo, FAQ rich results restrictions)
 
-```json
-{
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
-    {
-      "@type": "ListItem",
-      "position": 1,
-      "name": "Home",
-      "item": "[homepage URL]"
-    },
-    {
-      "@type": "ListItem",
-      "position": 2,
-      "name": "[Parent Page]",
-      "item": "[parent URL]"
-    },
-    {
-      "@type": "ListItem",
-      "position": 3,
-      "name": "[Current Page]",
-      "item": "[current URL]"
-    }
-  ]
-}
-```
+---
 
-### 5. Review/AggregateRating Schema (Reviews Page)
+## Phase 3: Output
 
-```json
-{
-  "@context": "https://schema.org",
-  "@type": "[SPECIFIC_BUSINESS_TYPE]",
-  "name": "[Business Name]",
-  "aggregateRating": {
-    "@type": "AggregateRating",
-    "ratingValue": "[rating]",
-    "reviewCount": "[count]"
-  },
-  "review": [
-    {
-      "@type": "Review",
-      "author": { "@type": "Person", "name": "[Reviewer Name]" },
-      "datePublished": "[YYYY-MM-DD]",
-      "reviewBody": "[Review text]",
-      "reviewRating": { "@type": "Rating", "ratingValue": "5" }
-    }
-  ]
-}
-```
+<HARD-GATE>
+DO NOT skip saving the output. ALWAYS save schema as a file.
+</HARD-GATE>
 
-### 6. Person Schema (Team/About Pages)
+1. Generate valid JSON-LD wrapped in `<script type="application/ld+json">` tags
+2. Save to `~/Desktop/YYYY-MM-DD-schema-[page-slug].json` (or `.html` if wrapping in script tags)
+3. Print to terminal: the complete JSON-LD code (schema is code, not a report — terminal output is appropriate here) + file path + validation instructions
+4. Remind the user to validate at https://search.google.com/test/rich-results
 
-```json
-{
-  "@context": "https://schema.org",
-  "@type": "Person",
-  "name": "[Full Name]",
-  "jobTitle": "[Title]",
-  "worksFor": {
-    "@type": "[SPECIFIC_BUSINESS_TYPE]",
-    "name": "[Business Name]"
-  },
-  "description": "[Bio summary]",
-  "image": "[headshot URL]",
-  "sameAs": ["[LinkedIn URL]"],
-  "hasCredential": [
-    {
-      "@type": "EducationalOccupationalCredential",
-      "credentialCategory": "[certification type]",
-      "name": "[Certification Name]"
-    }
-  ]
-}
-```
+---
 
-### 7. Article Schema (Blog Posts)
+## Red Flags
 
-```json
-{
-  "@context": "https://schema.org",
-  "@type": "Article",
-  "headline": "[Article Title]",
-  "description": "[Meta description]",
-  "author": {
-    "@type": "Person",
-    "name": "[Author Name]",
-    "url": "[Author page URL]"
-  },
-  "publisher": {
-    "@type": "Organization",
-    "name": "[Business Name]",
-    "logo": { "@type": "ImageObject", "url": "[logo URL]" }
-  },
-  "datePublished": "[YYYY-MM-DD]",
-  "dateModified": "[YYYY-MM-DD]",
-  "image": "[featured image URL]",
-  "mainEntityOfPage": "[article URL]"
-}
-```
+| Thought | Reality |
+|---|---|
+| "I'll generate a generic template" | Populate with REAL business data. Generic templates need extra work from the user. |
+| "LocalBusiness type is fine" | Use the most specific @type available (Dentist, Plumber, LegalService, etc.). |
+| "I'll include the address for this SAB" | Service area businesses OMIT address and use areaServed instead. |
+| "FAQ schema still gets rich results" | FAQ rich results are restricted since 2023. Still implement for Knowledge Graph, but set expectations. |
+| "One schema per page is enough" | Multiple schemas per page is fine and recommended (Service + FAQPage + BreadcrumbList). |
 
-## Implementation Rules
+---
 
-1. **JSON-LD only** — Place in `<head>` of each page (recommended method)
-2. **One LocalBusiness per location** — Don't duplicate across pages
-3. **Don't markup invisible content** — Schema must reflect visible page content
-4. **Don't fabricate reviews** — Only markup real reviews you actually have
-5. **Validate before publishing** — Use Google Rich Results Test
-6. **Multiple schemas per page is fine** — e.g., Service + FAQPage + BreadcrumbList on a service page
-7. **Keep ratings current** — Update AggregateRating when review count changes
+## Tools to Use
 
-## Validation
-
-Test all schema at: https://search.google.com/test/rich-results
-
-Check Google Search Console > Enhancements for structured data issues after deployment.
+- **WebFetch** — Scrape business details from website
+- **WebSearch** — Look up business hours, address, review data

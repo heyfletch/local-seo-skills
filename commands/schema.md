@@ -9,8 +9,16 @@ allowed-tools:
   - Write
   - Glob
   - Grep
+  - AskUserQuestion
+  - TaskCreate
+  - TaskUpdate
+  - TaskList
+  - Bash
+  - ToolSearch
 ---
 
-Generate valid JSON-LD schema markup using the `local-seo:local-seo-schema` skill. Invoke the skill, then select the appropriate schema templates based on the page type.
+Generate valid JSON-LD schema markup using the `local-seo:local-seo-schema` skill. Invoke the skill, then follow its three-phase process exactly: Discovery → Generate Schema → Output.
 
-If the user provided a page type (homepage, service page, etc.) or URL as an argument, use that to determine which schema types to generate. Otherwise, ask what pages need schema markup.
+CRITICAL: Follow the HARD-GATE enforcement in each phase. Do not generate generic templates — populate with real business data. Always save the output as a file.
+
+If the user provided a page type (homepage, service page, etc.) or URL as an argument, use that to begin Phase 1 discovery. Otherwise, use AskUserQuestion to identify the page type.

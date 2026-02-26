@@ -5,228 +5,125 @@ description: Review strategy, generation system, response templates, and monitor
 
 # Local SEO Reviews Skill
 
-Reviews account for 20% of local pack ranking and 16% of AI search visibility. In 2026, review RECENCY matters more than total volume. This skill covers generation, response, and monitoring.
+## Iron Law
 
-## Review Health Benchmarks
+NO REVIEW ADVICE WITHOUT UNDERSTANDING THE CONTEXT. Reviews account for 20% of local pack ranking and 16% of AI search visibility. Identify what the user needs, deliver targeted guidance, and produce a saved deliverable.
 
-| Metric | Poor | OK | Good | Excellent |
-|---|---|---|---|---|
-| Total reviews | <15 | 15-30 | 31-75 | 75+ |
-| Average rating | <4.0 | 4.0-4.4 | 4.5-4.8 | 4.9-5.0 |
-| Monthly velocity | 0 | 1-2 | 3-5 | 5+ |
-| Response rate | <25% | 25-75% | 75-95% | 95-100% |
-| Response time | >1 week | 3-7 days | 1-2 days | <24 hours |
+---
 
-## Review Generation System
+## Phase 1: Discovery
 
-### Goal: 2-5 new reviews per month (consistent, not in bursts)
+<HARD-GATE>
+DO NOT proceed to Phase 2 until the business context and specific review need are identified.
+</HARD-GATE>
 
-### Timing
-- **Service businesses:** Ask immediately after successful service completion
-- **Follow-up:** Send request 24-48 hours later via email/SMS
-- **NEVER ask:** During a sales pitch or before service is complete
+### Step 1: Identify the need
 
-### Methods by Conversion Rate
+Use AskUserQuestion:
 
-1. **In-Person Ask (~30% conversion)**
-   - "Would you mind leaving us a review? It really helps other [clients/patients/customers] find us."
-   - Hand them a card with QR code linking to Google review page
-   - Show them on their phone if they're willing
+**Question:** "What review help do you need?"
+- "Build a review generation system (get more reviews)"
+- "Respond to a specific review"
+- "Set up review monitoring"
+- "Full review strategy (generation + monitoring + response system)"
 
-2. **Text/SMS (~15-20% conversion)**
-   - Send within 48 hours of service
-   - Short, personal, with direct review link
-   - Higher response than email
+### Step 2: Gather context
 
-3. **Email (~5-10% conversion)**
-   - Send 24-48 hours after service
-   - Personalize with name and service details
-   - Single clear CTA button
+Based on the selected task, use AskUserQuestion:
 
-4. **Physical Materials (~10-15% conversion)**
-   - Leave-behind card with QR code
-   - Signage in waiting/reception area
-   - Checkout counter tent card
+**For generation system:**
+**Question:** "What's your current review situation?"
+- "Starting from zero (few or no reviews)"
+- "Some reviews but inconsistent (no system)"
+- "Decent reviews but need more volume/velocity"
+- "Strong reviews — need to maintain momentum"
 
-5. **Email Signature (~1-2% conversion)**
-   - Passive but compounds over time
-   - "See what our clients say → [link]"
+**For responding to a review:**
+**Question:** "What type of review are you responding to?"
+- "5-star positive review"
+- "4-star mostly positive"
+- "3-star neutral/mixed"
+- "1-2 star negative review"
 
-### Review Request Templates
+Then ask the user to paste the review text.
 
-**Text/SMS:**
-```
-Hi [Name]! Thanks for choosing [Company] for [service]. We'd love to hear about your experience — would you mind leaving a quick Google review?
+**For monitoring setup:**
+**Question:** "How do you currently monitor reviews?"
+- "I don't — I just check occasionally"
+- "Manual daily/weekly checks"
+- "I want to set up automation"
 
-[Direct Google review link]
+---
 
-It takes just a minute and helps us tremendously. Thank you!
+## Phase 2: Execute
 
-- [Your Name]
-```
+Based on the selected task, read the relevant reference file and execute:
 
-**Email:**
-```
-Subject: How was your [service] experience?
+### For generation system:
+Read `${CLAUDE_PLUGIN_ROOT}/skills/local-seo-reviews/references/review-strategy.md`.
 
-Hi [Name],
+Create TaskCreate items for:
+- Review health benchmark assessment
+- Generation method selection (in-person, SMS, email, physical)
+- Request template customization
+- Timing and workflow design
+- Platform priority assignment
 
-Thanks for trusting us with [service] on [day]. We hope everything exceeded expectations!
+### For responding to a review:
+Read `${CLAUDE_PLUGIN_ROOT}/skills/local-seo-reviews/references/review-templates.md`.
 
-If you have a moment, we'd greatly appreciate a quick Google review. It helps other [clients/patients] find us and supports our small business.
+1. Select the appropriate response template based on star rating
+2. Customize with specific details from the review
+3. Apply the response rules (reference specifics, take negatives offline, no defensiveness)
+4. Draft 2-3 response options for the user to choose from
 
-[CTA Button: Leave a Review]
+### For monitoring setup:
+Read the monitoring section from `${CLAUDE_PLUGIN_ROOT}/skills/local-seo-reviews/references/review-strategy.md`.
 
-Takes less than 2 minutes:
-1. Click the button above
-2. Select your star rating
-3. Share a few words about your experience
+Create TaskCreate items for:
+- Platform inventory (which platforms to monitor)
+- Manual process setup (tracking spreadsheet, schedule)
+- Automation workflow design (n8n if applicable)
 
-Thank you for your support!
+### For full strategy:
+Execute all three sections above.
 
-[Your Name]
-[Company]
+---
 
-P.S. If anything wasn't perfect, please reply directly — we want to make it right.
-```
+## Phase 3: Output
 
-## Review Response Templates
+<HARD-GATE>
+DO NOT skip output. Produce a saved deliverable for non-trivial outputs.
+</HARD-GATE>
 
-### Respond to ALL reviews within 24-48 hours.
+### For generation system or full strategy:
+1. Read the HTML report template at `${CLAUDE_PLUGIN_ROOT}/references/html-report-template.html`
+2. Generate an HTML document with the complete review strategy, templates, and monitoring plan
+3. Save to `~/Desktop/YYYY-MM-DD-review-strategy-[business-slug].html`
+4. Run `open ~/Desktop/[filename].html` via Bash to auto-open in browser
+5. Print to terminal ONLY: 3-5 bullet summary + file path
 
-**5-Star Review:**
-```
-Thank you so much, [Name]! We loved [working with you on / helping you with] [specific detail from review]. [Personal touch related to their experience].
+### For responding to a specific review:
+Print the 2-3 response options directly to the terminal (review responses are short, immediate-use content — no report needed). Offer to save them to a file if the user wants a response template library.
 
-We appreciate you taking the time to share!
+### For monitoring setup:
+Include the monitoring plan in the HTML strategy document or generate a standalone checklist.
 
-- [Your Name], [Company]
-```
+---
 
-**4-Star Review:**
-```
-Thanks for the kind review, [Name]! We're glad [specific positive from review]. [If they mentioned an area for improvement: "We appreciate the feedback on [topic] and are working on that."]
+## Red Flags
 
-Thank you for your trust!
+| Thought | Reality |
+|---|---|
+| "I'll just share the request templates" | Customize templates for the specific business and service. Generic templates feel generic to customers too. |
+| "The user just needs a quick response draft" | Draft 2-3 options so they can choose the best tone. Reference specific review details. |
+| "Review monitoring is straightforward" | Set up the full system: platforms, frequency, escalation rules, automation. |
+| "I'll cover all review topics" | Focus on what they asked. A generation system is different from a response strategy. |
+| "Negative reviews need a long apology" | Keep it brief, empathetic, and take it offline. Long public responses look defensive. |
 
-- [Your Name], [Company]
-```
+---
 
-**3-Star Neutral Review:**
-```
-[Name], thank you for your honest feedback. [Acknowledge the specific concern]. We take this seriously and would love to discuss further.
+## Tools to Use
 
-Would you mind reaching out at [phone/email]? I'd like to understand how we can improve.
-
-- [Your Name], [Company]
-```
-
-**1-2 Star Negative Review:**
-```
-[Name], I'm sorry your experience didn't meet expectations. [Brief acknowledgment of the specific issue — don't be defensive].
-
-I'd like to make this right. Please contact me directly at [phone] or [email] so we can resolve this.
-
-- [Your Name], [Title], [Company]
-```
-
-### Response Rules
-
-**DO:**
-- Use reviewer's name
-- Reference specific details from their review (proves you read it)
-- Keep responses genuine and human (not corporate-speak)
-- Take negative conversations offline (phone/email)
-- Respond to positive reviews too (engagement signal)
-
-**DON'T:**
-- Be defensive about negative reviews
-- Offer compensation publicly (take offline)
-- Use the same template response for every review
-- Over-apologize to the point of seeming insincere
-- Ignore negative reviews (worst option)
-- Argue with reviewers publicly
-
-## Review Monitoring System
-
-### Manual Process
-- Check Google Business Profile daily for new reviews
-- Check Yelp, Facebook, industry sites weekly
-- Log all reviews in a tracking spreadsheet
-
-### Automated (n8n Workflow)
-```
-Schedule: Every 4 hours
-1. Fetch reviews via GBP API
-2. Compare to stored reviews in database
-3. If new review detected:
-   - Negative (1-3 stars) → Immediate Slack/email alert to owner
-   - Positive (4-5 stars) → Queue response draft via Claude API
-4. Store in database with metadata
-5. Daily summary: new reviews count, pending responses, avg rating
-6. Weekly report: velocity trend, rating trend, response rate
-```
-
-## Platform Priority
-
-| Platform | Priority | Why |
-|---|---|---|
-| Google Business Profile | #1 | 32% of local pack weight, most visible |
-| Yelp | #2 | ChatGPT/AI uses Yelp as data source |
-| Facebook | #3 | Social proof + local community |
-| BBB | #4 | AI search engines reference BBB ratings |
-| Industry-specific (Healthgrades, Avvo, Zocdoc, etc.) | #5 | Industry authority signals |
-
-## What NOT To Do
-
-- ❌ **Never** offer incentives for reviews (violates Google policies → suspension risk)
-- ❌ **Never** ask only happy customers (selective solicitation)
-- ❌ **Never** write fake reviews or have employees/family review
-- ❌ **Never** buy reviews from services
-- ❌ **Never** post multiple reviews at the same time (looks suspicious)
-- ❌ **Never** gate reviews (send happy customers to Google, unhappy ones to a private form) — Google explicitly prohibits this
-- ❌ **Never** copy/paste the same response template for every review
-
-## Review Content for AI Visibility ⚠️ 2026
-
-LLMs crawl your website's testimonial page. To maximize AI citation:
-
-1. Display reviews on your website (not just on Google)
-2. Include reviewer name and location
-3. Organize reviews by service type
-4. Include specific service mentions in displayed reviews
-5. Mark up with Review schema (see local-seo-schema skill)
-6. Keep testimonial page updated regularly
-
-## Testimonials Page Title Optimization (QUICK WIN)
-
-Most businesses title their testimonials page "Testimonials" — a massive missed opportunity. Changing the title tag to **"[Brand Name] Reviews"** can take the #1 position for "[brand] reviews" searches, displacing Yelp, Reddit, and other third-party sites.
-
-**Implementation:**
-- Title tag: `[Brand Name] Reviews — What Our [Clients/Patients/Customers] Say`
-- H1: `[Brand Name] Reviews`
-- URL: `/reviews` (not `/testimonials`)
-- Include actual review content with names, locations, dates
-- Link to Google review profile for fresh reviews
-- This controls your brand's review narrative in both Google and AI search
-
-**Why it matters:** Reddit threads for "[brand] reviews" now frequently appear in Google results and tend to be negative. Your optimized reviews page can outrank these.
-
-## Reputation Defense: Reddit AMA Strategy
-
-For businesses with some existing recognition, a Reddit AMA (Ask Me Anything) creates a high-engagement thread that ranks for brand + review queries.
-
-**When to use:** Best for established businesses, agency owners, or professionals building a personal brand. NOT suitable for brand new businesses with no recognition.
-
-**How:**
-1. Find a relevant subreddit (r/[your city], r/[your industry], niche subreddits)
-2. Post an AMA: "I'm a [role] in [city] who specializes in [service] — AMA"
-3. Answer questions thoroughly and honestly
-4. High engagement makes the thread sticky and hard to displace
-5. Can outrank negative Reddit threads in search results
-
-**Rules:**
-- Be genuine — Reddit users detect and punish marketing attempts
-- Do NOT create fake accounts or astroturf
-- Do NOT coordinate upvotes
-- Provide real value in answers, not sales pitches
+- **WebSearch** — Research business review profiles across platforms, competitor review counts
+- **WebFetch** — Check current GBP review count and rating, competitor review data

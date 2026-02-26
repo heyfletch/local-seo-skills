@@ -9,8 +9,16 @@ allowed-tools:
   - Write
   - Glob
   - Grep
+  - AskUserQuestion
+  - TaskCreate
+  - TaskUpdate
+  - TaskList
+  - Bash
+  - ToolSearch
 ---
 
-Create a content strategy using the `local-seo:local-seo-content` skill. Invoke the skill, then follow the relevant sections based on what the user needs (full content plan, blog topics, content calendar, social media strategy, etc.).
+Create a content strategy using the `local-seo:local-seo-content` skill. Invoke the skill, then follow its four-phase process exactly: Discovery → Topic Generation & Prioritization → Calendar Building → Report Generation.
 
-If the user provided a business name or specific content type as an argument, use that to begin. Otherwise, determine what content planning is needed.
+CRITICAL: Follow the HARD-GATE enforcement in each phase. Do not skip discovery. Do not dump the calendar into the terminal — generate the HTML report.
+
+If the user provided a business name or specific content type as an argument, use that to begin Phase 1 discovery. Otherwise, use AskUserQuestion to gather the required information.
