@@ -96,7 +96,7 @@ Google now heavily prioritizes businesses that are currently open.
 
 - **Frequency:** 2-3 posts per week minimum
 - **Best days:** Tuesday-Thursday (higher engagement)
-- **Best times:** 9am-12pm local time
+- **Best times:** 9am-12pm in the business's local timezone (confirm timezone with client; default to ET if unknown)
 - **Max length:** 1,500 chars (300-500 chars ideal for engagement)
 
 ### Post Template

@@ -1,6 +1,6 @@
 # Local SEO Plugin for Claude Code
 
-A comprehensive local SEO toolkit with 8 specialized skills and 8 slash commands for Claude Code. Built for digital marketing consultants serving local/service-area businesses (professional services, healthcare, home services, etc.).
+A comprehensive local SEO toolkit with 9 specialized skills and 9 slash commands for Claude Code. Built for digital marketing consultants serving local/service-area businesses (professional services, healthcare, home services, etc.).
 
 ## Installation
 
@@ -41,6 +41,7 @@ Skills activate automatically based on context. Ask about any local SEO topic an
 | `local-seo-schema` | "schema markup", "structured data", "JSON-LD" |
 | `local-seo-reviews` | "get more reviews", "respond to this review", "review strategy" |
 | `local-seo-content` | "content calendar", "blog topics", "what should I blog about" |
+| `local-seo-agency` | "SEO agency pricing", "how to sell SEO", "local SEO packages", "how to get SEO clients" |
 
 ## Data Integrations
 
@@ -58,6 +59,8 @@ The plugin ships with a DataForSEO MCP server config for SERP rankings, keyword 
    source ~/.zshrc
    ```
 3. The MCP server starts automatically when the plugin loads.
+
+> **Verify setup:** Run `echo $DATAFORSEO_USERNAME` in your terminal — it should print your username. If it returns blank, re-run `source ~/.zshrc` or restart your terminal. The MCP server will fail silently if credentials are not set.
 
 ### Ahrefs (optional)
 
