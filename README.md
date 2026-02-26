@@ -52,7 +52,7 @@ The plugin ships with a DataForSEO MCP server config for SERP rankings, keyword 
 
 **Setup:**
 
-1. Get API credentials at [dataforseo.com](https://dataforseo.com) ($50 minimum, pay-as-you-go, credits never expire)
+1. Get API credentials at [dataforseo.com](https://dataforseo.com/?aff=182890) ($50 minimum, pay-as-you-go, credits never expire, affiliate link)
 2. Add credentials to your shell profile (`~/.zshrc`):
    ```bash
    echo 'export DATAFORSEO_USERNAME="your_username"' >> ~/.zshrc
