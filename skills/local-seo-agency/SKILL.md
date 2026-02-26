@@ -47,6 +47,18 @@ Recurring revenue engine. This is where real agency economics live.
 - Annual contracts with monthly billing reduce churn (offer 10% annual discount)
 - Raise prices on new clients, grandfather existing for 6-12 months
 
+**Anchor-High Presentation Strategy:**
+Consider presenting tiers highest-value first instead of lowest-first. Research in behavioral economics shows the first number seen becomes the price anchor:
+
+- **Traditional (anchoring low):** Foundation → Growth → Authority. Result: most clients choose the cheapest option.
+- **Anchor High:** Present Investment/Authority first → Growth → Foundation. Result: the middle tier becomes the most popular choice, increasing average deal size.
+
+Key principles:
+- Starting low triggers primal "hoarding instinct" and expense mindset
+- Starting high keeps higher-level thinking for value-based decisions
+- Frame options by value/outcomes, not deliverables (see Sales Process below)
+- Present what they're MISSING at each lower tier, not what they're GAINING
+
 ### Model C: Strategic Consulting + AI Visibility (Premium)
 
 Higher-touch, fewer clients, premium pricing.
@@ -100,7 +112,8 @@ Maintain and grow authority.
 5. Monthly reporting with clear wins highlighted
 6. Content updates and new blog posts (customer stories, seasonal content)
 7. Quarterly: competitor check, keyword refresh, strategy adjustment
-8. AI visibility monitoring — quarterly ChatGPT/Gemini/Perplexity brand checks
+8. AI visibility monitoring — track via GSC referral traffic from AI platforms, Microsoft Clarity bot data, CloudFlare analytics, and "How did you hear about us?" on contact forms. Quarterly manual ChatGPT/Gemini/Perplexity brand checks. Note: grid-based AI rank tracking tools are unreliable — LLM outputs are probabilistic and change every few minutes.
+9. LSA management (where applicable) — LSAs now appear on 31% of tracked queries and are eating into map pack leads. For industries where LSAs are active, consider offering LSA setup, call coaching (Google AI transcribes calls and poor handling lowers visibility), and lead dispute management as an add-on service.
 
 ## Sales Process
 
@@ -111,6 +124,26 @@ Maintain and grow authority.
 3. **Frame the opportunity** — "When someone in [city] searches for [service], they see [competitor], not you. Here's what it takes to change that."
 4. **Present the plan** — Walk through Phase 1 → 2 → 3. Show what happens at each stage. THEN give pricing.
 5. **Handle objections** — Most common: "I need to think about it." The sales call is the bottleneck — practice it.
+
+### Value-Based Proposal Framing
+
+Stop listing deliverables (5 blog posts, 10 citations, weekly GBP posts) and start framing proposals around what the client GAINS at each level:
+
+**Instead of:**
+- Foundation: GBP management, 1 blog/month, review monitoring → $500-800/mo
+
+**Try:**
+- **Investment tier (presented first):** "Full market dominance — appear in Google Maps, AI search, and organic results for all your services across your entire service area. Includes competitor displacement strategy and AI visibility monitoring."
+- **Growth tier:** "Strong local presence — rank for your primary services in your core city with consistent review growth and content authority."
+- **Foundation tier:** "Essential visibility — maintain your Google presence and protect your online reputation."
+
+The deliverables can be the same — only the FRAMING changes. Clients buy outcomes, not activities.
+
+### Pricing Psychology: Avoid Budget Questions
+
+Consider removing "What's your budget?" from intake forms and sales calls. This unintentionally sets a low price anchor and triggers expense mindset — the client's stated budget becomes the ceiling, and everything above it triggers "that's too expensive."
+
+Instead: present value and pricing before asking about budget. Let the client decide what they value most after seeing the options.
 
 ### What Sells in 2026
 
@@ -190,6 +223,16 @@ Every successful local SEO agency specializes. Options:
 - Industry conferences put you in front of hundreds of prospects
 - Specialists charge 2-3x what generalists charge
 
+### Full Productization
+
+Take niching a step further: build one standardized "machine" (website structure, service delivery system) and sell it repeatedly. Customize only the surface — colors, fonts, images, business-specific details — while the underlying architecture, page templates, keyword research framework, and content structure remain the same.
+
+This scales because:
+- Every new client gets a proven system, not a custom experiment
+- Delivery time drops dramatically (2 weeks instead of 2 months)
+- Quality stays consistent as you grow
+- Junior team members can execute the playbook without reinventing it each time
+
 ## Building SOPs (When to Write What)
 
 At 5 clients, you MUST have written SOPs. Without them you can't hire, train, or maintain quality.
@@ -208,6 +251,17 @@ At 5 clients, you MUST have written SOPs. Without them you can't hire, train, or
 
 **Solo ($0-50K):** You do everything. Focus on systems and getting to 5 clients.
 **First hire (~5 clients):** SEO assistant or VA. Train on SOPs. College interns work well and are affordable.
+
+**Strategic First Hire Framework (10/10/80):**
+When you hire your first person, be intentional about how you use the freed time:
+- **10%** → Personal time (the benefit of being a business owner)
+- **10%** → Leadership development (growing yourself + developing your hire)
+- **80%** → Revenue-producing activities (the things that have historically brought in money)
+
+Don't hire to "have more free time" — hire so freed hours go directly into revenue-generating work. The hire should pay for itself within weeks.
+
+**How to identify what to delegate:** List all tasks from last week with hours and energy level. Circle tasks that don't generate revenue, don't require unique judgment, and could be taught in 1-2 days. Star 10 hours worth — that's your first hire's job description.
+
 **Second hire (~10-15 clients):** Client success manager or operations manager. Frees you to sell and strategize.
 **Third hire (~20+ clients):** Additional SEO strategist or specialist. Now you have capacity for 30-35 clients.
 
@@ -226,6 +280,20 @@ At 5 clients, you MUST have written SOPs. Without them you can't hire, train, or
 6. Celebrate wins together — when rankings improve or a lead comes through, tell the client immediately
 
 **Target:** <1% monthly churn (2-3 clients/year at 20 clients). At 5% churn you'll spend all your time replacing clients.
+
+## Agency Operations: Quarterly Planning
+
+For agency owners drowning in client work, strategic planning is the first casualty. Without a plan, the whirlwind of client work always wins.
+
+### The System
+1. **Quarterly:** Half-day planning session. Identify top 2 goals (most immediate impact). Create SMART goal declarations. Break into 2-hour action items.
+2. **Weekly:** 30-minute planning session before the week starts. Block 2-4 hours for goal work. Gather resources so you can start immediately.
+3. **Weekly:** Execute the blocked time ("CEO time"). Don't cancel — you are your most important client.
+
+### Key Principles
+- Limit to 2-3 goals per quarter. Research shows teams given 4-10 goals only accomplish 1-2. Teams given 11-20 accomplish zero.
+- The urgent (client work) always beats the important (business strategy) unless you schedule strategy first.
+- Consider this your "business development retainer" — the same dedicated time you give clients, applied to your own agency.
 
 ## Budget Tool Stack
 

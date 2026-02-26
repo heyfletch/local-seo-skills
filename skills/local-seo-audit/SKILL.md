@@ -140,7 +140,7 @@ Check and score:
    - Neighborhood and zip code coverage
 
 3. **Technical On-Page**
-   - Title tags: Include primary keyword + location + brand (can be up to 270 chars — Google indexes hidden portion for ranking even though display truncates at ~60)
+   - Title tags: Front-load conversion copy (primary keyword + location + brand in first ~60 chars for display), then back-load SEO keywords past the truncation point — extra service names, service areas, keyword variations (up to 270 chars indexed even though users see "..."). Check if competitors are using this hidden keyword strategy.
    - Meta descriptions: 150-160 chars with keyword + CTA
    - H1-H3 hierarchy (one H1 per page)
    - Image optimization (WebP, compressed <200KB, descriptive alt text)
@@ -205,6 +205,19 @@ Check and score:
 7. **Brand SERP** — What appears when someone searches the business name?
 8. **Entity Consistency Check** — Google the brand name, ask ChatGPT "Who is [brand]?" — is the description accurate? Are bio, titles, services consistent across website, LinkedIn, GBP, directories? AI triangulates identity from multiple sources; inconsistencies cause confusion.
 
+**AI Visibility Tracking — What Works:**
+- Google Search Console — check referral traffic from AI platforms (chatgpt.com, gemini.google.com)
+- Microsoft Clarity — tracks when LLMs visit your site
+- CloudFlare — bot tracking data
+- "How did you hear about us?" on contact forms (some agencies report ~11% of leads cite ChatGPT)
+- Manual spot checks — periodically ask ChatGPT/Gemini about the business
+
+**What Doesn't Work (2026):**
+Grid-based AI rank tracking tools (AI equivalents of Local Falcon) are unreliable — LLM outputs are probabilistic and results change every few minutes for the same query. Avoid paying for AI rank tracking tools until the technology matures.
+
+**Multi-Site Visibility Strategy:**
+For AI visibility, the business doesn't need to rank its own website #1. LLMs synthesize answers from multiple sources in the top 10-20 results. Audit whether the business is mentioned across: "Best [Service] in [City]" articles, industry directories, local publications, and review platforms. Digital PR and third-party mentions matter more for AI citation than they do for traditional SEO.
+
 #### F2. SERP Landscape Check
 
 For top 5-10 target keywords, check the SERP layout:
@@ -212,6 +225,7 @@ For top 5-10 target keywords, check the SERP layout:
 2. **Map pack position** — Inside or outside visible results?
 3. **AI Overview present?** — Informational queries most affected
 4. **Number of organic results visible** — Ads increasingly compress organic space
+5. **LSA growth trend** — LSAs now appear on 31% of tracked queries (up from 11% at start of 2025). For industries where LSAs are active, note that leads/calls from the map pack may be declining as LSAs capture attention first. Consider recommending LSA management as part of the strategy.
 
 #### G. Competitor Analysis
 
@@ -229,6 +243,17 @@ For top 3-5 competitors, compare:
 | Location Pages | | | | |
 | GBP Post Frequency | | | | |
 | Schema Markup | | | | |
+
+#### H. Analytics & ROI Tracking Audit
+
+Check whether the client can prove SEO ROI:
+
+1. **GA4 Funnel Explorations** — Are custom funnels set up tracking: blog/service page visit → product/service page → conversion? Use open funnels (not closed) since users enter at different points.
+2. **Custom Events** — Are important interactions tracked in GTM (form submissions, button clicks, call clicks)?
+3. **Saved Reports** — Are funnel explorations saved as custom reports in the GA4 library for consistent monitoring?
+4. **Segment Comparisons** — Can they compare by device type, traffic source, and geography?
+
+If none of this exists, flag it as a priority setup item. Proving ROI is what prevents client churn.
 
 ### Step 3: Scoring & Prioritization
 

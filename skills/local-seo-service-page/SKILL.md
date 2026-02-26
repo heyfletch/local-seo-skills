@@ -120,11 +120,11 @@ Ask questions ONE AT A TIME in a conversational flow. Do NOT list all questions 
 - [ ] Featured customer story (full narrative with details/photos/costs — NOT just a quote)
 - [ ] CTA above the fold
 - [ ] CTA at bottom
-- [ ] 3-5 internal links to related services/pages
+- [ ] 3-5 in-content internal links to related services/pages (in-body anchor text links — NOT navigation menu links, which don't carry the same weight)
 - [ ] Pricing section present
 
 **Technical:**
-- [ ] Meta title: Primary keyword + location + brand (60 chars for display; up to 270 chars indexed)
+- [ ] Meta title: Front-load conversion copy (primary keyword + location + brand in first ~60 chars for display), then back-load SEO keywords past the truncation point — extra service names, service areas, keyword variations (up to 270 chars indexed by Google even though users see "...")
 - [ ] Meta description: 150-160 chars with keyword + compelling CTA
 - [ ] Clean URL: /services/[service-name]
 - [ ] Images: WebP, compressed <200KB, descriptive alt text with keyword
@@ -138,6 +138,17 @@ Ask questions ONE AT A TIME in a conversational flow. Do NOT list all questions 
 - [ ] Trust signals visible (certifications, associations, review count)
 - [ ] Social proof (years in business, clients served, review rating)
 - [ ] Process clearly explained (reduces friction)
+
+### Topic Silo Internal Linking
+
+Internal links in body content (not navigation menus) are a top organic ranking factor. Build topic silos by interlinking related service pages:
+
+Example for a plumber:
+- **Hot water tank cluster:** repair page, installation page, types page — all interlinked with descriptive anchor text
+- **Drain cleaning cluster:** similar structure
+- Each cluster's pages link to each other and back to the main service page
+
+The key: descriptive anchor text within body paragraphs, not just links in navigation dropdowns.
 
 ## Content Differentiation Rules
 
@@ -155,6 +166,28 @@ Ask questions ONE AT A TIME in a conversational flow. Do NOT list all questions 
 - Use passive voice excessively
 - Write in first person (use second person: you/your)
 - Include "what is [service]" sections unless searchers genuinely need education
+
+### Information Gain for AI Discoverability
+
+For AI search visibility, include exhaustive business detail on every service page. People prompt LLMs with detailed, paragraph-long descriptions of what they want. The LLM matches businesses to those specific attributes — if you haven't mentioned it, you won't be recommended.
+
+Consider including: insurance accepted, certifications and licenses, years of experience, specific techniques or approaches used, equipment brands, pricing transparency, response times, guarantees, specializations, languages spoken, accessibility features, and any other attribute a potential customer might specify when asking an AI for recommendations.
+
+This is different from traditional SEO where you optimize for "[service] [city]." Now you also need to answer every possible attribute a customer might specify.
+
+### Understanding LLM Sub-Queries
+
+When someone asks an AI "recommend 5 dentists in Denver that accept Delta Dental," the LLM breaks this into 8+ sub-queries behind the scenes. Consider what sub-queries your target audience might trigger and ensure your service pages cover those topics. You can reveal these sub-queries using Chrome DevTools (Network tab > search "search_model_queries" for ChatGPT) or the Gemini Grounding API.
+
+## Service Page Refresh Protocol
+
+Service pages should be refreshed on a ~3 month cycle. A "significant" update means:
+- Change to the title tag
+- Change to the H1
+- Structural changes to H2s
+- ~30% of content updated
+
+Freshness signals tell Google the page is current and maintained. After building all service pages and sub-service pages, cycle back to refresh the earliest ones, then repeat. This continuous refresh cycle can be as impactful as blogging for rankings.
 
 ## AI Content Generation Prompt
 

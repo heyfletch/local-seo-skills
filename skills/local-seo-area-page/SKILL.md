@@ -148,7 +148,7 @@ To make each page genuinely unique, use these tactics:
 
 - **Word count:** 1,200-1,800 words
 - **Target keyword:** "[service] in [city]" — use naturally 3-5 times
-- **Meta title:** [Service] in [City] | [Brand] (60 chars display; up to 270 indexed)
+- **Meta title:** Front-load conversion copy, back-load SEO keywords. The first ~60 chars display to users — make them compelling. Everything past the truncation point ("...") is invisible to users but still indexed by Google. Stuff extra service names, service areas, and keyword variations after the cutoff. Example: `Emergency Plumbing in Denver | ABC Plumbing | Drain Cleaning, Water Heater, Arvada, Lakewood, Aurora` (up to 270 chars indexed)
 - **Meta description:** 155 chars with keyword + local proof point + CTA
 - **URL:** /areas/[city-name] or /[city-name]/[service]
 - **Schema:** LocalBusiness with areaServed property (see local-seo-schema)

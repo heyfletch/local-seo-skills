@@ -99,6 +99,22 @@ Google now heavily prioritizes businesses that are currently open.
 - **Best times:** 9am-12pm in the business's local timezone (confirm timezone with client; default to ET if unknown)
 - **Max length:** 1,500 chars (300-500 chars ideal for engagement)
 
+### Batch Planning Workflow
+
+Instead of deciding what to post each week (which causes decision fatigue and inconsistency), plan the entire month in one sitting:
+
+1. **Set a primary monthly goal** (e.g., "Increase inbound calls by showcasing seasonal services")
+2. **Define a primary offer/focus** for the month
+3. **Assign weekly themes:**
+   - Week 1: Seasonal/educational awareness
+   - Week 2: Service highlight
+   - Week 3: Social proof (testimonials, project photos)
+   - Week 4: Offers and conversion push
+4. **Batch-write all 4+ posts** in one session
+5. **Review together, then schedule** all at once
+
+For agencies managing multiple clients: batch by client in dedicated sessions. First few times may take 2 hours per location, but gets faster with practice. Can batch 2-3+ months ahead.
+
 ### Post Template
 
 ```
@@ -204,6 +220,16 @@ For businesses with multiple locations:
 - Service descriptions should reference the specific location
 - Consider using a GBP management tool for 5+ locations
 
+### Expanding Map Pack Radius via Sublease Offices
+
+Service area pages help local organic rankings but will NOT help map pack rankings — only GBP proximity does that. For clients who need map pack presence in another city, consider subleasing office space:
+
+- Find someone on Facebook Marketplace or Craigslist renting a room in their existing office — usually hundreds/month vs thousands for a full lease
+- Requirements for GBP guidelines: should have signage and technically should be staffed
+- Many businesses staff only for initial video verification, then operate "by appointment only"
+- This is a legitimate strategy commonly used by law firms and insurance companies
+- Each new location needs its own verified GBP, unique photos, and location-specific content
+
 ## Local Services Ads (LSA) Considerations
 
 For industries where LSAs are available (plumbers, HVAC, lawyers, etc.):
@@ -213,6 +239,14 @@ For industries where LSAs are available (plumbers, HVAC, lawyers, etc.):
 3. **Call quality** — Google AI transcribes calls; poor handling lowers visibility
 4. LSAs capture up to 70% of lead volume in some industries
 5. LSA ads now appear on 31% of tracked queries (up from 11% at start of 2025)
+
+**LSA Management as a Service:**
+- Near Media research shows consumers often don't recognize LSAs as ads, making them highly effective
+- Map pack leads/calls are declining in industries where LSAs are active — LSAs capture attention first
+- Industry ROI varies significantly: personal injury lawyers ($500/lead, usually worth it), plumbers ($50-100/lead, depends on job size)
+- Part of effective LSA management includes listening to calls and coaching clients on closing leads — Google AI transcribes calls and poor handling lowers LSA visibility
+- Google's system for disputing bad leads is limited — factor this into ROI calculations
+- Consider offering LSA setup and management as an add-on service for applicable industries
 
 ## Automation Opportunities (n8n)
 

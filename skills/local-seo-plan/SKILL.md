@@ -67,6 +67,31 @@ Organize keywords into four categories:
 - Often show 0 volume but indicate real search behavior
 - High conversion potential due to specificity
 
+#### E. AI/LLM Sub-Query Keywords — Target: Service Pages & Blog
+
+When someone prompts an AI ("recommend 5 dentists in Denver that accept Delta Dental"), the LLM breaks this into 8+ background sub-queries. Understanding these sub-queries reveals keywords traditional tools miss.
+
+**How to discover LLM sub-queries:**
+- Chrome DevTools: Network tab → search "search_model_queries" (for ChatGPT)
+- Gemini Grounding API: returns the searches Gemini will perform
+- queryfanout.com: free tool that automates the process
+- Run your target keywords through ChatGPT with different customer personas and note what attributes it searches for
+
+These sub-queries often focus on specific business attributes (insurance, certifications, specializations) rather than generic "[service] [city]" patterns.
+
+#### Supplementary: AI/RAG Keyword Research Workflow
+
+A more systematic approach to AI keyword research:
+1. Start with your traditional keyword list
+2. Create 3-5 customer personas (demographics, preferences, constraints)
+3. Prompt LLMs: "If I was [persona] trying to find [keyword], what might I ask?" — generates 4-5 conversational prompt variations per keyword
+4. Feed those prompts into AlsoAsked to map where conversations go next
+5. Use grounding prediction tools to filter for queries that actually trigger web search (grounding threshold ~0.6)
+6. For grounded queries, discover the actual background searches (Chrome DevTools or Gemini API)
+7. Optimize service pages and content for those background search terms
+
+This workflow identifies keywords traditional tools miss — the conversational, attribute-rich queries people actually ask AI assistants.
+
 #### Keyword Metrics to Document
 
 For each keyword:
@@ -86,6 +111,15 @@ For each keyword:
 - **KGR > 1.0** — More competitive
 
 Flag all KGR < 0.25 keywords as quick-win content targets.
+
+#### ICE Scoring for Content Prioritization
+
+When deciding which keywords/pages to tackle first, consider the ICE framework:
+- **Impact (40% weight):** Estimated traffic × revenue potential. Traffic without revenue is vanity.
+- **Confidence (30%):** Can you realistically rank within 6 months given your DA and competition? If top 10 is all DR 90+ sites, confidence is low.
+- **Effort-inverted (30%):** Design needs, dev dependencies, research depth, approval processes. Score 1-10, invert (low effort = higher score).
+
+This often reveals uncomfortable truths: a viral content idea might score low on business impact, while an unglamorous comparison page scores highest.
 
 ### Step 3: Site Architecture
 
@@ -128,6 +162,13 @@ Homepage (/)
 - ⚠️ Do NOT create thin service area pages that just swap city names — Google penalizes these
 - Quality gate: Warning at 30+ location pages, hard stop at 50+ without audit
 - Internal linking: every service page links to related services + relevant area pages
+
+**Internal Linking Strategy — Topic Silos:**
+In-content links (anchor text within body paragraphs) carry significantly more weight than navigation menu links. Build topic silos by interlinking related service pages:
+- Group services into clusters (e.g., all water heater pages interlink, all drain pages interlink)
+- Each cluster's pages link to each other with descriptive anchor text
+- Each cluster links back to the main service hub page
+- Cross-link between clusters where relevant
 
 ### Step 4: Page-Level Specifications
 
@@ -193,6 +234,7 @@ Structure as weekly priorities:
 - Set up GA4, GSC, rank tracking
 - Implement schema markup on homepage
 - Fix critical technical issues (speed, mobile, SSL)
+- Set up GA4 funnel explorations: track journey from blog/service page → conversion page → form submission (use open funnels, not closed; proves SEO drives business outcomes, not just traffic)
 - Create NAP consistency document
 
 **Weeks 3-4: Core Content**
@@ -209,6 +251,7 @@ Structure as weekly priorities:
 - Publish 4-6 blog posts targeting KGR keywords
 - Begin citation building (Tier 1 directories)
 - Start GBP posting cadence (2-3/week)
+- Set up post-publish validation signals: indexation within 48 hours (GSC URL Inspection), impression growth tracking (impressions predict future click growth), user behavior monitoring (Microsoft Clarity for scroll depth and engagement)
 
 **Weeks 9-12: Authority**
 - Complete citation building (Tier 2)
@@ -216,6 +259,7 @@ Structure as weekly priorities:
 - Build 2-3 more service area pages
 - Start local link building (chambers, associations)
 - Monthly performance review and adjustment
+- Multi-site brand presence — ensure business is mentioned across top directory listings, "Best [Service] in [City]" articles, and industry publications (LLMs synthesize from multiple sources, not just your website)
 
 ### Step 7: Deliverable Format
 
@@ -286,3 +330,6 @@ For businesses with 2+ locations:
 - Review generation should be per-location
 - Citation building per-location for NAP consistency
 - Consider separate city subfolders: /bethesda/eye-exam vs /rockville/eye-exam
+
+**Expanding Map Pack Radius:**
+Service area pages help local organic rankings but will NOT help map pack rankings — only GBP proximity does that. For clients who need map pack presence in another city, consider subleasing office space. Find someone on Facebook Marketplace or Craigslist renting a room in their existing office — usually hundreds/month vs thousands for your own lease. Requirements: should have signage and technically should be staffed (though many operate "by appointment only" after initial verification). This is a legitimate strategy used by law firms and insurance companies.

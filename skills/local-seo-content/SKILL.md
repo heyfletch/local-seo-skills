@@ -16,6 +16,7 @@ Plan and execute ongoing content that builds topical authority, supports local r
 - Content competitors haven't written (differentiation > copying)
 - Answers to specific "People Also Ask" queries
 - Scannable format: H2/H3s, short paragraphs, direct answers
+- In-content internal links with descriptive anchor text (body text links carry more weight than navigation menu links — build topic silos by interlinking related service and blog pages)
 - Tools, calculators, interactive content (AI can't replicate these)
 - Video content (YouTube + embedded, increases dwell time)
 - First-party experience signals (E-E-A-T)
@@ -65,6 +66,8 @@ Calculators, quizzes, and assessment tools can rank with minimal or zero text co
 - Social media (platform-dependent)
 - Supports engagement and behavioral signals
 
+**GBP Batch Planning:** Instead of deciding what to post each week, plan the entire month in one sitting. Set a primary monthly goal, assign weekly themes (Week 1: educational, Week 2: service highlight, Week 3: social proof, Week 4: conversion push), batch-write all posts, then schedule. See the local-seo-gbp skill for the full workflow.
+
 ## Blog Topic Generation Process
 
 ### Step 1: Mine for Topics
@@ -75,6 +78,9 @@ Sources for content ideas:
 - **Competitor content gaps** — What haven't they written about?
 - **"People Also Ask"** — Google's related questions for your keywords
 - **Industry forums/Reddit** — Real questions people are asking
+
+**Systematic Reddit Analysis:** For deeper topic mining, export 50+ Reddit threads on a topic, upload to an AI tool, and prompt: "Extract the top 10 recurring objections and group them by customer journey stage. Format as a table with: Objection, Frequency, Journey Stage, Content Opportunity." This surfaces real customer concerns that keyword tools miss — especially useful for understanding WHY people search, not just WHAT.
+
 - **Seasonal needs** — What changes by season for your business?
 - **Local angles** — Local events, regulations, demographics
 
@@ -87,6 +93,12 @@ For each topic, assess:
 - Relevance to services you sell
 - Likelihood of converting readers to leads
 - Can you add unique perspective or data?
+
+**ICE Scoring Framework:** For formal prioritization, score each topic using ICE:
+- **Impact (40%):** Estimated traffic × revenue potential (traffic without revenue is vanity)
+- **Confidence (30%):** Can you realistically rank within 6 months given DA and competition?
+- **Effort-inverted (30%):** Design needs, research depth, approval processes. Score 1-10, invert.
+Multiply weighted scores to rank topics. This often reveals that unglamorous comparison pages outscore viral content ideas.
 
 ### Step 3: Content Calendar Structure
 
@@ -184,6 +196,35 @@ Review existing content quarterly:
 4. **Underperforming** — Update, consolidate with related content, or remove
 5. **All content older than 12 months** — Check for accuracy, update dates
 
+### Service Page Refresh Cycle
+
+Consider refreshing service pages on a ~3 month cycle in addition to blog content. A "significant" service page update means:
+- Change to the title tag
+- Change to the H1
+- Structural changes to H2s
+- ~30% of content updated
+
+After building all service pages and sub-service pages, cycle back to refresh the earliest ones, then repeat. This continuous refresh cycle ensures freshness signals are maintained across your highest-value pages.
+
+### Alternative Strategy: Service Page Cycling (Instead of Blogging)
+
+Some agencies (notably WhiteSpark) skip blogging entirely and invest that time in a continuous service page refresh cycle: build all service pages → build sub-service pages → refresh the first batch (~30% content update, title/H1/H2 changes) → repeat on a 3-month cycle. This can be more effective than blogging for businesses where:
+- The business has 10+ distinct services
+- Content budget is limited
+- The industry has low informational search demand
+
+This is an alternative approach worth considering, not a replacement for the blog strategy outlined above. Many businesses benefit from both. Evaluate based on the client's resources and industry.
+
+## Post-Publish Validation Signals
+
+After publishing content, monitor these early warning signals:
+- **Indexation speed:** Check if new pages are indexed within 48 hours (GSC URL Inspection)
+- **Impression growth:** Track impressions before clicks — impressions predict future click growth
+- **User behavior:** Microsoft Clarity or Hotjar for scroll depth, engagement, bounce behavior
+- **Internal link clicks:** Track if your content architecture is working (are people clicking through related articles?)
+
+Consider setting up weekly monitoring summaries: "This week: X new keywords in top 10, Y pieces hit 1,000 impressions, Z featured snippet won." Small celebrations maintain momentum with clients and teams.
+
 ## AI-Optimized Content (AEO/GEO)
 
 To maximize visibility in AI search results (Google AI Overviews, ChatGPT, etc.):
@@ -195,6 +236,7 @@ To maximize visibility in AI search results (Google AI Overviews, ChatGPT, etc.)
 5. **Keep it concise** — AI favors scannable, no-fluff content
 6. **First-party data** — Include original statistics, research, or proprietary insights
 7. **Update regularly** — AI systems prefer recently updated content
+8. **Multi-site brand presence** — For AI visibility, you don't need to rank your own website #1. You need your brand mentioned across multiple results in the top 10-20. Invest in digital PR, "Best [Service] in [City]" list placements, industry publication mentions, and strong directory presence. LLMs synthesize answers from multiple sources.
 
 ## Automation (n8n/Vista Social)
 

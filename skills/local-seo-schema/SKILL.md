@@ -1,11 +1,11 @@
 ---
 name: local-seo-schema
-description: Generate and validate schema markup (structured data) for local businesses. Use when the user wants to add schema, structured data, JSON-LD, rich snippets, or any schema.org markup for a local business website. Also triggers for "schema for service page", "FAQ schema", "LocalBusiness schema", "structured data", "rich results", or optimizing for AI search visibility through structured data. Schema is critical in 2026 for feeding Google's Knowledge Graph and AI agents.
+description: Generate and validate schema markup (structured data) for local businesses. Use when the user wants to add schema, structured data, JSON-LD, rich snippets, or any schema.org markup for a local business website. Also triggers for "schema for service page", "FAQ schema", "LocalBusiness schema", "structured data", "rich results", or optimizing for rich results and Knowledge Graph through structured data. Schema is critical in 2026 for feeding Google's Knowledge Graph and earning rich results.
 ---
 
 # Local SEO Schema Markup Skill
 
-Generate valid JSON-LD schema markup for local businesses. In 2026, schema is the primary language for feeding structured data to Google's Knowledge Graph and AI search agents. It increases AI Overview citation chances by 40-60%.
+Generate valid JSON-LD schema markup for local businesses. In 2026, schema is the primary language for feeding structured data to Google's Knowledge Graph. Schema drives rich results (star ratings, FAQs, breadcrumbs) in Google Search and feeds the Knowledge Graph. Note: while schema helps traditional SEO and rich result eligibility, research suggests LLMs strip all markup and read only raw page text — so schema alone does not directly increase AI/LLM citation. The real value is in rich results, Knowledge Graph presence, and helping Google understand your entity.
 
 ## Schema Types by Page
 
@@ -24,7 +24,7 @@ Generate valid JSON-LD schema markup for local businesses. In 2026, schema is th
 ## Schema Deprecation Awareness (2026)
 
 - **HowTo:** Deprecated September 2023 (still indexed but no rich results)
-- **FAQ:** Restricted to government and health authority sites (August 2023) — still worth implementing for AI citation even without rich results
+- **FAQ:** Restricted to government and health authority sites (August 2023) — still worth implementing for Knowledge Graph signals and content structure even without rich results
 - **SpecialAnnouncement:** Deprecated July 2025
 
 ## Templates
@@ -144,7 +144,7 @@ Adjust `@type` for specific business type. Options: `ProfessionalService`, `Fina
 
 ### 3. FAQPage Schema
 
-Implement on any page with FAQ sections. Still worth implementing for AI citation even though rich results are restricted.
+Implement on any page with FAQ sections. Still worth implementing for Knowledge Graph signals and content structure even though rich results are restricted.
 
 ```json
 {
