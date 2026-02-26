@@ -26,6 +26,7 @@ claude --plugin-dir /path/to/local-seo-skills
 | `/local-seo:schema` | Generate JSON-LD schema markup |
 | `/local-seo:reviews` | Create review strategy, templates, monitoring |
 | `/local-seo:content` | Plan content strategy, calendar, blog topics |
+| `/local-seo:agency` | Package, price, sell, and deliver local SEO as an agency or freelancer |
 
 ## Skills (Auto-Activate)
 
