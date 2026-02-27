@@ -130,6 +130,8 @@ DO NOT skip report generation. ALWAYS produce an HTML report. Do not dump findin
 
 ## Tools to Use
 
+> **Prerequisites:** See [references/prerequisites.md](../../references/prerequisites.md) — ensure ahrefs and dataforseo MCPs are installed and active.
+
 - **DataForSEO MCP** (if available) — SERP rankings, Google Maps data, keyword volumes, GBP data, backlinks, on-page crawl. Preferred source for quantitative data.
 - **Ahrefs MCP** (if available) — Domain rating, backlinks, organic keywords, competitor analysis
 - **WebSearch / WebFetch** — Crawl competitor pages, discover citations, check listings, verify GBP data

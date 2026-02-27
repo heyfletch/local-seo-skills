@@ -129,6 +129,8 @@ DO NOT skip output. ALWAYS produce an HTML deliverable. Do not dump checklists o
 
 ## Tools to Use
 
+> **Prerequisites:** See [references/prerequisites.md](../../references/prerequisites.md) — ensure ahrefs and dataforseo MCPs are installed and active.
+
 - **DataForSEO MCP** (if available) — Google Maps rankings, GBP data, competitor GBP analysis
 - **WebSearch / WebFetch** — Research business GBP, competitor profiles, industry-specific GBP features
 

@@ -146,6 +146,8 @@ DO NOT skip report generation. ALWAYS produce an HTML report. Do not dump the pl
 
 ## Tools to Use
 
+> **Prerequisites:** See [references/prerequisites.md](../../references/prerequisites.md) — ensure ahrefs and dataforseo MCPs are installed and active.
+
 - **DataForSEO MCP** (if available) — Keyword volumes, SERP data, competitor analysis, Google Maps rankings. Preferred for keyword research.
 - **Ahrefs MCP** (if available) — Domain metrics, organic keywords, competitor gaps
 - **WebSearch / WebFetch** — Competitor research, content gap analysis, SERP analysis

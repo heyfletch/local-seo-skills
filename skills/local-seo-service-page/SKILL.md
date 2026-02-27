@@ -124,6 +124,8 @@ DO NOT skip output. ALWAYS save the page content as a file. Do not dump the full
 
 ## Tools to Use
 
+> **Prerequisites:** See [references/prerequisites.md](../../references/prerequisites.md) — ensure ahrefs and dataforseo MCPs are installed and active.
+
 - **DataForSEO MCP** (if available) — Keyword volumes, SERP data, on-page analysis of competitors
 - **Ahrefs MCP** (if available) — Keyword difficulty, content gap analysis
 - **WebSearch / WebFetch** — Competitor page analysis, PAA research, service-specific information
