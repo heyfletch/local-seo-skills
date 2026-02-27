@@ -1,6 +1,6 @@
 ---
 name: local-seo-service-page
-description: Build SEO-optimized service pages for local businesses. Use when the user wants to create, write, or optimize a service page, landing page for a specific service offering, or any page targeting "[service] [location]" keywords. Also triggers for "write a service page", "create a page for [service]", "optimize my services page", or building individual service offering pages for local/service-area businesses.
+description: This skill should be used when the user asks to "write a service page", "create a page for [service]", "optimize my services page", "build a landing page for [service]", or any page targeting "[service] [location]" keywords. Covers content generation, on-page SEO, FAQs, and schema markup for individual service offering pages. Schema markup is generated as part of the page — for standalone schema generation without a full page, use the local-seo-schema skill instead.
 ---
 
 # Local SEO Service Page Builder

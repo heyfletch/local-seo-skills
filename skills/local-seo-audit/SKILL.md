@@ -1,6 +1,6 @@
 ---
 name: local-seo-audit
-description: Comprehensive local SEO audit for service-area and local businesses. Use when the user wants to audit, review, diagnose, or assess local SEO performance, Google Business Profile optimization, citation consistency, review health, local rankings, or AI search visibility. Also triggers for "local SEO check", "how's my local SEO", "GBP audit", "map pack analysis", "local visibility report", or any mention of auditing a local business website.
+description: This skill should be used when the user asks to "audit my local SEO", "review my local rankings", "diagnose local SEO issues", "assess local SEO performance", "local SEO check", "how's my local SEO", "GBP audit", "map pack analysis", "local visibility report", or any mention of auditing a local business website. Covers GBP optimization, citation consistency, review health, local rankings, and AI search visibility as part of a comprehensive audit. For standalone GBP optimization without a full audit, use the local-seo-gbp skill instead.
 ---
 
 # Local SEO Audit Skill

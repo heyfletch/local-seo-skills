@@ -1,6 +1,6 @@
 ---
 name: local-seo-plan
-description: Strategic local SEO planning for service-area and local businesses. Use when the user wants to create a marketing roadmap, site architecture, keyword strategy, sitemap, content plan, or 90-day action plan for a local business. Also triggers for "SEO roadmap", "keyword research for local business", "site structure", "what pages should I create", "marketing plan for [local business type]", or strategic planning for multi-location businesses.
+description: This skill should be used when the user asks to "create an SEO roadmap", "plan my site architecture", "do keyword research for my local business", "keyword strategy", "what pages should I create", "build a sitemap", "marketing plan for [local business type]", "90-day action plan", or any strategic planning for a local or multi-location business. Covers keyword research, site structure, traffic projections, and action planning. For ongoing content calendars and blog topic planning, use the local-seo-content skill instead.
 ---
 
 # Local SEO Strategic Plan Skill

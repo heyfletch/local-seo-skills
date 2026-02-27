@@ -1,6 +1,6 @@
 ---
 name: local-seo-gbp
-description: Google Business Profile optimization, posting strategy, and Q&A management for local businesses. Use when the user wants to optimize GBP, create GBP posts, manage Google Business Profile, set up Q&A, plan GBP content, or improve local map pack visibility. Also triggers for "Google Maps listing", "GMB optimization", "GBP posts", "map pack rankings", "local pack", or any mention of Google Business Profile or Google Maps presence.
+description: This skill should be used when the user asks to "optimize my GBP", "create GBP posts", "write Google Business Profile posts", "set up Q&A on my profile", "improve my Google Maps listing", "Google My Business optimization", "GMB optimization", "my Google listing", "Maps ranking", "map pack rankings", "local pack visibility", or any standalone Google Business Profile or Google Maps work. This skill writes actual GBP posts and optimizes the profile directly. For GBP evaluation as part of a full site audit, use the local-seo-audit skill. For scheduling GBP posts on a calendar, use the local-seo-content skill.
 ---
 
 # Local SEO — Google Business Profile Skill

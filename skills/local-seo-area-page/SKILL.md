@@ -1,6 +1,6 @@
 ---
 name: local-seo-area-page
-description: Build unique, genuine service area and location pages for local businesses. Use when the user wants to create location pages, city pages, service area pages, "areas we serve" pages, or any page targeting "[service] in [city]" keywords. Also triggers for "create a page for [city]", "location page", "we serve [city]", multi-location pages, or expanding geographic coverage. CRITICAL - this skill enforces unique content requirements to avoid Google penalties.
+description: This skill should be used when the user asks to "create a page for [city]", "build a location page", "write an area page", "city page", "service area page", "areas we serve", or any page targeting "[service] in [city]" keywords. Also triggers for "we serve [city]", "multi-location pages", or "expanding geographic coverage". CRITICAL — enforces unique content requirements to avoid Google penalties for thin area pages. Schema markup is generated as part of the page — for standalone schema generation without a full page, use the local-seo-schema skill instead.
 ---
 
 # Local SEO Service Area Page Builder

@@ -1,6 +1,6 @@
 ---
 name: local-seo-reviews
-description: Review strategy, generation system, response templates, and monitoring for local businesses. Use when the user wants to get more reviews, respond to reviews, create a review generation system, handle negative reviews, improve review ratings, set up review monitoring, or discuss review strategy. Also triggers for "how to get more Google reviews", "respond to this review", "review request template", "negative review", "review management", or "reputation management".
+description: This skill should be used when the user asks to "get more reviews", "respond to this review", "build a review generation system", "handle a negative review", "improve my star rating", "set up review monitoring", "review request template", "reputation management", "how to get more Google reviews", "what should I do about my bad reviews", or any review strategy, response drafting, or monitoring setup for a local business.
 ---
 
 # Local SEO Reviews Skill

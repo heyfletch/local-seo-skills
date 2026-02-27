@@ -1,6 +1,6 @@
 ---
 name: local-seo-content
-description: Content strategy, calendar, blog topics, and social media planning for local businesses. Use when the user wants to plan content, create a content calendar, find blog topics, plan social media, create a posting schedule, or develop ongoing content for a local business. Also triggers for "what should I blog about", "content ideas for [business type]", "posting schedule", "content calendar", "social media plan", "GBP posts", or "what content to create next".
+description: This skill should be used when the user asks to "create a content calendar", "plan my blog topics", "what should I blog about", "content ideas for [business type]", "build a posting schedule", "social media plan", "what content to create next", or any ongoing content strategy and calendar planning for a local business. Covers blog topics, GBP post scheduling, and social media planning on a calendar. This skill plans and schedules content — for writing actual GBP posts, use the local-seo-gbp skill. For one-time strategic site architecture planning, use the local-seo-plan skill.
 ---
 
 # Local SEO Content Strategy Skill

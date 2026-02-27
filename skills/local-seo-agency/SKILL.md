@@ -1,6 +1,6 @@
 ---
 name: local-seo-agency
-description: Help small agencies and freelancers decide how to package, price, sell, and deliver local SEO services to clients. Use when the user asks about starting an SEO agency, pricing SEO services, selling local SEO, packaging SEO, client onboarding, creating SOPs, building a team, getting SEO clients, productizing SEO, or agency growth strategy. Also triggers for "how much should I charge for SEO", "how to sell SEO services", "SEO agency pricing", "local SEO packages", "how to get SEO clients", "SEO proposals", "client retention", or any question about running an SEO business vs doing SEO for clients.
+description: This skill should be used when the user asks about the BUSINESS side of local SEO — "how much should I charge for SEO", "how to sell SEO services", "SEO agency pricing", "local SEO packages", "how to get SEO clients", "starting an SEO agency", "client onboarding", "creating SOPs", "building a team", "productizing SEO", "SEO proposals", "client retention", or any question about running, packaging, pricing, selling, or delivering SEO as a business. This skill is about running an SEO agency or freelance practice, NOT about executing SEO work for a specific client — for that, use the other local-seo skills (audit, plan, service-page, etc.).
 ---
 
 # Local SEO Agency Skill

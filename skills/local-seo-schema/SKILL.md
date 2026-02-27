@@ -1,6 +1,6 @@
 ---
 name: local-seo-schema
-description: Generate and validate schema markup (structured data) for local businesses. Use when the user wants to add schema, structured data, JSON-LD, rich snippets, or any schema.org markup for a local business website. Also triggers for "schema for service page", "FAQ schema", "LocalBusiness schema", "structured data", "rich results", or optimizing for rich results and Knowledge Graph through structured data. Schema is critical in 2026 for feeding Google's Knowledge Graph and earning rich results.
+description: This skill should be used when the user asks to "add schema markup", "generate structured data", "create JSON-LD", "add schema.org markup", "LocalBusiness schema", "FAQ schema", "rich snippets", "rich results", or any standalone schema markup generation for a local business website. Also triggers for "schema for service page", "schema for homepage", "validate my structured data", or optimizing for Knowledge Graph through structured data. Use this skill for standalone schema generation. When building a new service page or area page, schema is generated automatically by those skills — this skill is for adding schema to existing pages or generating schema independently.
 ---
 
 # Local SEO Schema Markup Skill
