@@ -31,7 +31,7 @@ Execute the strategy — create and optimize pages.
 
 ### Phase 3: Care Phase (Ongoing)
 
-Maintain and grow authority.
+Maintain and grow authority. For the detailed month-by-month execution workflow, see `monthly-execution-checklist.md` in this references folder.
 
 **Tasks:**
 1. Citation building — spaced over time, not all at once

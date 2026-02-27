@@ -105,6 +105,8 @@ Check and score:
 - Core Web Vitals: LCP <2.5s, INP <200ms, CLS <0.1
 - Page speed score >85
 
+**For existing sites not being rebuilt:** Run the expanded technical SEO checklist from `technical-seo-checklist.md` (same folder) — covers crawlability, indexation, redirects, duplicate content, security, and WordPress-specific issues. These checks are critical for sites that have been running for years and may have accumulated technical debt.
+
 ### 4. E-E-A-T Signals
 - Author bios with credentials
 - About page with team details

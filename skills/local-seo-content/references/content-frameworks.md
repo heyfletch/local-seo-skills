@@ -225,6 +225,153 @@ To maximize visibility in AI search results (Google AI Overviews, ChatGPT, etc.)
 7. **Update regularly** — AI systems prefer recently updated content
 8. **Multi-site brand presence** — For AI visibility, you don't need to rank your own website #1. You need your brand mentioned across multiple results in the top 10-20. Invest in digital PR, "Best [Service] in [City]" list placements, industry publication mentions, and strong directory presence. LLMs synthesize answers from multiple sources.
 
+## Sales Funnel & Lead Magnet Strategy
+
+### Context
+
+Most local businesses rely on "call us" or "fill out this form" as their only conversion path. Adding a sales funnel with lead magnets captures prospects who aren't ready to buy yet but are researching — typically 70-80% of website visitors.
+
+**When to recommend:** Businesses with longer sales cycles (financial planning, home remodeling, legal services), higher price points, or competitive markets where trust must be built before conversion. Less critical for emergency services (plumber for a burst pipe) where the conversion path is naturally short.
+
+### Funnel Structure for Local Businesses
+
+```
+AWARENESS (Blog/Social → Website)
+    ↓
+INTEREST (Lead Magnet → Email Capture)
+    ↓
+CONSIDERATION (Email Nurture Sequence)
+    ↓
+DECISION (Consultation/Quote → Customer)
+    ↓
+ADVOCACY (Review Request → Referral)
+```
+
+### Lead Magnet Ideas by Business Type
+
+Lead magnets should solve a specific problem or answer a specific question. They should be genuinely useful — not gated content that could be a blog post.
+
+| Business Type | Lead Magnet Ideas |
+|---|---|
+| **Financial Planner** | Retirement readiness calculator, "10 FERS mistakes" PDF, benefits comparison worksheet |
+| **Home Services** | Seasonal maintenance checklist, cost estimator tool, "questions to ask before hiring" guide |
+| **Legal** | "What to do after [event]" guide, rights checklist, timeline worksheet |
+| **Healthcare** | Symptom assessment quiz, preparation guide, insurance coverage checker |
+| **Real Estate** | Home valuation tool, neighborhood comparison guide, buyer/seller timeline |
+| **B2B Services** | ROI calculator, industry benchmark report, audit checklist |
+
+**Format options:**
+- **PDF guide** (easiest to create, 5-15 pages)
+- **Interactive calculator/quiz** (highest conversion, requires development)
+- **Video series** (high perceived value, good for complex topics)
+- **Checklist/worksheet** (quick to consume, high utility)
+- **Email course** (drip-delivered over 5-7 days, builds habit of opening your emails)
+
+### Landing Page Requirements
+
+Each lead magnet needs a dedicated landing page:
+- Clear headline stating the benefit (not the format)
+- 3-5 bullet points of what they'll learn/get
+- Minimal form fields (name + email, phone optional)
+- Social proof (testimonial, number of downloads, trust badges)
+- No navigation menu (reduce distractions)
+- Mobile-optimized (60%+ of local traffic is mobile)
+- Thank you page with next step CTA (book a call, check email, etc.)
+
+**Target:** Landing page conversion rate of 20-40% (compared to ~2-5% for a general contact page).
+
+### Conversion Path Mapping
+
+For each service, map the complete conversion path:
+
+```
+[Blog Post: "How to Choose a Financial Planner"]
+    → CTA: "Download our retirement readiness checklist"
+        → Landing Page → Email Capture
+            → Email Sequence (5-7 emails over 2-3 weeks)
+                → Final CTA: "Book a free consultation"
+                    → Consultation → Client
+```
+
+Include these conversion paths when planning service pages and blog content. Every piece of content should have a clear "next step" — whether that's a lead magnet, a contact form, or a phone call.
+
+### Integration with Content Calendar
+
+When building the content calendar (see above), tag each content piece with its funnel stage:
+- **Top of funnel (TOFU):** Blog posts answering questions, social media education
+- **Middle of funnel (MOFU):** Lead magnets, comparison guides, case studies
+- **Bottom of funnel (BOFU):** Service pages, testimonials, pricing, consultation CTAs
+
+A healthy content mix is roughly 50% TOFU, 30% MOFU, 20% BOFU.
+
+## Email Marketing Strategy
+
+### Context
+
+Email marketing is a high-ROI channel for local businesses with longer consideration cycles. It converts captured leads into customers and past customers into repeat buyers and referral sources.
+
+**This skill does NOT generate email sequences.** Email campaign creation, copywriting, and automation setup should be handled by dedicated email marketing skills or tools. This section covers when and why to recommend email as a strategic option and how it fits into the broader local SEO content strategy.
+
+> **Handoff note:** If an email marketing strategy is recommended as a top priority, advise the user to use dedicated email campaign skills or tools (e.g., Claude email copywriting prompts, ActiveCampaign, Mailchimp, or n8n email automation workflows) for the actual sequence creation.
+
+### When to Recommend Email Marketing
+
+**High priority (recommend proactively):**
+- Professional services with 2+ week sales cycles (financial planning, legal, consulting)
+- Businesses with repeat customers (dentist, salon, auto repair)
+- Businesses already capturing leads but not nurturing them
+- Businesses with lead magnets or downloadable content
+
+**Medium priority (mention as option):**
+- Service businesses with shorter cycles but high lifetime value
+- Businesses with seasonal demand (landscaping, HVAC, tax prep)
+- Businesses wanting to reactivate past customers
+
+**Low priority (only if asked):**
+- Emergency/immediate-need services (locksmith, tow truck, plumber for emergencies)
+- Businesses with no existing email list and no lead capture mechanism
+- Very small businesses with <50 contacts
+
+### Email Sequence Types for Local Businesses
+
+| Sequence Type | Trigger | Purpose | Typical Length |
+|---|---|---|---|
+| **Welcome/Nurture** | Lead magnet download | Build trust, educate, drive consultation | 5-7 emails over 2-3 weeks |
+| **Post-Consultation Follow-up** | After consultation/quote | Overcome objections, reinforce value | 3-5 emails over 1-2 weeks |
+| **Post-Service** | After service completed | Request review, referral, cross-sell | 3-4 emails over 2-4 weeks |
+| **Re-engagement** | Inactive customer (6+ months) | Win back, seasonal reminder, special offer | 3 emails over 2 weeks |
+| **Seasonal/Maintenance** | Recurring schedule | Remind about annual/seasonal services | 1-2 emails per season |
+| **Newsletter** | Monthly/bi-weekly | Stay top of mind, share content, promotions | Ongoing |
+
+### Email + SEO Synergy
+
+Email marketing amplifies local SEO efforts:
+- **Drive traffic to new content** — Email subscribers to new blog posts increases early engagement signals
+- **Generate reviews** — Post-service email sequences with review request links
+- **Amplify GBP posts** — Share GBP offers/events via email for broader reach
+- **Build backlinks** — Share original research/guides with industry contacts who may link to them
+- **Increase return visits** — Newsletter drives repeat site visits, improving behavioral signals
+
+### Implementation Recommendations
+
+**Tools (budget-conscious):**
+- **Free tier:** Mailchimp (500 contacts), MailerLite (1,000 contacts), Brevo (300 emails/day)
+- **n8n automation:** Build custom email sequences with unlimited sends via SMTP (more complex but free at scale)
+- **ActivePieces:** Lifetime deal, can handle email automation workflows
+
+**Quick start:**
+1. Set up email capture on the website (lead magnet or newsletter signup)
+2. Create a welcome sequence (5-7 emails)
+3. Create a post-service review request sequence (3-4 emails)
+4. Set up a monthly newsletter template
+5. Automate via n8n or email platform
+
+**Measurement:**
+- Open rate benchmark: 30-40% for local businesses (higher than e-commerce)
+- Click rate benchmark: 3-5%
+- Unsubscribe rate: < 0.5% per send
+- Track: email-attributed leads, review completions from email links, website traffic from email
+
 ## Automation (n8n/Vista Social)
 
 ### Content Generation Pipeline

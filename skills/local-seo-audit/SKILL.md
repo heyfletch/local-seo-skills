@@ -63,6 +63,7 @@ Use AskUserQuestion:
 - "Full audit (all categories)" — recommended
 - "Focused: GBP + Reviews only"
 - "Focused: On-Page + Technical only"
+- "Focused: Technical SEO deep dive (existing site)" — for sites not being rebuilt
 - "Focused: AI Visibility + Citations only"
 
 ### Step 4: Data tools
@@ -97,7 +98,9 @@ DO NOT proceed to Phase 3 until all audit categories (per the selected scope) ar
 
 Create a TaskCreate item for each audit category being executed. Mark each in_progress when starting and completed when done.
 
-Read the full checklists from `${CLAUDE_PLUGIN_ROOT}/skills/local-seo-audit/references/audit-checklists.md` and execute each applicable category:
+Read the full checklists from `${CLAUDE_PLUGIN_ROOT}/skills/local-seo-audit/references/audit-checklists.md` and execute each applicable category.
+
+For the "Technical SEO deep dive" scope, also read `${CLAUDE_PLUGIN_ROOT}/skills/local-seo-audit/references/technical-seo-checklist.md` — this expands Section C with crawlability, indexation, speed, redirects, duplicate content, and security checks specific to existing sites that are not being rebuilt.
 
 | Task | Category | Weight (Local Pack) |
 |---|---|---|

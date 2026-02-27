@@ -28,6 +28,10 @@ Homepage (/)
 │
 ├── FAQ (/faq) — if not embedded in service pages
 │
+├── Resources / Lead Magnets (if sales funnel strategy applies)
+│   ├── [Lead Magnet Landing Page 1] (/resources/[topic])
+│   └── [Lead Magnet Landing Page 2] (/resources/[topic])
+│
 └── Contact (/contact)
     └── Schedule Appointment (/contact/schedule)
 ```
@@ -128,6 +132,31 @@ Content Requirements:
 
 Conversion Goal: [Call / Book / Form submission]
 ```
+
+## Sales Funnel Pages (When Applicable)
+
+For businesses with longer sales cycles or higher price points, include landing pages for lead magnets in the site architecture. These pages serve a different purpose than service pages:
+
+```
+Page: /resources/[lead-magnet-topic]
+Title: [Benefit-focused title] | [Brand]
+Target: Conversions (email capture), NOT organic rankings
+Search Intent: N/A — these are destination pages for CTAs, not SEO targets
+
+Content Requirements:
+- Headline stating benefit (not format)
+- 3-5 bullet points of what they'll learn
+- Minimal form (name + email)
+- Social proof (testimonials, download count)
+- No main navigation (reduce distractions)
+- Thank you page with next-step CTA
+
+Conversion Goal: Email capture → nurture sequence → consultation/booking
+```
+
+**Architecture note:** Lead magnet landing pages typically sit outside the main navigation. They're linked from blog posts, service pages, and social media — not from the nav menu. Keep URLs under `/resources/` to separate them from SEO-targeted content.
+
+**When to include:** Recommend funnel pages when the business has professional services with 2+ week sales cycles, high-value services, or competitive markets where trust-building is needed before conversion. Skip for emergency/immediate-need services. See the Sales Funnel & Lead Magnet Strategy section in `${CLAUDE_PLUGIN_ROOT}/skills/local-seo-content/references/content-frameworks.md` for detailed funnel strategy.
 
 ## Multi-Location Strategy Notes
 

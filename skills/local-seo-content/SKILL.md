@@ -57,10 +57,11 @@ Use WebSearch to discover: website, industry, services, existing content, compet
 Use AskUserQuestion:
 
 **Question:** "What content planning do you need?"
-- "Full content strategy (blog + GBP + social)" — recommended
+- "Full content strategy (blog + GBP + social + funnel)" — recommended
 - "Blog topic ideas and calendar only"
 - "GBP posting calendar only"
 - "Content refresh audit for existing pages"
+- "Sales funnel & lead magnet strategy"
 
 ### Step 4: Gather context
 
@@ -104,6 +105,8 @@ Create TaskCreate items for:
 - Content tier assignment (Tier 1-4)
 
 Use available data tools (DataForSEO MCP, Ahrefs MCP, WebSearch) to gather keyword data. Apply the ICE scoring framework to prioritize topics. Flag all KGR < 0.25 keywords as quick-win targets.
+
+If the content scope includes "Full content strategy" or "Sales funnel & lead magnet strategy," also review the Sales Funnel & Lead Magnet Strategy and Email Marketing Strategy sections in the content frameworks reference. Recommend lead magnets and email nurture sequences when appropriate for the business type. Note: actual email sequence creation should be handled by dedicated email campaign skills or tools — this skill identifies when email is a strategic fit and defines the sequence types needed.
 
 ---
 

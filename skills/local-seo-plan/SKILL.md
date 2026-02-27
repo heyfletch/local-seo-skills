@@ -141,6 +141,11 @@ Read the traffic projections guide from `${CLAUDE_PLUGIN_ROOT}/skills/local-seo-
 3. Build the week-by-week 90-day action plan
 4. Score each action item with the Impact × Effort priority matrix
 
+When building the 90-day action plan, incorporate guidance from these additional references where relevant:
+- **Citations:** Read `${CLAUDE_PLUGIN_ROOT}/skills/local-seo-plan/references/citation-strategy.md` for directory tiers and submission timeline
+- **Outreach:** Read `${CLAUDE_PLUGIN_ROOT}/skills/local-seo-plan/references/outreach-strategy.md` for partnership types and link building tactics
+- **Sales funnel:** If the business has longer sales cycles or higher price points, reference the sales funnel section in the content frameworks and site architecture guides
+
 ---
 
 ## Phase 5: Report Generation
