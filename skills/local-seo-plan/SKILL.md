@@ -200,6 +200,8 @@ Only runs when client context is active. Offers to update the work log, save a r
 - **DataForSEO MCP** (if available) — Keyword volumes, SERP data, competitor analysis, Google Maps rankings. Preferred for keyword research.
 - **Ahrefs MCP** (if available) — Domain metrics, organic keywords, competitor gaps
 - **WebSearch / WebFetch** — Competitor research, content gap analysis, SERP analysis
+- **GA4 MCP** (if available) — Traffic trends, channel breakdown, conversion data. Loaded automatically in Phase 0.5 when client has `ga4_property_id` set.
+- **GSC MCP** (if available) — Keyword positions, impressions, click-through rates. Loaded automatically in Phase 0.5 when client has `gsc_site_url` set.
 
 ## Self-Improvement
 - After the user approves final output, offer to save it as an approved example for future reference

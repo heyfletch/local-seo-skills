@@ -174,6 +174,8 @@ Only runs when client context is active. Offers to update the work log, save a r
 - **DataForSEO MCP** (if available) — Keyword volumes, SERP data, content gap analysis
 - **Ahrefs MCP** (if available) — Organic keywords, content explorer, competitor content
 - **WebSearch / WebFetch** — Competitor content analysis, PAA mining, Reddit research
+- **GA4 MCP** (if available) — Page performance, session duration, engagement rates. Loaded automatically in Phase 0.5 when client has `ga4_property_id` set.
+- **GSC MCP** (if available) — Top queries, page clicks/impressions, content gap data. Loaded automatically in Phase 0.5 when client has `gsc_site_url` set.
 
 ## Self-Improvement
 - After the user approves final output, offer to save it as an approved example for future reference
