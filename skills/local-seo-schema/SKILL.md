@@ -11,6 +11,17 @@ NO SCHEMA OUTPUT WITHOUT IDENTIFYING THE PAGE TYPE AND BUSINESS DETAILS. Do not 
 
 ---
 
+## Settings
+
+Before starting Phase 1, check if `.claude/local-seo.local.md` exists. If it does, read it and extract settings from the YAML frontmatter:
+
+- `output_dir` — directory for saving reports/pages (default: `~/Desktop/`)
+- `auto_open` — whether to auto-open files in browser (default: `true`)
+
+Use these values in the output phase. If the file doesn't exist, use defaults.
+
+---
+
 ## Phase 1: Discovery
 
 <HARD-GATE>
@@ -71,7 +82,7 @@ DO NOT skip saving the output. ALWAYS save schema as a file.
 </HARD-GATE>
 
 1. Generate valid JSON-LD wrapped in `<script type="application/ld+json">` tags
-2. Save to `~/Desktop/YYYY-MM-DD-schema-[page-slug].json` (or `.html` if wrapping in script tags)
+2. Save to `[output_dir]/YYYY-MM-DD-schema-[page-slug].json` (default `output_dir`: `~/Desktop/`; use `.html` if wrapping in script tags)
 3. Print to terminal: the complete JSON-LD code (schema is code, not a report — terminal output is appropriate here) + file path + validation instructions
 4. Remind the user to validate at https://search.google.com/test/rich-results
 

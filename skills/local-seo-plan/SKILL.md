@@ -11,6 +11,17 @@ NO PLAN OUTPUT WITHOUT COMPLETING ALL FIVE PHASES. Do not skip discovery. Do not
 
 ---
 
+## Settings
+
+Before starting Phase 1, check if `.claude/local-seo.local.md` exists. If it does, read it and extract settings from the YAML frontmatter:
+
+- `output_dir` — directory for saving reports/pages (default: `~/Desktop/`)
+- `auto_open` — whether to auto-open files in browser (default: `true`)
+
+Use these values in the output phase. If the file doesn't exist, use defaults.
+
+---
+
 ## Phase 1: Discovery
 
 <HARD-GATE>
@@ -115,8 +126,8 @@ DO NOT skip report generation. ALWAYS produce an HTML report. Do not dump the pl
 
 1. Read the HTML plan template at `${CLAUDE_PLUGIN_ROOT}/references/html-plan-template.html`
 2. Generate a self-contained HTML roadmap with all sections: executive summary, competitor analysis, keyword strategy, sitemap, traffic projections, 90-day action plan
-3. Save to `~/Desktop/YYYY-MM-DD-plan-[business-slug].html`
-4. Run `open ~/Desktop/[filename].html` via Bash to auto-open in browser
+3. Save to `[output_dir]/YYYY-MM-DD-plan-[business-slug].html` (default `output_dir`: `~/Desktop/`)
+4. If `auto_open` is true (default), run `open [filepath]` via Bash to auto-open in browser
 5. Print to terminal ONLY: 3-5 bullet summary + file path
 
 ---

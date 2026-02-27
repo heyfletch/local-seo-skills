@@ -11,6 +11,17 @@ NO GBP OUTPUT WITHOUT COMPLETING ALL FOUR PHASES. GBP drives 32% of local pack r
 
 ---
 
+## Settings
+
+Before starting Phase 1, check if `.claude/local-seo.local.md` exists. If it does, read it and extract settings from the YAML frontmatter:
+
+- `output_dir` — directory for saving reports/pages (default: `~/Desktop/`)
+- `auto_open` — whether to auto-open files in browser (default: `true`)
+
+Use these values in the output phase. If the file doesn't exist, use defaults.
+
+---
+
 ## Phase 1: Discovery
 
 <HARD-GATE>
@@ -91,15 +102,15 @@ DO NOT skip output. ALWAYS produce an HTML deliverable. Do not dump checklists o
 ### For optimization audit:
 1. Read the HTML report template at `${CLAUDE_PLUGIN_ROOT}/references/html-report-template.html`
 2. Generate an HTML checklist report with current status and action items
-3. Save to `~/Desktop/YYYY-MM-DD-gbp-audit-[business-slug].html`
+3. Save to `[output_dir]/YYYY-MM-DD-gbp-audit-[business-slug].html` (default `output_dir`: `~/Desktop/`)
 
 ### For GBP posting calendar:
 1. Read the HTML calendar template at `${CLAUDE_PLUGIN_ROOT}/references/html-calendar-template.html`
 2. Generate an HTML calendar with all posts, dates, CTAs, and image suggestions
-3. Save to `~/Desktop/YYYY-MM-DD-gbp-calendar-[business-slug].html`
+3. Save to `[output_dir]/YYYY-MM-DD-gbp-calendar-[business-slug].html` (default `output_dir`: `~/Desktop/`)
 
 ### For all outputs:
-4. Run `open ~/Desktop/[filename].html` via Bash to auto-open in browser
+4. If `auto_open` is true (default), run `open [filepath]` via Bash to auto-open in browser
 5. Print to terminal ONLY: 3-5 bullet summary + file path
 
 ---

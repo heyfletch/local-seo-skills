@@ -11,6 +11,17 @@ NO AUDIT OUTPUT WITHOUT COMPLETING ALL FOUR PHASES. Do not skip discovery. Do no
 
 ---
 
+## Settings
+
+Before starting Phase 1, check if `.claude/local-seo.local.md` exists. If it does, read it and extract settings from the YAML frontmatter:
+
+- `output_dir` — directory for saving reports/pages (default: `~/Desktop/`)
+- `auto_open` — whether to auto-open files in browser (default: `true`)
+
+Use these values in the output phase. If the file doesn't exist, use defaults.
+
+---
+
 ## Phase 1: Discovery
 
 <HARD-GATE>
@@ -99,8 +110,8 @@ DO NOT skip report generation. ALWAYS produce an HTML report. Do not dump findin
 1. Read the HTML template at `${CLAUDE_PLUGIN_ROOT}/references/html-report-template.html`
 2. Generate a self-contained HTML report with all findings, scores, and recommendations
 3. Follow the output format from `${CLAUDE_PLUGIN_ROOT}/skills/local-seo-audit/references/audit-scoring.md`
-4. Save to `~/Desktop/YYYY-MM-DD-audit-[business-slug].html`
-5. Run `open ~/Desktop/[filename].html` via Bash to auto-open in browser
+4. Save to `[output_dir]/YYYY-MM-DD-audit-[business-slug].html` (default `output_dir`: `~/Desktop/`)
+5. If `auto_open` is true (default), run `open [filepath]` via Bash to auto-open in browser
 6. Print to terminal ONLY: 3-5 bullet summary + file path
 
 ---

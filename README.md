@@ -67,6 +67,24 @@ The plugin ships with a DataForSEO MCP server config for SERP rankings, keyword 
 
 If you have the Ahrefs MCP server configured separately, the skills will use both DataForSEO and Ahrefs for richer data.
 
+## Configuration (Optional)
+
+Customize output behavior by creating `.claude/local-seo.local.md` in your project:
+
+```markdown
+---
+output_dir: ~/Desktop/
+auto_open: true
+---
+```
+
+| Setting | Default | Description |
+|---|---|---|
+| `output_dir` | `~/Desktop/` | Directory where reports and pages are saved |
+| `auto_open` | `true` | Auto-open HTML files in browser after generation |
+
+This file is optional — all settings have sensible defaults without it.
+
 ## Report Output
 
 All analysis skills automatically generate HTML reports saved to `~/Desktop/` and auto-opened in the browser. No format selection needed — HTML is always the default.

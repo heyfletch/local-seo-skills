@@ -11,6 +11,17 @@ NO PAGE OUTPUT WITHOUT COMPLETING ALL FOUR PHASES. Do not skip research. Do not 
 
 ---
 
+## Settings
+
+Before starting Phase 1, check if `.claude/local-seo.local.md` exists. If it does, read it and extract settings from the YAML frontmatter:
+
+- `output_dir` — directory for saving reports/pages (default: `~/Desktop/`)
+- `auto_open` — whether to auto-open files in browser (default: `true`)
+
+Use these values in the output phase. If the file doesn't exist, use defaults.
+
+---
+
 ## Phase 1: Discovery
 
 <HARD-GATE>
@@ -93,8 +104,8 @@ DO NOT skip output. ALWAYS save the page content as a file. Do not dump the full
 </HARD-GATE>
 
 1. Generate clean semantic HTML ready for CMS insertion, with schema JSON-LD in a `<script>` tag at the bottom
-2. Save to `~/Desktop/YYYY-MM-DD-service-[service-slug].html`
-3. Run `open ~/Desktop/[filename].html` via Bash to auto-open in browser
+2. Save to `[output_dir]/YYYY-MM-DD-service-[service-slug].html` (default `output_dir`: `~/Desktop/`)
+3. If `auto_open` is true (default), run `open [filepath]` via Bash to auto-open in browser
 4. Print to terminal ONLY: meta title, meta description, word count, 3-5 key differentiators used, file path
 
 ---
