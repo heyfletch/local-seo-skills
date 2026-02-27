@@ -149,3 +149,8 @@ DO NOT skip report generation. ALWAYS produce an HTML report. Do not dump the pl
 - **DataForSEO MCP** (if available) — Keyword volumes, SERP data, competitor analysis, Google Maps rankings. Preferred for keyword research.
 - **Ahrefs MCP** (if available) — Domain metrics, organic keywords, competitor gaps
 - **WebSearch / WebFetch** — Competitor research, content gap analysis, SERP analysis
+
+## Self-Improvement
+- After the user approves final output, offer to save it as an approved example for future reference
+- If the user gives explicit negative feedback, offer to add it as a learned rule
+- If approved examples exist in references/approved-examples/, review them before generating new output to match established quality

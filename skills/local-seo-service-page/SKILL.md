@@ -127,3 +127,8 @@ DO NOT skip output. ALWAYS save the page content as a file. Do not dump the full
 - **DataForSEO MCP** (if available) — Keyword volumes, SERP data, on-page analysis of competitors
 - **Ahrefs MCP** (if available) — Keyword difficulty, content gap analysis
 - **WebSearch / WebFetch** — Competitor page analysis, PAA research, service-specific information
+
+## Self-Improvement
+- After the user approves final output, offer to save it as an approved example for future reference
+- If the user gives explicit negative feedback, offer to add it as a learned rule
+- If approved examples exist in references/approved-examples/, review them before generating new output to match established quality

@@ -136,3 +136,8 @@ DO NOT skip report generation. ALWAYS produce an HTML report. Do not dump findin
 - **Google Rich Results Test** — Schema validation (via WebFetch)
 
 Use whichever data tools are available. DataForSEO and Ahrefs complement each other — use both when available.
+
+## Self-Improvement
+- After the user approves final output, offer to save it as an approved example for future reference
+- If the user gives explicit negative feedback, offer to add it as a learned rule
+- If approved examples exist in references/approved-examples/, review them before generating new output to match established quality

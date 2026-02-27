@@ -131,3 +131,8 @@ DO NOT skip output. ALWAYS produce an HTML deliverable. Do not dump checklists o
 
 - **DataForSEO MCP** (if available) — Google Maps rankings, GBP data, competitor GBP analysis
 - **WebSearch / WebFetch** — Research business GBP, competitor profiles, industry-specific GBP features
+
+## Self-Improvement
+- After the user approves final output, offer to save it as an approved example for future reference
+- If the user gives explicit negative feedback, offer to add it as a learned rule
+- If approved examples exist in references/approved-examples/, review them before generating new output to match established quality

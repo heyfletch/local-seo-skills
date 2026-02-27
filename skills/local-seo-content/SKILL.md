@@ -125,3 +125,8 @@ DO NOT skip report generation. ALWAYS produce an HTML report. Do not dump the ca
 - **DataForSEO MCP** (if available) — Keyword volumes, SERP data, content gap analysis
 - **Ahrefs MCP** (if available) — Organic keywords, content explorer, competitor content
 - **WebSearch / WebFetch** — Competitor content analysis, PAA mining, Reddit research
+
+## Self-Improvement
+- After the user approves final output, offer to save it as an approved example for future reference
+- If the user gives explicit negative feedback, offer to add it as a learned rule
+- If approved examples exist in references/approved-examples/, review them before generating new output to match established quality

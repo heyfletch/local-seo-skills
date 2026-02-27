@@ -104,3 +104,8 @@ DO NOT skip saving the output. ALWAYS save schema as a file.
 
 - **WebFetch** — Scrape business details from website
 - **WebSearch** — Look up business hours, address, review data
+
+## Self-Improvement
+- After the user approves final output, offer to save it as an approved example for future reference
+- If the user gives explicit negative feedback, offer to add it as a learned rule
+- If approved examples exist in references/approved-examples/, review them before generating new output to match established quality
