@@ -7,6 +7,22 @@
         "DATAFORSEO_USERNAME": "${DATAFORSEO_USERNAME}",
         "DATAFORSEO_PASSWORD": "${DATAFORSEO_PASSWORD}"
       }
+    },
+    "ga4": {
+      "command": "pipx",
+      "args": ["run", "analytics-mcp"],
+      "env": {
+        "GOOGLE_APPLICATION_CREDENTIALS": "${GOOGLE_APPLICATION_CREDENTIALS}",
+        "GOOGLE_CLOUD_PROJECT": "${GOOGLE_CLOUD_PROJECT}"
+      }
+    },
+    "gsc": {
+      "command": "python3",
+      "args": ["/usr/local/share/mcp-gsc/gsc_server.py"],
+      "env": {
+        "GSC_CREDENTIALS_PATH": "${GOOGLE_APPLICATION_CREDENTIALS}",
+        "GSC_SKIP_OAUTH": "true"
+      }
     }
   }
 }
