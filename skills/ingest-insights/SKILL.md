@@ -43,15 +43,35 @@ Create these directories at the plugin root (`${CLAUDE_PLUGIN_ROOT}/inbox/` etc.
 DO NOT proceed to Phase 2 until all inbox items are read and summarized.
 </HARD-GATE>
 
-1. Scan `${CLAUDE_PLUGIN_ROOT}/inbox/` for files (markdown, txt, pdf, html, and any other readable format). Exclude subdirectories (`processed/`, `rejected/`, `reports/`).
-2. Read each file using the Read tool (use `pages` parameter for PDFs).
+### Binary File Conversion (pre-scan sub-step)
+
+Before reading any files, check for binary formats that need conversion:
+
+1. Glob `${CLAUDE_PLUGIN_ROOT}/inbox/` for `*.pdf`, `*.docx`, `*.pptx`, `*.xlsx` (exclude subdirectories). If none found, skip to "Read and Summarize" below.
+2. If binary files exist, check if `markitdown` is installed:
+   - Run `which markitdown` via Bash.
+   - **If installed** → convert each binary file:
+     - Run `markitdown "<file>" > "<file>.md"` to save the converted markdown in `inbox/` alongside the original.
+     - Move the original binary to `inbox/processed/YYYY-MM-DD-<original-filename>`.
+   - **If not installed** → check if pip is available:
+     - Run `which pip3 || which pip` via Bash.
+     - **If no pip** → skip markitdown, use Read tool fallback (see below).
+     - **If pip available** → ask the user via AskUserQuestion: "markitdown is not installed but can be added with pip. Install it? (This enables better conversion of DOCX, PPTX, XLSX, and PDF files to markdown.)"
+       - **User says yes** → run `pip install markitdown` via Bash. If it fails, retry once. If the retry also fails, fall back to Read tool.
+       - **User says no** → fall back to Read tool.
+3. **Read tool fallback**: When markitdown is unavailable, attempt to read binary files directly with the Read tool (use `pages` parameter for PDFs). If Read fails for a file (e.g., DOCX/PPTX/XLSX that Claude cannot parse), log a warning to the user and skip that file. No `.md` conversion file is created in fallback mode — the binary is treated as a normal inbox item.
+
+### Read and Summarize
+
+1. Scan `${CLAUDE_PLUGIN_ROOT}/inbox/` for all remaining files (markdown, txt, html, and any converted `.md` files from the sub-step above). Exclude subdirectories (`processed/`, `rejected/`, `reports/`).
+2. Read each file using the Read tool.
 3. For each item, produce a structured summary:
    - **Source**: Author/publication/URL if identifiable
    - **Date**: Publication date if identifiable, otherwise "unknown"
    - **Key claims**: Bulleted list of factual assertions
    - **Actionable insights**: Specific recommendations that could improve existing skills
 
-If the inbox is empty, inform the user and stop.
+If the inbox is empty (no files and no converted files), inform the user and stop.
 
 ---
 
