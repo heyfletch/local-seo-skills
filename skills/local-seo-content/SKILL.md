@@ -22,6 +22,19 @@ Use these values in the output phase. If the file doesn't exist, use defaults.
 
 ---
 
+## Phase 0: Client Context
+
+Follow the instructions in [references/client-context-phases.md](../../references/client-context-phases.md) — Phase 0 section.
+
+This determines whether the skill runs in **quick mode** (today's behavior) or **deliverable mode** (with client profile pre-loaded).
+
+If client context is loaded:
+- Phase 1 Steps 1-2 are skipped (business already identified)
+- Output directory is set to `[client-path]/deliverables/`
+- All business context is pre-populated from the profile
+
+---
+
 ## Phase 1: Discovery
 
 <HARD-GATE>
@@ -117,6 +130,14 @@ DO NOT skip report generation. ALWAYS produce an HTML report. Do not dump the ca
 3. Save to `[output_dir]/YYYY-MM-DD-content-calendar-[business-slug].html` (default `output_dir`: `~/Desktop/`)
 4. If `auto_open` is true (default), run `open [filepath]` via Bash to auto-open in browser
 5. Print to terminal ONLY: 3-5 bullet summary + file path
+
+---
+
+## Phase 3.5: Client Profile Update
+
+Follow the instructions in [references/client-context-phases.md](../../references/client-context-phases.md) — Phase 3.5 section.
+
+Only runs when client context is active. Offers to update the work log, save a reference doc, track the deliverable, and suggest related standard deliverables.
 
 ---
 
