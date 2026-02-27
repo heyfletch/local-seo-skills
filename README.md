@@ -1,6 +1,6 @@
 # Local SEO Plugin for Claude Code
 
-A comprehensive local SEO toolkit with 9 specialized skills and 9 slash commands for Claude Code. Built for digital marketing consultants serving local/service-area businesses (professional services, healthcare, home services, etc.).
+A comprehensive local SEO toolkit with 10 specialized skills and 10 slash commands for Claude Code. Built for digital marketing consultants serving local/service-area businesses (professional services, healthcare, home services, etc.).
 
 ## Installation
 
@@ -27,6 +27,7 @@ claude plugin update local-seo-skills
 | `/local-seo:reviews` | Create review strategy, templates, monitoring |
 | `/local-seo:content` | Plan content strategy, calendar, blog topics |
 | `/local-seo:agency` | Package, price, sell, and deliver local SEO as an agency or freelancer |
+| `/local-seo:ingest-insights` | Process inbox items and sync new knowledge into plugin skills |
 
 ## Skills (Auto-Activate)
 
@@ -43,6 +44,7 @@ Skills activate automatically based on context. Ask about any local SEO topic an
 | `local-seo-reviews` | "get more reviews", "respond to this review", "review strategy" |
 | `local-seo-content` | "content calendar", "blog topics", "what should I blog about" |
 | `local-seo-agency` | "SEO agency pricing", "how to sell SEO", "local SEO packages", "how to get SEO clients" |
+| `ingest-insights` | "ingest new info", "process inbox", "sync new knowledge", "update skills with new info" |
 
 ## Data Integrations
 
