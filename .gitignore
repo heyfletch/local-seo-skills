@@ -8,3 +8,4 @@ inbox/**/*
 !inbox/processed/.gitkeep
 !inbox/rejected/.gitkeep
 !inbox/reports/.gitkeep
+references/clients/registry.md
