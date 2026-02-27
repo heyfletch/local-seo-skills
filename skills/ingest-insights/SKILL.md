@@ -164,7 +164,7 @@ Present a summary to the user:
 Only execute this phase when the user explicitly says "apply", "implement", "go", or similar.
 
 1. Execute each approved edit using Edit tool (prefer Edit over Write for existing files)
-2. For each processed inbox item, move to `inbox/processed/` with timestamp prefix: `YYYY-MM-DD-original-filename.ext`
+2. For each processed inbox item (including `.md` conversion files created by markitdown), move to `inbox/processed/` with timestamp prefix: `YYYY-MM-DD-original-filename.ext`
 3. Generate a changelog entry and present it to the user
 
 ---
@@ -189,5 +189,5 @@ Only execute this phase when the user explicitly says "apply", "implement", "go"
 - **Grep** — Search existing knowledge base for specific claims or statistics
 - **Write** — Create sync reports, create new reference files
 - **Edit** — Apply approved edits to existing files (preferred over Write for modifications)
-- **Bash** — Create directories, move files to processed/rejected
-- **AskUserQuestion** — Get user decisions on USEFUL-classified items and apply approval
+- **Bash** — Create directories, move files to processed/rejected, run markitdown conversion and install commands
+- **AskUserQuestion** — Get user decisions on USEFUL-classified items, markitdown installation prompt, and apply approval
