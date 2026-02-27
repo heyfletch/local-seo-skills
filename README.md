@@ -70,6 +70,29 @@ The plugin ships with a DataForSEO MCP server config for SERP rankings, keyword 
 
 If you have the Ahrefs MCP server configured separately, the skills will use both DataForSEO and Ahrefs for richer data.
 
+### Google Analytics 4 (optional)
+
+If you have a GCP service account with GA4 access, the audit, plan, and content skills pull live traffic data automatically.
+
+**Setup:** See `references/prerequisites.md` for the full setup guide (GCP project, service account, API enablement, per-client access).
+
+**Environment variables:**
+```bash
+export GOOGLE_APPLICATION_CREDENTIALS="~/.config/gcloud/service-account.json"
+export GOOGLE_CLOUD_PROJECT="your-gcp-project-id"
+```
+
+### Google Search Console (optional)
+
+If you have a GCP service account with GSC access, the audit, plan, and content skills pull keyword rankings and indexing data automatically.
+
+**Setup:** Same service account as GA4. See `references/prerequisites.md`. Also requires cloning the GSC MCP server:
+
+```bash
+git clone https://github.com/AminForou/mcp-gsc.git /usr/local/share/mcp-gsc
+cd /usr/local/share/mcp-gsc && python3 -m venv .venv && source .venv/bin/activate && pip install -r requirements.txt
+```
+
 ## Configuration (Optional)
 
 Customize output behavior by creating `.claude/local-seo.local.md` in your project:
@@ -113,6 +136,13 @@ These skills incorporate the latest 2026 ranking factors:
 - **Backlink weight declining** for local pack in favor of real-world signals
 - **Title tags** can be up to 270 characters (Google indexes hidden portion)
 - **Thin service area pages** are penalized; unique local content required
+
+## Roadmap
+
+- [ ] **Google Business Profile MCP** — Live GBP data integration (n8n-based or standalone when a mature option emerges)
+- [ ] **NeuronWriter API** — Content optimization scoring and keyword suggestions during content and service page writing
+- [ ] **Per-skill analytics dashboards** — HTML reports with embedded GA4/GSC trend charts
+- [ ] **Automated monthly reporting** — Scheduled analytics snapshots and client report generation
 
 ## License
 
