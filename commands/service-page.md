@@ -1,7 +1,7 @@
 ---
 name: service-page
 description: Build an SEO-optimized service page for a local business
-argument-hint: "[service name]"
+argument-hint: "[service name] [--quick | --deliverable]"
 allowed-tools:
   - WebSearch
   - WebFetch
@@ -22,3 +22,9 @@ Build a high-converting, SEO-optimized service page using the `local-seo:local-s
 CRITICAL: Follow the HARD-GATE enforcement in each phase. Do not skip research. Do not dump the page into the terminal — save as semantic HTML file.
 
 If the user provided a service name as an argument, use that to begin Phase 1 discovery. Otherwise, use AskUserQuestion to identify the service and business.
+
+**Client context flags:**
+- `--quick` — Skip client lookup, run in stateless mode (today's default behavior)
+- `--deliverable` — Force client context mode, create a client profile if none exists
+
+If no flags are provided, the skill infers the mode: if a client registry exists with entries, it asks which client; otherwise it runs in quick mode.
