@@ -35,6 +35,17 @@ If client context is loaded:
 
 ---
 
+## Phase 0.5: Analytics Data
+
+Follow the instructions in [references/analytics-integration.md](../../references/analytics-integration.md) — "For content skill" section.
+
+If analytics data is available:
+- Topic prioritization uses real GSC query data to find content gaps (queries with impressions but low clicks)
+- Existing content audit uses GA4 page performance to identify refresh candidates (high-traffic pages with declining engagement)
+- Content calendar scheduling prioritizes topics that support pages already ranking in positions 5-20
+
+---
+
 ## Phase 1: Discovery
 
 <HARD-GATE>
