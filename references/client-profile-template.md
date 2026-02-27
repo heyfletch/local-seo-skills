@@ -28,5 +28,8 @@ deliverables_completed: []
 ## Competitors
 [Top 3-5 with URLs]
 
+## Engagement Scope
+[If scope docs exist in scope/, this section summarizes: committed deliverables, timeline, KPIs. Updated when scope docs are added or changed.]
+
 ## Current SEO Status
 [Baseline metrics, known issues — updated after audits]

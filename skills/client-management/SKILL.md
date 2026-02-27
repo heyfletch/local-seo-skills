@@ -91,6 +91,46 @@ If yes:
 - Ask about ideal customer profile (demographics, pain points, buying triggers)
 - Ask about brand voice (formal/casual, terminology preferences, tone)
 
+### Step 4.5: Scope documents (SOW / Proposal)
+
+Use AskUserQuestion:
+**Question:** "Do you have a Statement of Work, Proposal, or scope document for this client?"
+- "Yes — I'll provide the file path"
+- "Skip for now — I'll add one later"
+
+If yes:
+
+1. Ask for the file path. Accepted formats (converted via MarkItDown):
+   - **PDF** (.pdf) — recommended if exporting from Pages, Word, or Google Docs
+   - **Word** (.docx)
+   - **PowerPoint** (.pptx)
+   - **HTML** (.html)
+   - **Markdown** (.md) — no conversion needed
+
+2. Create `[client-path]/scope/` directory
+
+3. If the file is already `.md`, copy it directly to `[client-path]/scope/sow.md`
+
+4. If the file is any other supported format, convert it:
+   ```bash
+   markitdown "[source-file]" > "[client-path]/scope/sow.md"
+   ```
+   If `markitdown` is not installed, install it first:
+   ```bash
+   pip install markitdown
+   ```
+
+5. Read the converted `sow.md` and present a summary to the user:
+   - List of deliverables/services promised
+   - Timeline or milestones (if present)
+   - Any specific KPIs or goals mentioned
+
+   Ask the user to confirm the conversion looks correct. If the conversion is poor (e.g., tables mangled, content missing), suggest trying a different source format — PDF generally works best.
+
+6. Also copy the original source file into `[client-path]/scope/` as-is (e.g., `proposal.pdf`) so there's always a reference copy.
+
+Users can add more scope docs later by dropping files into the `scope/` folder and running `/client [slug]` to re-convert them.
+
 ### Step 5: Write the profile
 
 1. Read the template at `${CLAUDE_PLUGIN_ROOT}/references/client-profile-template.md`
@@ -108,7 +148,8 @@ Dated entries from skill runs and client work.
 ```
 
 6. Create `deliverables/` subdirectory in the client folder
-7. Add the client to the registry (`${CLAUDE_PLUGIN_ROOT}/references/clients/registry.md`) — update the YAML frontmatter `clients` map with the new slug, name, and path
+7. Create `scope/` subdirectory in the client folder (if not already created in Step 4.5)
+8. Add the client to the registry (`${CLAUDE_PLUGIN_ROOT}/references/clients/registry.md`) — update the YAML frontmatter `clients` map with the new slug, name, and path
 
 ### Step 6: Confirm
 
@@ -116,6 +157,7 @@ Print to terminal:
 - "Client profile created for [Business Name]"
 - "Profile: [path]/profile.md"
 - "Deliverables will be saved to: [path]/deliverables/"
+- "Scope docs: [path]/scope/" (if scope docs were added)
 - "You can now run any skill and it will use this client's context."
 
 ---
@@ -124,12 +166,14 @@ Print to terminal:
 
 1. Read the client's `profile.md` from the registered path
 2. Display a summary: business name, website, industry, services, service areas, competitors
-3. If `work-log.md` exists, show the last 3 entries
-4. If `deliverables/` has files, list them with dates
-5. Read `references/client-deliverables.md` and show which standard deliverables have been completed vs. remaining
+3. If `scope/` has files, list them and show a brief summary of SOW deliverables/commitments
+4. If `work-log.md` exists, show the last 3 entries
+5. If `deliverables/` has files, list them with dates
+6. Read `references/client-deliverables.md` and show which standard deliverables have been completed vs. remaining
 
 Offer actions via AskUserQuestion:
 - "Update this profile" — re-run discovery or let user edit sections
+- "Add or update scope docs" — upload a new SOW/proposal (uses Step 4.5 conversion flow)
 - "View full work log"
 - "Run a skill for this client" — then ask which skill
 - "Go back to client list"
