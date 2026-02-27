@@ -52,14 +52,15 @@ Before reading any files, check for binary formats that need conversion:
    - Run `which markitdown` via Bash.
    - **If installed** → convert each binary file:
      - Run `markitdown "<file>" > "<file>.md"` to save the converted markdown in `inbox/` alongside the original.
-     - Move the original binary to `inbox/processed/YYYY-MM-DD-<original-filename>`.
+     - If conversion fails (non-zero exit or empty output), log a warning and fall back to the Read tool for that specific file.
+     - On success, move the original binary to `inbox/processed/YYYY-MM-DD-<original-filename>`.
    - **If not installed** → check if pip is available:
      - Run `which pip3 || which pip` via Bash.
      - **If no pip** → skip markitdown, use Read tool fallback (see below).
      - **If pip available** → ask the user via AskUserQuestion: "markitdown is not installed but can be added with pip. Install it? (This enables better conversion of DOCX, PPTX, XLSX, and PDF files to markdown.)"
-       - **User says yes** → run `pip install markitdown` via Bash. If it fails, retry once. If the retry also fails, fall back to Read tool.
+       - **User says yes** → run `pip install --user markitdown` via Bash (the `--user` flag avoids "externally managed environment" errors on macOS/modern Linux). If it fails, retry once with `pipx install markitdown` if `pipx` is available. If both fail, fall back to Read tool.
        - **User says no** → fall back to Read tool.
-3. **Read tool fallback**: When markitdown is unavailable, attempt to read binary files directly with the Read tool (use `pages` parameter for PDFs). If Read fails for a file (e.g., DOCX/PPTX/XLSX that Claude cannot parse), log a warning to the user and skip that file. No `.md` conversion file is created in fallback mode — the binary is treated as a normal inbox item.
+3. **Read tool fallback**: When markitdown is unavailable, attempt to read binary files directly with the Read tool (use `pages` parameter for PDFs). If Read succeeds, produce the structured summary for that file immediately (same format as "Read and Summarize" below) and move the binary to `inbox/processed/YYYY-MM-DD-<original-filename>` so it is not re-read. If Read fails for a file (e.g., DOCX/PPTX/XLSX that Claude cannot parse), log a warning to the user and skip that file.
 
 ### Read and Summarize
 
