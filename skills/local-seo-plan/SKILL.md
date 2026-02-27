@@ -35,6 +35,17 @@ If client context is loaded:
 
 ---
 
+## Phase 0.5: Analytics Data
+
+Follow the instructions in [references/analytics-integration.md](../../references/analytics-integration.md) — "For plan skill" section.
+
+If analytics data is available:
+- Phase 2 (Keyword Research) uses real GSC keyword positions to identify quick wins (positions 5-20)
+- Phase 3 (Architecture) uses real page traffic data to prioritize high-value pages
+- Traffic projections in Phase 4 use actual baseline numbers from GA4 instead of estimates
+
+---
+
 ## Phase 1: Discovery
 
 <HARD-GATE>
