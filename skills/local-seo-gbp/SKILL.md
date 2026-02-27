@@ -49,6 +49,17 @@ Use AskUserQuestion:
 
 Use WebSearch to research the business's current GBP presence, competitors' GBP profiles, and industry-specific GBP features. Present findings and ask the user to confirm via AskUserQuestion.
 
+### Step 4: Data tools
+
+Use AskUserQuestion:
+
+**Question:** "Do you want to use enhanced data tools for GBP research?"
+- "Yes — use Ahrefs and DataForSEO"
+- "Just DataForSEO (Maps rankings, GBP data)"
+- "No — WebSearch is fine"
+
+For each selected tool, verify the MCP is responding. If it fails, inform the user and offer setup help or fall back to WebSearch. See [references/prerequisites.md](../../references/prerequisites.md).
+
 ---
 
 ## Phase 2: Execute
@@ -129,7 +140,7 @@ DO NOT skip output. ALWAYS produce an HTML deliverable. Do not dump checklists o
 
 ## Tools to Use
 
-> **Prerequisites:** See [references/prerequisites.md](../../references/prerequisites.md) — ensure ahrefs and dataforseo MCPs are installed and active.
+> **Optional MCPs:** ahrefs and dataforseo — user chooses in Phase 1, Step 4. See [references/prerequisites.md](../../references/prerequisites.md).
 
 - **DataForSEO MCP** (if available) — Google Maps rankings, GBP data, competitor GBP analysis
 - **WebSearch / WebFetch** — Research business GBP, competitor profiles, industry-specific GBP features

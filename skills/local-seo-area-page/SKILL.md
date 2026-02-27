@@ -60,6 +60,18 @@ Use AskUserQuestion for each (skip any already answered):
 - "We participate in local events"
 - "None yet — use what you find in research"
 
+### Step 5: Data tools
+
+Use AskUserQuestion:
+
+**Question:** "Do you want to use enhanced data tools for keyword research?"
+- "Yes — use Ahrefs and DataForSEO"
+- "Just Ahrefs"
+- "Just DataForSEO"
+- "No — WebSearch is fine"
+
+For each selected tool, verify the MCP is responding. If it fails, inform the user and offer setup help or fall back to WebSearch. See [references/prerequisites.md](../../references/prerequisites.md).
+
 ### Information needed (discover via research, only ask user if undiscoverable)
 - City/area name and neighborhoods within it
 - Specific services offered there
@@ -126,7 +138,7 @@ DO NOT skip output. ALWAYS save the page content as a file. Do not dump the full
 
 ## Tools to Use
 
-> **Prerequisites:** See [references/prerequisites.md](../../references/prerequisites.md) — ensure ahrefs and dataforseo MCPs are installed and active.
+> **Optional MCPs:** ahrefs and dataforseo — user chooses in Phase 1, Step 5. See [references/prerequisites.md](../../references/prerequisites.md).
 
 - **DataForSEO MCP** (if available) — Keyword volumes for "[service] [city]" queries, SERP analysis
 - **Ahrefs MCP** (if available) — Keyword difficulty, competitor area page analysis

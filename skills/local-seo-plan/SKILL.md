@@ -60,6 +60,18 @@ Use AskUserQuestion for each remaining piece of information (skip any already an
 - "Fairly consistent year-round"
 - "Not sure"
 
+### Step 4: Data tools
+
+Use AskUserQuestion:
+
+**Question:** "Do you want to use enhanced data tools for this plan?"
+- "Yes — use Ahrefs and DataForSEO"
+- "Just Ahrefs"
+- "Just DataForSEO"
+- "No — WebSearch is fine"
+
+For each selected tool, verify the MCP is responding. If it fails, inform the user and offer setup help or fall back to WebSearch. See [references/prerequisites.md](../../references/prerequisites.md).
+
 ### Information needed (discover via research, only ask user if undiscoverable)
 - Business name, website URL, industry
 - Services offered (complete list)
@@ -146,7 +158,7 @@ DO NOT skip report generation. ALWAYS produce an HTML report. Do not dump the pl
 
 ## Tools to Use
 
-> **Prerequisites:** See [references/prerequisites.md](../../references/prerequisites.md) — ensure ahrefs and dataforseo MCPs are installed and active.
+> **Optional MCPs:** ahrefs and dataforseo — user chooses in Phase 1, Step 4. See [references/prerequisites.md](../../references/prerequisites.md).
 
 - **DataForSEO MCP** (if available) — Keyword volumes, SERP data, competitor analysis, Google Maps rankings. Preferred for keyword research.
 - **Ahrefs MCP** (if available) — Domain metrics, organic keywords, competitor gaps
