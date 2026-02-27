@@ -5,13 +5,13 @@ A comprehensive local SEO toolkit with 10 specialized skills and 10 slash comman
 ## Installation
 
 ```bash
-claude plugin install github:heyfletch/local-seo-skills
+claude plugin install https://github.com/heyfletch/local-seo-skills
 ```
 
 ## Updating
 
 ```bash
-claude plugin update local-seo-skills
+claude plugin update local-seo
 ```
 
 ## Commands
