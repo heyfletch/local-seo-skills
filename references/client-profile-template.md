@@ -3,6 +3,8 @@ slug: ""
 name: ""
 website: ""
 gbp_url: ""
+ga4_property_id: ""
+gsc_site_url: ""
 industry: ""
 created: ""
 deliverables_completed: []
