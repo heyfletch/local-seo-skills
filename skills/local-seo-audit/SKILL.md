@@ -35,6 +35,17 @@ If client context is loaded:
 
 ---
 
+## Phase 0.5: Analytics Data
+
+Follow the instructions in [references/analytics-integration.md](../../references/analytics-integration.md) — "For audit skill" section.
+
+If analytics data is available:
+- Phase 2 Category H (Analytics & ROI Tracking) uses real GA4 data instead of asking the user
+- Phase 2 Categories A-G use GSC indexing/ranking data to verify findings
+- "Current monthly organic traffic" in the information needed list is pre-filled from GA4
+
+---
+
 ## Phase 1: Discovery
 
 <HARD-GATE>
@@ -85,7 +96,7 @@ For each selected tool, verify the MCP is responding. If it fails, inform the us
 - Service area (cities/regions served)
 - Primary services offered
 - Top 3-5 competitors (or discover them)
-- Current monthly organic traffic (if available from GA4/GSC)
+- Current monthly organic traffic (pre-filled from GA4 if analytics data was loaded in Phase 0.5; otherwise ask user)
 - Number of locations (single vs multi-location)
 
 ---
@@ -172,6 +183,8 @@ Only runs when client context is active. Offers to update the work log, save a r
 - **Ahrefs MCP** (if available) — Domain rating, backlinks, organic keywords, competitor analysis
 - **WebSearch / WebFetch** — Crawl competitor pages, discover citations, check listings, verify GBP data
 - **Google Rich Results Test** — Schema validation (via WebFetch)
+- **GA4 MCP** (if available) — Traffic overview, landing page performance, bounce rates, session data. Loaded automatically in Phase 0.5 when client has `ga4_property_id` set.
+- **GSC MCP** (if available) — Search queries, page clicks/impressions, indexing issues, sitemap status. Loaded automatically in Phase 0.5 when client has `gsc_site_url` set.
 
 Use whichever data tools are available. DataForSEO and Ahrefs complement each other — use both when available.
 
