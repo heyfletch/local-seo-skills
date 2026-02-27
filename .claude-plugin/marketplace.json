@@ -1,0 +1,19 @@
+{
+  "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
+  "name": "heyfletch-local-seo-skills",
+  "description": "Local SEO skills and commands for Claude Code — audits, service pages, area pages, GBP, schema, reviews, content strategy, and more.",
+  "owner": {
+    "name": "Joe Fletcher"
+  },
+  "plugins": [
+    {
+      "name": "local-seo",
+      "description": "Comprehensive local SEO toolkit for service-area and local businesses.",
+      "version": "1.0.0",
+      "author": {
+        "name": "Joe Fletcher"
+      },
+      "source": "./"
+    }
+  ]
+}
