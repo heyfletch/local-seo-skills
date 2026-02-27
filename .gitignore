@@ -2,4 +2,9 @@
 .claude/settings.local.json
 .claude/*.local.md
 node_modules/
-inbox/
+inbox/*
+inbox/**/*
+!inbox/.gitkeep
+!inbox/processed/.gitkeep
+!inbox/rejected/.gitkeep
+!inbox/reports/.gitkeep
