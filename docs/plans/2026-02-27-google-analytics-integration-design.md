@@ -17,7 +17,7 @@ Add GA4 and GSC MCP integrations to the local-seo-skills plugin. Both are option
 - **Multi-property:** YES — `get_account_summaries` discovers all accessible properties dynamically; `run_report` accepts property as a parameter
 - **Install:** `pipx run analytics-mcp` (no clone needed)
 - **Tools:** 6-7 (get_account_summaries, get_property_details, run_report, run_realtime_report, get_custom_dimensions_and_metrics, list_google_ads_links)
-- **Env vars:** `GOOGLE_APPLICATION_CREDENTIALS`, `GOOGLE_PROJECT_ID`
+- **Env vars:** `GOOGLE_APPLICATION_CREDENTIALS`, `GOOGLE_CLOUD_PROJECT`
 
 **Why this over the alternatives:**
 - Stape hosted MCP: OAuth-only, no service account support — disqualified
@@ -58,7 +58,7 @@ No mature standalone GBP MCP servers exist. Best future option is n8n-based MCP 
       "args": ["run", "analytics-mcp"],
       "env": {
         "GOOGLE_APPLICATION_CREDENTIALS": "${GOOGLE_APPLICATION_CREDENTIALS}",
-        "GOOGLE_PROJECT_ID": "${GOOGLE_PROJECT_ID}"
+        "GOOGLE_CLOUD_PROJECT": "${GOOGLE_CLOUD_PROJECT}"
       }
     },
     "gsc": {
