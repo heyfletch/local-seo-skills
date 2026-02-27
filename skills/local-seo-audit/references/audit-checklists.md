@@ -9,7 +9,7 @@ Check and score:
 ### 1. Profile Completeness
 - Business name (exact match to legal name, no keyword stuffing)
 - Primary category (most specific available — e.g., "Personal Injury Attorney" not "Law Firm")
-- Secondary categories (all relevant ones added, up to 9)
+- Secondary categories (all relevant ones added, up to 9 — target 4-5 minimum; most businesses only use 1-2, which is a missed opportunity)
 - Business description (750 chars, keywords, service area, differentiators, CTA)
 - Service area defined (if SAB) or address visible (if storefront)
 - Phone number (local number preferred over toll-free)

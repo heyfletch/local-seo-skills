@@ -43,6 +43,8 @@
 - Build topical authority
 - Content that competitors haven't written
 
+**Warning — informational content and geographic mismatch:** For local businesses, generic "how to" blog content (e.g., "how to unclog a drain") often attracts traffic from searchers outside your service area who will never become customers. A Lasik center in Chicago getting 80K visits/month from "does Lasik hurt" searchers in Florida and New York gets zero calls from that traffic. Prioritize transactional "who can do this for me" content (service pages, area pages) over informational "how do I do this" content. When blogging, add local context to informational topics (e.g., "Denver homeowner's guide to drain maintenance" vs. "how to unclog a drain") to attract geographically relevant readers. Service page creation and refresh cycles may deliver better ROI than blogging for many local businesses — see Alternative Strategy below.
+
 ### Tier 3a: Customer Stories (HIGH PRIORITY)
 Customer stories dramatically outperform all other content types. These are NOT short testimonials — they're full narratives with specific details. Tested results: +57% conversions (dentist), +350% traffic (painter), outperformed AI content head-to-head.
 

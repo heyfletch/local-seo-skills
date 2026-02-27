@@ -6,8 +6,12 @@
 <!-- H1: Include primary keyword naturally. One H1 only. -->
 <h1>[Service Name] in [City/Area]</h1>
 
-<!-- Opening: 100-150 words. Keyword in first 100 words. Address visitor's
-     main question immediately. Who you are, what you do, primary benefit. -->
+<!-- Opening: 100-150 words. Keyword in first 100 words. Address the visitor's
+     problem and your solution FIRST — what they need and why they should call.
+     Do NOT lead with "We are a family-owned business" or company history.
+     Save credentials for later sections. The opening earns attention by
+     speaking to the visitor's immediate need, not about yourself.
+     Include a CTA (phone number or booking link) in this opening section. -->
 
 <h2>Why Choose [Company] for [Service]?</h2>
 <!-- 4 differentiators. Each must be SPECIFIC and MEASURABLE.
@@ -84,6 +88,7 @@
 - [ ] Featured customer story (full narrative with details/photos/costs — NOT just a quote)
 - [ ] CTA above the fold
 - [ ] CTA at bottom
+- [ ] Opening paragraph addresses visitor's problem first (not company credentials) with an immediate CTA
 - [ ] 3-5 in-content internal links to related services/pages (in-body anchor text links — NOT navigation menu links, which don't carry the same weight)
 - [ ] Pricing section present
 
@@ -113,6 +118,18 @@ Example for a plumber:
 - Each cluster's pages link to each other and back to the main service page
 
 The key: descriptive anchor text within body paragraphs, not just links in navigation dropdowns.
+
+### Core Service Hub Pages
+
+For a business's highest-profit services (1-2 "core services" they most want to rank for), consider creating a hub page with child sub-service pages underneath:
+
+Example for a plumber's "Water Heater Replacement" core service:
+- Hub: `/water-heater-replacement/` — comprehensive overview, links to all sub-services
+- Child: `/water-heater-replacement/tankless-water-heater/`
+- Child: `/water-heater-replacement/electric-water-heater/`
+- Child: `/water-heater-replacement/gas-water-heater/`
+
+This creates concentrated topical authority around the core service. Each child page links to siblings and back to the hub. The hub links to all children.
 
 ## AI Content Generation Prompt
 

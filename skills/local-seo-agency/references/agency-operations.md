@@ -70,8 +70,20 @@ Attend industry conferences for your target niche. Interview speakers and attend
 ### 5. Existing Client Referrals
 Ask happy clients for referrals. Offer a referral bonus. Most underused lead source.
 
-### 6. Personal Brand Content
+### 6. Personal Brand Content (LinkedIn Focus)
 LinkedIn, podcast, blog. Long-game but compounds. Demonstrate expertise publicly.
+
+#### LinkedIn Profile Optimization for SEO Professionals
+Commit to at least 6 months of consistent posting (3-5 days/week) before evaluating results. LinkedIn is still less competitive than other social platforms for B2B lead generation.
+
+**Three highest-ROI profile actions:**
+1. **Headline:** Put your target keyword first, then what you do, who you help, and a CTA. Don't just list your job title — clients want to know what's in it for them.
+2. **Featured links:** Add 3-4 maximum. Link to your lead magnet (free audit, ebook), your main offer, and optionally a case study. Less is more — focus on actions that generate leads.
+3. **About section:** Structure as: client pain points → who you are + experience → services offered → proof/testimonials → CTA with contact details. Include target keywords naturally.
+
+**Cover banner:** Include your value proposition, social proof (client logos, star ratings), and a CTA. Use a designer or Fiverr — visual quality matters for first impressions.
+
+**What to avoid:** Don't call yourself an "SEO expert" in your headline (anyone can claim it; show expertise through content instead). Don't post and ghost — engage with others before and after posting. Don't obsess over impressions — track leads and bookings as your KPIs. Don't use engagement pods or buy followers.
 
 ## The Lighthouse Strategy (Dennis Yu)
 

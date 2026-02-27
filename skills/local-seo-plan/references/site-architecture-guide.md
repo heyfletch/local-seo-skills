@@ -32,6 +32,58 @@ Homepage (/)
     └── Schedule Appointment (/contact/schedule)
 ```
 
+## GBP-Mirroring Architecture (Alternative for Service Businesses)
+
+For service businesses with multiple GBP categories, consider an alternative structure that mirrors GBP's own category hierarchy. This builds topical authority by siloing services under their parent categories:
+
+```
+Homepage (/) — targets "[primary category] [city]" (this IS the GBP landing page)
+│
+├── [Secondary Category 1] (/[category-1])
+│   ├── [Service A] (/[category-1]/[service-a])
+│   ├── [Service B] (/[category-1]/[service-b])
+│   └── ...
+│
+├── [Secondary Category 2] (/[category-2])
+│   ├── [Service C] (/[category-2]/[service-c])
+│   └── ...
+│
+├── [Core Service 1] (/[core-service-1]) — high-profit services get their own hub
+│   ├── [Sub-service] (/[core-service-1]/[sub-service])
+│   └── ...
+│
+├── [Core Service 2] (/[core-service-2])
+│   └── ...
+│
+├── General Services (/services) — services that don't fit a category
+│
+├── Service Areas (/areas)
+│   └── ...
+│
+├── About (/about)
+├── Reviews (/reviews)
+└── Contact (/contact)
+```
+
+**Key principles:**
+- Homepage = GBP landing page. Target your primary GBP category + city.
+- Create 4-5 secondary category pages matching your GBP secondary categories. Most businesses only use 1-2 GBP categories — using 4-5 is an advantage.
+- Each category page links to its child service pages. Each service page links back to its parent category and to the homepage.
+- "Core services" (highest-profit services the business wants to rank for) get their own hub pages with child sub-service pages to build concentrated topical authority.
+- Internal linking follows the hierarchy: homepage ↔ category ↔ service pages. This mirrors GBP's structure and reinforces topical signals.
+
+**When to use this vs. the flat structure:** Use GBP-mirroring when the business has 4+ distinct service categories and 15+ individual services. For simpler businesses with fewer services, the flat /services/[service] structure is fine.
+
+## Homepage / GBP Landing Page Content
+
+For most local businesses, the homepage IS the GBP landing page. This is the single most important page on the site.
+
+**Opening paragraph (goal completion):** The first paragraph must immediately address what the visitor is looking for and include a CTA. Do NOT open with "We are a family-owned business with 20 years of experience" — nobody cares about that in the opening. Talk to the user about their problem and your solution. Business credentials belong further down the page.
+
+**Goal completion principle:** Google tracks whether visitors quickly find what they came for. A visitor who bounces back to search results signals to Google that the page didn't satisfy their intent. Structure the homepage so the answer to "who can help me with [service] in [city]?" is immediately visible with a phone number or booking CTA.
+
+**H2 structure:** Use H2s for each secondary category / core service. Each H2 links to the corresponding category or service page. This creates a natural table of contents and clear internal linking from the homepage.
+
 ## Architecture Rules
 
 - Flat structure: every page within 3 clicks of homepage
@@ -44,10 +96,11 @@ Homepage (/)
 ## Internal Linking Strategy — Topic Silos
 
 In-content links (anchor text within body paragraphs) carry significantly more weight than navigation menu links. Build topic silos by interlinking related service pages:
-- Group services into clusters (e.g., all water heater pages interlink, all drain pages interlink)
+- Group services into clusters that mirror GBP categories (e.g., all drainage services interlink, all bathroom remodeling services interlink)
 - Each cluster's pages link to each other with descriptive anchor text
-- Each cluster links back to the main service hub page
+- Each cluster links back to its parent category page (if using GBP-mirroring architecture) or the main services page
 - Cross-link between clusters where relevant
+- The hierarchy should flow: homepage ↔ category pages ↔ individual service pages — matching the structure in your GBP listing
 
 ## Page-Level Specifications
 
