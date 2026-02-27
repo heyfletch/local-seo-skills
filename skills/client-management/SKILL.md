@@ -77,6 +77,8 @@ Use WebSearch to discover:
 - Services offered
 - Service areas (cities/regions)
 - Top 3-5 competitors
+- GA4 Property ID (if the user has GA4 configured for this client)
+- GSC Site URL (the verified property URL in Search Console)
 
 Present all findings via AskUserQuestion. Let the user confirm, correct, or skip each section.
 
@@ -90,6 +92,23 @@ Use AskUserQuestion:
 If yes:
 - Ask about ideal customer profile (demographics, pain points, buying triggers)
 - Ask about brand voice (formal/casual, terminology preferences, tone)
+
+### Step 4.25: Analytics connections (optional)
+
+Use AskUserQuestion:
+**Question:** "Do you have Google Analytics and Search Console set up for this client?"
+- "Yes — I'll provide the property IDs"
+- "Not yet — skip for now"
+
+If yes, ask two follow-up questions:
+
+**Question:** "What's the GA4 Property ID? (Find it in GA4 > Admin > Property Settings — looks like 'properties/123456789')"
+- Open text input
+
+**Question:** "What's the GSC Site URL? (Find it in Search Console > Settings > Property — looks like 'https://example.com/' or 'sc-domain:example.com')"
+- Open text input
+
+Store these in the profile frontmatter as `ga4_property_id` and `gsc_site_url`. If the user skips, leave the fields empty.
 
 ### Step 4.5: Scope documents (SOW / Proposal)
 
@@ -135,7 +154,7 @@ Users can add more scope docs later by dropping files into the `scope/` folder a
 
 1. Read the template at `${CLAUDE_PLUGIN_ROOT}/references/client-profile-template.md`
 2. Fill in all discovered and confirmed data
-3. Set the YAML frontmatter: slug, name, website, gbp_url, industry, created date
+3. Set the YAML frontmatter: slug, name, website, gbp_url, ga4_property_id, gsc_site_url, industry, created date
 4. Write `profile.md` to the client folder path
 5. Create `work-log.md` in the client folder with a header:
 
