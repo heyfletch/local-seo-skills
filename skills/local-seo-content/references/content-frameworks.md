@@ -13,11 +13,12 @@
 - Tools, calculators, interactive content (AI can't replicate these)
 - Video content (YouTube + embedded, increases dwell time)
 - First-party experience signals (E-E-A-T)
-- **Real photos of people, actual work, and real results** (383-image study: people photos convert best, infographics get most clicks; AI-generated images showed initial gains then declined)
+- **Real photos of people, actual work, and real results** (383-image study: people photos convert best, infographics get most clicks; AI-generated images showed initial gains then flatlined in Feb 2025 when Google began detecting AI images — confirmed across multiple test sites)
 
 ### What's Declining
 - Thin "what is X" informational articles (AI answers these directly, CTR down 15-40%)
 - Generic content that matches what top competitors already have
+- AI-written content, even when human-edited — tested head-to-head against customer stories on the same site, AI content ranked briefly then died while customer stories drove sustained traffic and leads (Joy Hawkins, Sterling Sky client data)
 - Keyword-stuffed articles without unique angle
 - Guest posts on low-quality sites
 
@@ -122,8 +123,8 @@ Calculators, quizzes, and assessment tools can rank with minimal or zero text co
 Sources for content ideas:
 - **Customer questions** — What do clients ask during consultations?
 - **GSC queries** — What are people searching to find you?
-- **Competitor content gaps** — What haven't they written about?
-- **"People Also Ask"** — Google's related questions for your keywords
+- **Questions nobody has answered well** — Don't do traditional content gap analysis (copying topics competitors already rank for). That approach no longer works — Google has millions of copies already. Instead, find questions people are asking that don't have good answers yet. Use PAA (People Also Ask) scraping tools to surface high-frequency questions at scale.
+- **"People Also Ask"** — Google's related questions for your keywords. Consider using dedicated PAA scraping tools (e.g., Chrome extensions that export PAA questions) to mine these systematically rather than manually browsing SERPs.
 - **Industry forums/Reddit** — Real questions people are asking
 
 **Systematic Reddit Analysis:** For deeper topic mining, export 50+ Reddit threads on a topic, upload to an AI tool, and prompt: "Extract the top 10 recurring objections and group them by customer journey stage. Format as a table with: Objection, Frequency, Journey Stage, Content Opportunity." This surfaces real customer concerns that keyword tools miss — especially useful for understanding WHY people search, not just WHAT.
@@ -224,6 +225,7 @@ To maximize visibility in AI search results (Google AI Overviews, ChatGPT, etc.)
 6. **First-party data** — Include original statistics, research, or proprietary insights
 7. **Update regularly** — AI systems prefer recently updated content
 8. **Multi-site brand presence** — For AI visibility, you don't need to rank your own website #1. You need your brand mentioned across multiple results in the top 10-20. Invest in digital PR, "Best [Service] in [City]" list placements, industry publication mentions, and strong directory presence. LLMs synthesize answers from multiple sources.
+9. **Reddit as dominant AI source** — SEM Rush data shows Reddit is the #1 source cited by LLMs and #2 for Google AI Overviews. Reddit threads surface for nearly every local query. For brand reputation, Reddit threads for "[brand] reviews" now frequently outrank business websites. See the review-strategy skill for Reddit AMA and testimonials page optimization tactics.
 
 ## Sales Funnel & Lead Magnet Strategy
 
