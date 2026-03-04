@@ -7,5 +7,7 @@
   },
   "repository": "https://github.com/heyfletch/local-seo-skills",
   "license": "MIT",
-  "keywords": ["local-seo", "seo", "google-business-profile", "schema", "reviews", "content-strategy"]
+  "keywords": ["local-seo", "seo", "google-business-profile", "schema", "reviews", "content-strategy"],
+  "commands": "./commands/",
+  "skills": "./skills/"
 }
