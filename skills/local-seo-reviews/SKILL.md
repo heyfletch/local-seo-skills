@@ -1,6 +1,6 @@
 ---
 name: local-seo-reviews
-description: This skill should be used when the user asks to "get more reviews", "respond to this review", "build a review generation system", "handle a negative review", "improve my star rating", "set up review monitoring", "review request template", "reputation management", "how to get more Google reviews", "what should I do about my bad reviews", or any review strategy, response drafting, or monitoring setup for a local business.
+description: This skill should be used when the user asks to "get more reviews", "respond to this review", "build a review generation system", "handle a negative review", "improve my star rating", "set up review monitoring", "review request template", "reputation management", "how to get more Google reviews", "what should I do about my bad reviews", or any review strategy, response drafting, or monitoring setup for a local business. For drafting individual review responses with keyword injection and voice matching, use the local-seo-review-responder skill.
 ---
 
 # Local SEO Reviews Skill
@@ -48,6 +48,9 @@ Use AskUserQuestion:
 **Question:** "What review help do you need?"
 - "Build a review generation system (get more reviews)"
 - "Respond to a specific review"
+
+> **Note:** For a more advanced response with keyword injection, voice matching, and 3 response variations, suggest the user try the `local-seo-review-responder` skill instead.
+
 - "Set up review monitoring"
 - "Full review strategy (generation + monitoring + response system)"
 
