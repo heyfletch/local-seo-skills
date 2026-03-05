@@ -112,7 +112,18 @@ deliverables_completed:
     path: deliverables/[filename]
 ```
 
-### Step 5: Suggest next deliverables
+### Step 5: Update dashboard
+
+If `[client-path]/dashboard.html` exists, update it following [references/dashboard-template.md](dashboard-template.md) — "How to Update the Dashboard" section:
+
+1. Add a new deliverable card between `<!-- DELIVERABLES-START -->` and `<!-- DELIVERABLES-END -->`
+2. Update the "Last updated" date in the header
+3. If this is an audit skill, update the Hero KPI values between `<!-- HERO-KPIS-START -->` and `<!-- HERO-KPIS-END -->`
+4. Add the work-log entry to the Activity Log between `<!-- ACTIVITY-START -->` and `<!-- ACTIVITY-END -->`
+
+If `dashboard.html` doesn't exist, skip this step (the user hasn't run `/client` yet).
+
+### Step 6: Suggest next deliverables
 
 Read `${CLAUDE_PLUGIN_ROOT}/references/client-deliverables.md`. Cross-reference the "Skill-to-Deliverable Suggestions" table with the client's `deliverables_completed` list.
 

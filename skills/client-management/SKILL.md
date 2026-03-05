@@ -170,14 +170,31 @@ Dated entries from skill runs and client work.
 7. Create `scope/` subdirectory in the client folder (if not already created in Step 4.5)
 8. Add the client to the registry (`${CLAUDE_PLUGIN_ROOT}/references/clients/registry.md`) — update the YAML frontmatter `clients` map with the new slug, name, and path
 
+### Step 5.5: Generate dashboard
+
+Generate `dashboard.html` in the client folder following the instructions in [references/dashboard-template.md](../../references/dashboard-template.md).
+
+The initial dashboard should show:
+- Header with business name, location, and today's date
+- Hero KPI placeholders ("Run /audit to populate")
+- Empty deliverables section
+- Client profile filled from the interview data
+- Empty activity log
+- Quick links for any URLs collected (website, GSC, GA4)
+
+The HTML must include the comment markers (`<!-- DELIVERABLES-START -->`, etc.) so future skills can programmatically update it.
+
 ### Step 6: Confirm
 
 Print to terminal:
 - "Client profile created for [Business Name]"
 - "Profile: [path]/profile.md"
+- "Dashboard: [path]/dashboard.html"
 - "Deliverables will be saved to: [path]/deliverables/"
 - "Scope docs: [path]/scope/" (if scope docs were added)
 - "You can now run any skill and it will use this client's context."
+
+Open `dashboard.html` in the browser (if `auto_open` is true).
 
 ---
 
