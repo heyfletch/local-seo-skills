@@ -226,6 +226,17 @@ These skills incorporate the latest 2026 ranking factors:
 
 ## Changelog
 
+### 1.5.1
+- Changelog catch-up for 1.5.0 UX improvements
+
+### 1.5.0
+- Smart client auto-detection in Phase 0: CWD match, single-client auto-select, multi-client list, no-clients prompt
+- Fixed AskUserQuestion prompts across all skills: removed broken "I'll type it" patterns, added descriptive "Other" labels for freeform input
+- Client onboarding now asks for domain directly instead of guessing via WebSearch
+- New `/local-seo:setup-analytics` skill for guided GA4/GSC MCP configuration with gcloud CLI support, state audit, and per-client validation
+- Added shared AskUserQuestion conventions reference linked from all 13 skills
+- Simplified prerequisites.md to point to `/setup-analytics` skill
+
 ### 1.4.0
 - Client dashboard: `/client` now generates a `dashboard.html` that tracks all deliverables, KPIs, and activity in one shareable page
 - All skills auto-update the dashboard when saving deliverables (via shared Phase 3.5)
