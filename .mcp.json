@@ -18,7 +18,7 @@
       "disabled": true
     },
     "gsc": {
-      "command": "python3",
+      "command": "/usr/local/share/mcp-gsc/.venv/bin/python3",
       "args": ["/usr/local/share/mcp-gsc/gsc_server.py"],
       "env": {
         "GSC_CREDENTIALS_PATH": "${GOOGLE_APPLICATION_CREDENTIALS}",

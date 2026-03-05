@@ -105,7 +105,17 @@ pip install -r requirements.txt
 deactivate
 ```
 
-The plugin's `.mcp.json` points to `/usr/local/share/mcp-gsc/gsc_server.py`. If you cloned it elsewhere, update `.mcp.json` accordingly.
+**Custom GSC path:** The `.mcp.json` points to `/usr/local/share/mcp-gsc/.venv/bin/python3` and `/usr/local/share/mcp-gsc/gsc_server.py`. If you cloned mcp-gsc to a different location, update both paths in `.mcp.json`:
+
+```json
+"gsc": {
+  "command": "/your/custom/path/mcp-gsc/.venv/bin/python3",
+  "args": ["/your/custom/path/mcp-gsc/gsc_server.py"],
+  ...
+}
+```
+
+Replace `/your/custom/path` with your actual clone location. For example, if you cloned to `~/repos/mcp-gsc`, use `/Users/yourname/repos/mcp-gsc`.
 
 ### Step 9: Install GA4 MCP dependency
 
