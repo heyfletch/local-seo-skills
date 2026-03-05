@@ -9,6 +9,8 @@ description: This skill should be used when the user asks to "set up a client", 
 
 ALWAYS confirm the client folder path with the user before creating any files. NEVER assume a directory structure. NEVER overwrite an existing profile without confirmation.
 
+Follow [references/ask-user-question-conventions.md](../../references/ask-user-question-conventions.md) for all AskUserQuestion prompts.
+
 ---
 
 ## Settings
@@ -63,22 +65,29 @@ Use AskUserQuestion:
 
 Use AskUserQuestion:
 **Question:** "Where should I store this client's SEO data?"
-- "Suggest a path for me" — use `[output_dir]/clients/[slug]/` as default
-- "I'll provide a path" — user types a custom path
+- "[output_dir]/clients/[slug]/" — use suggested path
+- "Type a custom path" (Other) — enter a different location
 
 Confirm the path. If the directory doesn't exist, create it (with user confirmation).
 
-### Step 3: Auto-discover
+### Step 3: Collect website and auto-discover
 
-Use WebSearch to discover:
-- Website URL
-- Google Business Profile URL
-- Industry / business type
-- Services offered
-- Service areas (cities/regions)
-- Top 3-5 competitors
-- GA4 Property ID (if the user has GA4 configured for this client)
-- GSC Site URL (the verified property URL in Search Console)
+**3a: Ask for the website URL directly**
+
+Use AskUserQuestion:
+**Question:** "What's the website URL for [business name]?"
+- Open text input (user types the URL)
+
+Do NOT attempt to guess the domain via WebSearch. The domain is too important to risk getting wrong.
+
+**3b: Auto-discover from the URL**
+
+Once the user provides the URL, use WebSearch and WebFetch to discover:
+- Google Business Profile URL (search: "[business name] [city] Google Business")
+- Industry / business type (from site content)
+- Services offered (from site content)
+- Service areas / cities / regions (from site content)
+- Top 3-5 competitors (search: "[services] [city]")
 
 Present all findings via AskUserQuestion. Let the user confirm, correct, or skip each section.
 
@@ -97,8 +106,9 @@ If yes:
 
 Use AskUserQuestion:
 **Question:** "Do you have Google Analytics and Search Console set up for this client?"
-- "Yes — I'll provide the property IDs"
+- "Yes — let's connect them"
 - "Not yet — skip for now"
+- "I need help setting this up" — run the `setup-analytics` skill, then return here
 
 If yes, ask two follow-up questions:
 
@@ -110,11 +120,13 @@ If yes, ask two follow-up questions:
 
 Store these in the profile frontmatter as `ga4_property_id` and `gsc_site_url`. If the user skips, leave the fields empty.
 
+If "I need help setting this up" → run the `setup-analytics` skill. When it completes, the GA4 Property ID and GSC Site URL will have been collected and validated. Continue to Step 4.5.
+
 ### Step 4.5: Scope documents (SOW / Proposal)
 
 Use AskUserQuestion:
 **Question:** "Do you have a Statement of Work, Proposal, or scope document for this client?"
-- "Yes — I'll provide the file path"
+- "Yes — I have a scope document"
 - "Skip for now — I'll add one later"
 
 If yes:

@@ -9,6 +9,8 @@ description: This skill should be used when the user asks to "respond to a revie
 
 EVERY RESPONSE MUST SOUND LIKE THE BUSINESS OWNER WROTE IT, NOT AN AI OR AGENCY. If a response reads like corporate template copy, it fails. Reference specifics from the review. Match the review's energy. Never stuff keywords.
 
+Follow [references/ask-user-question-conventions.md](../../references/ask-user-question-conventions.md) for all AskUserQuestion prompts.
+
 ---
 
 ## Settings

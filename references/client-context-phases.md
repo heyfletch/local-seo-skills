@@ -13,26 +13,45 @@ Run this phase BEFORE the skill's own Phase 1 (Discovery).
 Parse the user's command for flags:
 - `--quick` → Set mode to **quick**. Skip all client context. Proceed directly to Phase 1 as normal.
 - `--deliverable` → Set mode to **deliverable**. Client context is required — create profile if none exists.
-- No flags → Set mode to **infer** (see Step 3).
+- No flags → Set mode to **infer** (see Step 2).
 
-### Step 2: Read the registry
+### Step 2: Smart client detection
 
 Read `${CLAUDE_PLUGIN_ROOT}/references/clients/registry.md` and parse the YAML frontmatter `clients` map.
 
-- If the registry file doesn't exist or has no clients AND mode is **infer** → ask:
+Follow the conventions in [ask-user-question-conventions.md](ask-user-question-conventions.md) for all prompts below.
 
-  **Question:** "Do you want to associate this with a client profile?"
-  - "Yes — create a new client profile" → run the `client-management` skill in Create Mode, then return here with the new client loaded
-  - "No — run in quick mode" → set mode to **quick**, proceed to Phase 1
+**Priority 1: CWD match**
 
-- If the registry has clients → ask:
+Check if the current working directory matches or is inside any registered client's path (CWD starts with client path, or client path starts with CWD).
 
-  **Question:** "Which client is this for?"
-  - Options: [list each client by name] + "New client" + "No client (quick mode)"
+If a match is found → auto-select that client, then confirm:
 
-  If "New client" → run the `client-management` skill in Create Mode, then return here.
-  If "No client" → set mode to **quick**, proceed to Phase 1.
-  Otherwise → load that client's profile.
+**Question:** "Using client profile: **[Client Name]** ([website])."
+- "Continue" — load this client's profile
+- "Switch to a different client" — go to Priority 3 flow
+- "No client (quick mode)" — set mode to **quick**, proceed to Phase 1
+
+**Priority 2: Single client in registry**
+
+If no CWD match but the registry has exactly 1 client → auto-select that client, use the same confirmation prompt as Priority 1.
+
+**Priority 3: Multiple clients in registry**
+
+If no CWD match and the registry has 2+ clients → show a selection list:
+
+**Question:** "Which client is this for?"
+- [List each client by name]
+- "New client" → run the `client-management` skill in Create Mode, then return here with the new client loaded
+- "No client (quick mode)" → set mode to **quick**, proceed to Phase 1
+
+**Priority 4: No clients registered**
+
+If the registry file doesn't exist or has no clients:
+
+**Question:** "Do you want to set up a client profile first?"
+- "Yes — create a new client profile" → run the `client-management` skill in Create Mode, then return here with the new client loaded
+- "No — run in quick mode" → set mode to **quick**, proceed to Phase 1
 
 ### Step 3: Load client context
 

@@ -9,6 +9,8 @@ description: This skill should be used when the user asks to "add schema markup"
 
 NO SCHEMA OUTPUT WITHOUT IDENTIFYING THE PAGE TYPE AND BUSINESS DETAILS. Do not generate generic templates. Every schema must be populated with real business data and validated before delivery.
 
+Follow [references/ask-user-question-conventions.md](../../references/ask-user-question-conventions.md) for all AskUserQuestion prompts.
+
 ---
 
 ## Settings
@@ -56,9 +58,11 @@ Use AskUserQuestion:
 Use AskUserQuestion:
 
 **Question:** "How should I get your business details?"
-- "I'll provide the website URL — scrape the details"
-- "I'll type the details manually"
-- "Use details from a previous audit/plan in this session"
+
+If client context is loaded (from Phase 0), this step is skipped — use profile data.
+
+If no client context:
+- Open text: "What's the website URL? (Or describe the business if no site exists)"
 
 If a URL is provided, use WebFetch to extract: business name, address, phone, services, hours, social profiles. Present findings and ask the user to confirm via AskUserQuestion.
 

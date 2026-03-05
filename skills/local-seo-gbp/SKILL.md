@@ -9,6 +9,8 @@ description: This skill should be used when the user asks to "optimize my GBP", 
 
 NO GBP OUTPUT WITHOUT COMPLETING ALL FOUR PHASES. GBP drives 32% of local pack ranking weight. Do not dump checklists or post ideas into the terminal. Identify what the user needs, execute it, and produce a saved deliverable.
 
+Follow [references/ask-user-question-conventions.md](../../references/ask-user-question-conventions.md) for all AskUserQuestion prompts.
+
 ---
 
 ## Settings
@@ -46,7 +48,13 @@ DO NOT proceed to Phase 2 until the business and GBP task are identified.
 Use AskUserQuestion:
 
 **Question:** "What business is this GBP work for?"
-- Options: "I'll provide a business name + city", "I'll provide a GBP URL", "Both"
+
+If client context is loaded (from Phase 0), this step is skipped — the business is already identified.
+
+If no client context:
+- Open text: "What's the business name + city, or GBP URL?"
+
+If the user provides a business name without a GBP URL, use WebSearch to find the GBP listing, then confirm with the user.
 
 ### Step 2: Determine the task
 

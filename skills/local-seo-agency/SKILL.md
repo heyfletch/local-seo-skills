@@ -9,6 +9,8 @@ description: This skill should be used when the user asks about the BUSINESS sid
 
 NO ADVICE WITHOUT UNDERSTANDING CONTEXT. Do not dump all agency knowledge at once. Identify what the user actually needs, deliver targeted guidance, and produce an actionable output document.
 
+Follow [references/ask-user-question-conventions.md](../../references/ask-user-question-conventions.md) for all AskUserQuestion prompts.
+
 ---
 
 ## Settings

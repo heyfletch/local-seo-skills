@@ -9,6 +9,8 @@ description: This skill should be used when the user asks to "create a page for 
 
 NO AREA PAGE WITHOUT GENUINE LOCAL CONTENT. Do not create cookie-cutter pages that swap city names. Do not skip the quality gate. Every area page must pass the thin content detection checklist before output.
 
+Follow [references/ask-user-question-conventions.md](../../references/ask-user-question-conventions.md) for all AskUserQuestion prompts.
+
 ---
 
 ## Settings
@@ -46,7 +48,15 @@ DO NOT proceed to Phase 2 until the city, service, and local content availabilit
 Use AskUserQuestion:
 
 **Question:** "What city/area and service is this page for?"
-- Options: "I'll specify the city and service", "I'll provide a list of cities to evaluate", "I need help choosing which cities to target"
+
+If client context is loaded (from Phase 0), service areas are known from profile.
+
+- [List known service areas from profile as options, if available]
+- "Enter a different city/service" (Other) — type a custom combination
+- "Help me choose which cities to target" — run analysis first
+
+If no client context:
+- Open text: "What city and service should this page target? (e.g., 'dog training in Alpharetta')"
 
 ### Step 2: Quality gate — can we create a genuine page?
 

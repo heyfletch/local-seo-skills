@@ -9,6 +9,8 @@ description: This skill should be used when the user asks to "write a service pa
 
 NO PAGE OUTPUT WITHOUT COMPLETING ALL FOUR PHASES. Do not skip research. Do not generate content without keyword targeting. Each service MUST have its own dedicated page — never combine multiple services on one page.
 
+Follow [references/ask-user-question-conventions.md](../../references/ask-user-question-conventions.md) for all AskUserQuestion prompts.
+
 ---
 
 ## Settings
@@ -46,7 +48,11 @@ DO NOT proceed to Phase 2 until the business, service, and target keywords are c
 Use AskUserQuestion:
 
 **Question:** "What service and business is this page for?"
-- Options: "I'll describe the service", "I'll provide a URL to an existing page to optimize", "I'll provide both"
+
+If client context is loaded (from Phase 0), the business is already identified — just ask about the service.
+
+If no client context:
+- Open text: "What service should this page be for? Include the URL if there's an existing page to optimize."
 
 ### Step 2: Auto-discover and research
 

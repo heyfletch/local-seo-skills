@@ -9,6 +9,8 @@ description: This skill should be used when the user asks to "audit my local SEO
 
 NO AUDIT OUTPUT WITHOUT COMPLETING ALL FOUR PHASES. Do not skip discovery. Do not generate a report without scoring. Do not dump findings into the terminal. Every audit follows the four phases below in order.
 
+Follow [references/ask-user-question-conventions.md](../../references/ask-user-question-conventions.md) for all AskUserQuestion prompts.
+
 ---
 
 ## Settings
@@ -57,7 +59,13 @@ DO NOT proceed to Phase 2 until all discovery questions are answered and confirm
 Use AskUserQuestion with these options:
 
 **Question:** "What business should I audit?"
-- Options: "I'll provide a URL", "I'll provide a business name + city", "Both URL and name"
+
+If client context is loaded (from Phase 0), this step is skipped — the business is already identified.
+
+If no client context:
+- Open text: "What's the website URL or business name + city?"
+
+If the user provides a business name without a URL, use WebSearch to find the website, then confirm with the user.
 
 ### Step 2: Auto-discover
 

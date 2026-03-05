@@ -9,6 +9,8 @@ description: This skill should be used when the user asks to "get more reviews",
 
 NO REVIEW ADVICE WITHOUT UNDERSTANDING THE CONTEXT. Reviews account for 20% of local pack ranking and 16% of AI search visibility. Identify what the user needs, deliver targeted guidance, and produce a saved deliverable.
 
+Follow [references/ask-user-question-conventions.md](../../references/ask-user-question-conventions.md) for all AskUserQuestion prompts.
+
 ---
 
 ## Settings

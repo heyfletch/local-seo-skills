@@ -9,6 +9,8 @@ description: This skill should be used when the user asks to "create a content c
 
 NO CONTENT CALENDAR OUTPUT WITHOUT COMPLETING ALL FOUR PHASES. Do not skip discovery. Do not generate a calendar without topic prioritization. Do not dump the calendar into the terminal. Every content plan follows the four phases below in order.
 
+Follow [references/ask-user-question-conventions.md](../../references/ask-user-question-conventions.md) for all AskUserQuestion prompts.
+
 ---
 
 ## Settings
@@ -57,7 +59,13 @@ DO NOT proceed to Phase 2 until all discovery questions are answered and confirm
 Use AskUserQuestion:
 
 **Question:** "What business is this content plan for?"
-- Options: "I'll provide a URL", "I'll provide a business name + city", "Both URL and name"
+
+If client context is loaded (from Phase 0), this step is skipped — the business is already identified.
+
+If no client context:
+- Open text: "What's the website URL or business name + city?"
+
+If the user provides a business name without a URL, use WebSearch to find the website, then confirm with the user.
 
 ### Step 2: Auto-discover
 
@@ -84,7 +92,7 @@ Use AskUserQuestion for remaining details (skip any already answered):
 - "5+ pieces per month (team or agency)"
 
 **Question:** "Any seasonal patterns or upcoming events?"
-- "Yes — I'll describe them"
+- "Yes — let me describe them" (Other) — type seasonal details
 - "Fairly consistent year-round"
 - "Not sure — help me identify them"
 

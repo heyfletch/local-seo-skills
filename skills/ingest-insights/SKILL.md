@@ -9,6 +9,8 @@ description: This skill should be used when the user asks to "ingest new info", 
 
 NO EDITS TO SKILLS WITHOUT COMPLETING PHASES 1-5 FIRST. Default mode is dry-run (Ingest → Evaluate → Analyze → Diff → Recommend). Edits only happen in Phase 6 after explicit user approval ("apply", "implement", "go", or similar). When in doubt about content quality, classify as USEFUL and let the user decide.
 
+Follow [references/ask-user-question-conventions.md](../../references/ask-user-question-conventions.md) for all AskUserQuestion prompts.
+
 ---
 
 ## Settings
