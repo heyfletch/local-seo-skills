@@ -91,6 +91,30 @@ Once the user provides the URL, use WebSearch and WebFetch to discover:
 
 Present all findings via AskUserQuestion. Let the user confirm, correct, or skip each section.
 
+### Step 3c: Site inventory
+
+Build a list of all pages on the site so downstream skills know what already exists.
+
+1. **Try sitemap.xml first** — Use WebFetch to fetch `[website]/sitemap.xml`. If that returns a 404 or error, try `[website]/sitemap_index.xml`. If the response is a sitemap index (contains `<sitemap>` entries), fetch each child sitemap URL listed in it.
+
+2. **Fallback: GSC sitemaps** — If no sitemap found on the site, check whether `gsc_site_url` is available (it may not be set yet at this point in onboarding). If available, use the GSC MCP `get_sitemaps` tool to find submitted sitemaps, then WebFetch those URLs.
+
+3. **Fallback: crawl navigation** — If still no sitemap data, use WebFetch on the homepage and extract all internal links from the navigation/menu. Note in the output that this is a partial inventory.
+
+4. **Parse and categorize** — Extract all URLs from whatever source was found. Categorize each URL into one of three groups based on URL patterns and page titles:
+   - **Service Pages** — URLs containing `/services/`, `/service/`, or matching common service-page patterns
+   - **Area Pages** — URLs containing `/areas/`, `/area/`, `/locations/`, `/cities/`, or city-name patterns
+   - **Other Pages** — Everything else (about, contact, blog posts, etc.)
+
+5. **Present to user** — Show the categorized page list via AskUserQuestion.
+   - **Question:** "I found [N] pages on your site. Here's how I've categorized them:"
+   - **Options:**
+     - "Looks good"
+     - "I need to correct some" (open text)
+     - "Skip site inventory"
+
+6. **Store in profile** — Save the confirmed pages into the `## Existing Site Pages` section of the profile. Use the three subsections (Service Pages, Area Pages, Other Pages), each with a `| URL | Page Title |` table.
+
 ### Step 4: ICP and brand (optional)
 
 Use AskUserQuestion:

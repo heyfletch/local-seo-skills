@@ -21,6 +21,21 @@ deliverables_completed: []
 ## Services
 [List of services offered]
 
+## Existing Site Pages
+[Auto-discovered from sitemap.xml during onboarding. Grouped by type.]
+
+### Service Pages
+| URL | Page Title |
+|-----|-----------|
+
+### Area Pages
+| URL | Page Title |
+|-----|-----------|
+
+### Other Pages
+| URL | Page Title |
+|-----|-----------|
+
 ## Service Areas
 [Cities/regions served]
 

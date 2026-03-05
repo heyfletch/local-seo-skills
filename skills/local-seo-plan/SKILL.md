@@ -143,11 +143,26 @@ Organize keywords into the five categories (Service, Location, Long-tail, Zero-v
 
 Read the site architecture guide from `${CLAUDE_PLUGIN_ROOT}/skills/local-seo-plan/references/site-architecture-guide.md`.
 
-1. Design the optimal sitemap structure based on keyword research
-2. Map each keyword to a target page
-3. Define page-level specifications (title, meta, H1, content requirements, schema)
-4. Plan internal linking strategy with topic silos
-5. Apply quality gates for service area pages (warn at 30+, hard stop at 50+)
+1. **Cross-reference existing pages** — When client context is active and the profile has an `## Existing Site Pages` section:
+   - Read the existing page inventory from the client profile
+   - For each page the architecture would recommend creating, fuzzy-match against existing URLs AND page titles (e.g., "in-home dog training" should match a page titled "At Home Dog Training" or URL `/at-home-dog-training/`)
+   - Classify each recommended page into one of three categories:
+     - **Exists — optimize**: The page already exists and targets the right keyword intent. Recommend on-page optimization, not a new page.
+     - **Exists — restructure**: The page exists but the URL, title, or positioning doesn't match the ideal architecture. Recommend renaming/moving/updating.
+     - **New — create**: No existing page covers this topic. Recommend creating it.
+   - Present the classification to the user before proceeding with the full architecture design
+   - The architecture output must clearly distinguish between "optimize existing" and "create new" pages — NEVER recommend creating a page that already exists
+   - If no client context or no existing pages section, skip this step and proceed to step 2
+
+<HARD-GATE>
+DO NOT recommend creating a page that already exists on the site. If a page covers the same service or topic, recommend optimizing or restructuring it instead.
+</HARD-GATE>
+
+2. Design the optimal sitemap structure based on keyword research
+3. Map each keyword to a target page
+4. Define page-level specifications (title, meta, H1, content requirements, schema)
+5. Plan internal linking strategy with topic silos
+6. Apply quality gates for service area pages (warn at 30+, hard stop at 50+)
 
 ---
 
