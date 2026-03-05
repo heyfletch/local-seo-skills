@@ -11,6 +11,8 @@ NO AUDIT OUTPUT WITHOUT COMPLETING ALL FOUR PHASES. Do not skip discovery. Do no
 
 Follow [references/ask-user-question-conventions.md](../../references/ask-user-question-conventions.md) for all AskUserQuestion prompts.
 
+When auditing GBP compliance, consult [references/gbp-guidelines.md](../../references/gbp-guidelines.md) Sections 1-9 (eligibility, name, address, categories, hours) for official requirements.
+
 ---
 
 ## Settings

@@ -11,6 +11,8 @@ NO ADVICE WITHOUT UNDERSTANDING CONTEXT. Do not dump all agency knowledge at onc
 
 Follow [references/ask-user-question-conventions.md](../../references/ask-user-question-conventions.md) for all AskUserQuestion prompts.
 
+When advising on GBP management for clients, consult [references/gbp-guidelines.md](../../references/gbp-guidelines.md) Section 21 (Third-Party Management Policies) for Google's official requirements on agency/third-party responsibilities.
+
 ---
 
 ## Settings

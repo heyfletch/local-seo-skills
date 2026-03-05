@@ -11,6 +11,8 @@ NO REVIEW ADVICE WITHOUT UNDERSTANDING THE CONTEXT. Reviews account for 20% of l
 
 Follow [references/ask-user-question-conventions.md](../../references/ask-user-question-conventions.md) for all AskUserQuestion prompts.
 
+When advising on review solicitation or response policies, consult [references/gbp-guidelines.md](../../references/gbp-guidelines.md) Section 20 (Prohibited and Restricted Content — Fake and Misleading Content) for Google's official rules on what is and isn't allowed.
+
 ---
 
 ## Settings

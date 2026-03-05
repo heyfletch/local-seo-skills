@@ -11,6 +11,8 @@ NO CONTENT CALENDAR OUTPUT WITHOUT COMPLETING ALL FOUR PHASES. Do not skip disco
 
 Follow [references/ask-user-question-conventions.md](../../references/ask-user-question-conventions.md) for all AskUserQuestion prompts.
 
+When planning GBP posts, consult [references/gbp-guidelines.md](../../references/gbp-guidelines.md) Section 11 (Photos, Videos, and Posts Policy) for Google's official post rules.
+
 ---
 
 ## Settings

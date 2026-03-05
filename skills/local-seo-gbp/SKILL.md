@@ -11,6 +11,8 @@ NO GBP OUTPUT WITHOUT COMPLETING ALL FOUR PHASES. GBP drives 32% of local pack r
 
 Follow [references/ask-user-question-conventions.md](../../references/ask-user-question-conventions.md) for all AskUserQuestion prompts.
 
+Before making any GBP recommendation, consult [references/gbp-guidelines.md](../../references/gbp-guidelines.md) for official Google requirements. Load only the relevant sections — do not load the entire file.
+
 ---
 
 ## Settings

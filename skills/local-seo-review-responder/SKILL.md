@@ -11,6 +11,8 @@ EVERY RESPONSE MUST SOUND LIKE THE BUSINESS OWNER WROTE IT, NOT AN AI OR AGENCY.
 
 Follow [references/ask-user-question-conventions.md](../../references/ask-user-question-conventions.md) for all AskUserQuestion prompts.
 
+When drafting responses, consult [references/gbp-guidelines.md](../../references/gbp-guidelines.md) Section 10 and Section 20 to ensure responses comply with Google's content and prohibited content policies.
+
 ---
 
 ## Settings

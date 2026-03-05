@@ -227,6 +227,10 @@ These skills incorporate the latest 2026 ranking factors:
 
 ## Changelog
 
+### 1.6.1
+- **GBP guidelines reference:** Added official Google Business Profile guidelines as a shared reference (`references/gbp-guidelines.md`) — compiled from Google Help Center, covering eligibility, naming, addresses, categories, posts, reviews, third-party management, and all prohibited content policies
+- **6 skills now consult GBP guidelines:** gbp (all sections), audit (eligibility/name/address/categories/hours), reviews and review-responder (prohibited content policies), content (posts policy), agency (third-party management rules)
+
 ### 1.6.0
 - **Site inventory system:** Client onboarding now crawls the entire site during setup — discovers all URLs from sitemap.xml (with GSC and nav-crawl fallbacks), fetches every page, and extracts title, meta description, H1, schema types, word count, and robots directives
 - **Full content capture for priority pages:** Homepage, service pages, and area pages are saved as markdown files for downstream skills to read and optimize. Blog and other pages get metadata only.
