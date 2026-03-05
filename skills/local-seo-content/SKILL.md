@@ -46,6 +46,13 @@ If analytics data is available:
 - Existing content audit uses GA4 page performance to identify refresh candidates (high-traffic pages with declining engagement)
 - Content calendar scheduling prioritizes topics that support pages already ranking in positions 5-20
 
+Follow the instructions in [references/site-inventory-integration.md](../../references/site-inventory-integration.md) to load the site inventory.
+
+If site inventory is available:
+- Content gap analysis cross-references services and areas against existing pages
+- Refresh scheduling uses page word counts and types from the inventory
+- Blog topic recommendations avoid cannibalization with existing service/area pages
+
 ---
 
 ## Phase 1: Discovery
@@ -124,6 +131,12 @@ Create TaskCreate items for:
 - Content tier assignment (Tier 1-4)
 
 Use available data tools (DataForSEO MCP, Ahrefs MCP, WebSearch) to gather keyword data. Apply the ICE scoring framework to prioritize topics. Flag all KGR < 0.25 keywords as quick-win targets.
+
+When site inventory is available:
+- Read `[client-path]/site-inventory/metadata.md` for the full page index
+- Before recommending new content, check if a page already covers that topic (fuzzy-match against titles and URLs)
+- For content refresh recommendations, prioritize pages with low word counts (under 800 for service pages, under 500 for area pages)
+- When recommending blog topics, check that the topic doesn't cannibalize an existing service or area page's primary keyword
 
 If the content scope includes "Full content strategy" or "Sales funnel & lead magnet strategy," also review the Sales Funnel & Lead Magnet Strategy and Email Marketing Strategy sections in the content frameworks reference. Recommend lead magnets and email nurture sequences when appropriate for the business type. Note: actual email sequence creation should be handled by dedicated email campaign skills or tools — this skill identifies when email is a strategic fit and defines the sequence types needed.
 

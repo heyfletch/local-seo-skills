@@ -40,6 +40,7 @@ source ~/.zshrc
 
 This runs an interactive interview that:
 - Discovers the business (website, GBP, services, service areas, competitors)
+- Crawls the entire site — extracts metadata (title, meta description, H1, schema, word count) for every page and saves full content for service/area pages
 - Connects GA4 and GSC (if you have property IDs)
 - Imports scope documents (SOW/proposal)
 - Creates a `dashboard.html` you can share with the client
@@ -225,6 +226,15 @@ These skills incorporate the latest 2026 ranking factors:
 - [ ] **Automated monthly reporting** — Scheduled analytics snapshots and client report generation
 
 ## Changelog
+
+### 1.6.0
+- **Site inventory system:** Client onboarding now crawls the entire site during setup — discovers all URLs from sitemap.xml (with GSC and nav-crawl fallbacks), fetches every page, and extracts title, meta description, H1, schema types, word count, and robots directives
+- **Full content capture for priority pages:** Homepage, service pages, and area pages are saved as markdown files for downstream skills to read and optimize. Blog and other pages get metadata only.
+- **Stored at `[client-path]/site-inventory/`:** `metadata.md` (single table of all pages), `pages/` folder (markdown content), `crawl-log.md` (crawl history)
+- **Plan skill cross-references existing pages:** Phase 3 (Site Architecture) now fuzzy-matches recommended pages against the inventory — classifies each as "optimize existing," "restructure," or "create new" with a hard gate preventing duplicate page recommendations
+- **8 skills now consume the inventory:** audit (full on-page checks, gap detection, thin content), content (gap analysis, refresh scheduling, cannibalization prevention), service-page and area-page (duplication check, optimize/rewrite mode, real internal linking URLs), schema (coverage report, page picker), GBP (service-to-page linking, post CTA URLs), review-responder (skip WebFetch, use inventory for keywords)
+- New shared reference: `site-inventory-integration.md` used by all inventory-aware skills
+- Profile template updated: `## Existing Site Pages` now points to full inventory with condensed quick-reference table
 
 ### 1.5.1
 - Changelog catch-up for 1.5.0 UX improvements

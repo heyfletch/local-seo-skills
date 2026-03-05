@@ -35,6 +35,14 @@ If client context is loaded:
 - Output directory is set to `[client-path]/deliverables/`
 - All business context is pre-populated from the profile
 
+### Site Inventory
+
+Follow the instructions in [references/site-inventory-integration.md](../../references/site-inventory-integration.md) to load the site inventory.
+
+If site inventory is available:
+- Present a schema coverage report showing which pages have schema and which don't
+- When generating schema for a specific page, pre-populate URL and business details from the inventory
+
 ---
 
 ## Phase 1: Discovery
@@ -52,6 +60,8 @@ Use AskUserQuestion:
 - "Service page (Service + FAQPage)"
 - "Service area page (LocalBusiness + areaServed)"
 - "Multiple page types"
+
+If site inventory is loaded, show the Schema column from `metadata.md` as a coverage summary (pages with schema vs without) and let the user pick from actual pages rather than typing a URL.
 
 ### Step 2: Gather business details
 

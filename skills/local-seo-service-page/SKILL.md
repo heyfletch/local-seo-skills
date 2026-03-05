@@ -35,6 +35,13 @@ If client context is loaded:
 - Output directory is set to `[client-path]/deliverables/`
 - All business context is pre-populated from the profile
 
+Follow the instructions in [references/site-inventory-integration.md](../../references/site-inventory-integration.md) to load the site inventory.
+
+If site inventory is available:
+- Check if a page for this service already exists before creating a new one
+- Use existing page content as the starting point for optimization/rewrite
+- Internal linking recommendations reference actual page URLs from the inventory
+
 ---
 
 ## Phase 1: Discovery
@@ -53,6 +60,15 @@ If client context is loaded (from Phase 0), the business is already identified �
 
 If no client context:
 - Open text: "What service should this page be for? Include the URL if there's an existing page to optimize."
+
+### Step 1.5: Check site inventory for existing page
+
+When site inventory is loaded, fuzzy-match the target service name against existing Service-type pages in `[client-path]/site-inventory/metadata.md` (match against both URL slugs and page titles).
+
+- If a match is found, inform the user: "A page for this service already exists: [URL] — [Title]" and offer options via AskUserQuestion:
+  - "Optimize/rewrite this existing page" — read the full content from `[client-path]/site-inventory/pages/[slug].md` and use it as the starting point
+  - "Create a new page anyway" — proceed with creation (user knows best)
+- If no match found, proceed with creation as normal
 
 ### Step 2: Auto-discover and research
 
@@ -123,7 +139,7 @@ Read the page template from `${CLAUDE_PLUGIN_ROOT}/skills/local-seo-service-page
 5. Generate meta title (front-load conversion copy, back-load SEO keywords up to 270 chars)
 6. Generate meta description (150-160 chars with keyword + CTA)
 7. Generate Service + FAQPage JSON-LD schema markup
-8. Suggest 3-5 internal linking targets with anchor text
+8. Suggest 3-5 internal linking targets with anchor text (when site inventory is available, use actual URLs and titles from the inventory instead of generic placeholders)
 9. Suggest image placements with alt text
 
 ---
@@ -138,6 +154,7 @@ DO NOT skip output. ALWAYS save the page content as a file. Do not dump the full
 2. Save to `[output_dir]/YYYY-MM-DD-service-[service-slug].html` (default `output_dir`: `~/Desktop/`)
 3. If `auto_open` is true (default), run `open [filepath]` via Bash to auto-open in browser
 4. Print to terminal ONLY: meta title, meta description, word count, 3-5 key differentiators used, file path
+5. After creating or optimizing a page, suggest the user update the site inventory (mention they can run `/client refresh-inventory`)
 
 ---
 

@@ -37,14 +37,19 @@ If client context is loaded:
 
 ---
 
-## Phase 0.5: Analytics Data
+## Phase 0.5: Analytics Data & Site Inventory
 
 Follow the instructions in [references/analytics-integration.md](../../references/analytics-integration.md) — "For plan skill" section.
+
+Follow the instructions in [references/site-inventory-integration.md](../../references/site-inventory-integration.md) to load the site inventory.
 
 If analytics data is available:
 - Phase 2 (Keyword Research) uses real GSC keyword positions to identify quick wins (positions 5-20)
 - Phase 3 (Architecture) uses real page traffic data to prioritize high-value pages
 - Traffic projections in Phase 4 use actual baseline numbers from GA4 instead of estimates
+
+If site inventory is available:
+- Phase 3 (Architecture) cross-references existing pages before recommending new ones
 
 ---
 
@@ -143,8 +148,8 @@ Organize keywords into the five categories (Service, Location, Long-tail, Zero-v
 
 Read the site architecture guide from `${CLAUDE_PLUGIN_ROOT}/skills/local-seo-plan/references/site-architecture-guide.md`.
 
-1. **Cross-reference existing pages** — When client context is active and the profile has an `## Existing Site Pages` section:
-   - Read the existing page inventory from the client profile
+1. **Cross-reference existing pages** — When site inventory is loaded (`site_inventory` is not null):
+   - Read the full metadata table from `[client-path]/site-inventory/metadata.md`
    - For each page the architecture would recommend creating, fuzzy-match against existing URLs AND page titles (e.g., "in-home dog training" should match a page titled "At Home Dog Training" or URL `/at-home-dog-training/`)
    - Classify each recommended page into one of three categories:
      - **Exists — optimize**: The page already exists and targets the right keyword intent. Recommend on-page optimization, not a new page.
@@ -152,7 +157,7 @@ Read the site architecture guide from `${CLAUDE_PLUGIN_ROOT}/skills/local-seo-pl
      - **New — create**: No existing page covers this topic. Recommend creating it.
    - Present the classification to the user before proceeding with the full architecture design
    - The architecture output must clearly distinguish between "optimize existing" and "create new" pages — NEVER recommend creating a page that already exists
-   - If no client context or no existing pages section, skip this step and proceed to step 2
+   - If no site inventory is available, skip this step and proceed to step 2
 
 <HARD-GATE>
 DO NOT recommend creating a page that already exists on the site. If a page covers the same service or topic, recommend optimizing or restructuring it instead.

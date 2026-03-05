@@ -93,7 +93,9 @@ Present all findings via AskUserQuestion. Let the user confirm, correct, or skip
 
 ### Step 3c: Site inventory
 
-Build a list of all pages on the site so downstream skills know what already exists.
+Build a complete inventory of all pages on the site so downstream skills know what already exists. This runs in two phases: discover URLs, then crawl pages for metadata and content.
+
+#### Phase 1: Discover URLs
 
 1. **Try sitemap.xml first** — Use WebFetch to fetch `[website]/sitemap.xml`. If that returns a 404 or error, try `[website]/sitemap_index.xml`. If the response is a sitemap index (contains `<sitemap>` entries), fetch each child sitemap URL listed in it.
 
@@ -101,19 +103,85 @@ Build a list of all pages on the site so downstream skills know what already exi
 
 3. **Fallback: crawl navigation** — If still no sitemap data, use WebFetch on the homepage and extract all internal links from the navigation/menu. Note in the output that this is a partial inventory.
 
-4. **Parse and categorize** — Extract all URLs from whatever source was found. Categorize each URL into one of three groups based on URL patterns and page titles:
-   - **Service Pages** — URLs containing `/services/`, `/service/`, or matching common service-page patterns
-   - **Area Pages** — URLs containing `/areas/`, `/area/`, `/locations/`, `/cities/`, or city-name patterns
-   - **Other Pages** — Everything else (about, contact, blog posts, etc.)
+4. **Categorize URLs** — Assign each URL a type based on URL patterns and context from the site:
+   - **Home** — The root URL (`/`)
+   - **Core** — Top-level structural pages: about, contact, FAQ, reviews, testimonials, privacy, terms
+   - **Service** — URLs containing `/services/`, `/service/`, or matching common service-page patterns
+   - **Area** — URLs containing `/areas/`, `/area/`, `/locations/`, `/cities/`, or city-name patterns
+   - **Blog** — URLs containing `/blog/`, `/resources/`, `/news/`, or `/articles/`
+   - **Other** — Everything that doesn't fit the above categories
 
 5. **Present to user** — Show the categorized page list via AskUserQuestion.
    - **Question:** "I found [N] pages on your site. Here's how I've categorized them:"
    - **Options:**
-     - "Looks good"
-     - "I need to correct some" (open text)
+     - "Looks good — start crawling"
+     - "I need to correct some categories" (open text)
      - "Skip site inventory"
 
-6. **Store in profile** — Save the confirmed pages into the `## Existing Site Pages` section of the profile. Use the three subsections (Service Pages, Area Pages, Other Pages), each with a `| URL | Page Title |` table.
+   If the user skips, write an empty `## Existing Site Pages` section in the profile and move on.
+
+#### Phase 2: Crawl & Extract Metadata
+
+After the user confirms the URL list, crawl each page to extract metadata and (for priority pages) full content.
+
+1. **Create directory** — Create `[client-path]/site-inventory/pages/` if it doesn't exist.
+
+2. **Determine crawl depth per type:**
+   - **Full content + metadata:** Home, Service, Area — WebFetch these pages, save the markdown output to `[client-path]/site-inventory/pages/[slug].md`, and extract metadata
+   - **Metadata only:** Core, Blog, Other — WebFetch these pages, extract metadata, but do NOT save content files
+
+3. **Extract from each page** (all types):
+   - **Title** — from the `<title>` tag or first `# ` heading in the markdown
+   - **Meta description** — from `<meta name="description">` if available in the response
+   - **H1** — first H1 heading on the page
+   - **Schema types** — parse any `<script type="application/ld+json">` blocks, extract `@type` values (e.g., LocalBusiness, Service, FAQPage)
+   - **Word count** — approximate body text word count
+   - **Robots** — meta robots directives (index/noindex, follow/nofollow). Default to `index,follow` if no meta robots tag found.
+
+   Note: WebFetch returns markdown, which may not include raw `<meta>` tags or JSON-LD. Extract what you can from the markdown content. If title, meta description, or schema can't be determined from the markdown, mark them as `?` in the table — the audit skill will fill gaps later.
+
+4. **Write metadata.md** — Save to `[client-path]/site-inventory/metadata.md`:
+
+   ```markdown
+   # Site Inventory: [Business Name]
+   **Crawled:** YYYY-MM-DD
+   **Source:** [sitemap.xml | GSC sitemaps | navigation crawl]
+   **Full content:** [N] pages | **Metadata only:** [N] pages
+
+   | Type | URL | Title | Meta Description | H1 | Schema | Words | Robots | Content |
+   |------|-----|-------|-----------------|-----|--------|-------|--------|---------|
+   ```
+
+   Sort rows by type in this order: Home, Core, Service, Area, Blog, Other.
+   For full-content pages, the Content column links to the markdown file: `[view](pages/slug.md)`. For metadata-only pages, use `—`.
+
+5. **Write crawl-log.md** — Save to `[client-path]/site-inventory/crawl-log.md`:
+
+   ```markdown
+   # Crawl Log
+
+   ## YYYY-MM-DD — Initial crawl
+   - **Source:** [sitemap.xml | GSC sitemaps | navigation crawl]
+   - **Total URLs found:** [N]
+   - **Pages crawled (full):** [N]
+   - **Pages crawled (metadata):** [N]
+   - **Errors:** [list any pages that failed to fetch, or "None"]
+   ```
+
+6. **Update profile** — Write the `## Existing Site Pages` section in `profile.md` as a pointer + condensed quick-reference table:
+
+   ```markdown
+   ## Existing Site Pages
+   **Inventory:** [site-inventory/metadata.md](site-inventory/metadata.md) ([N] pages, crawled YYYY-MM-DD)
+
+   | Type | URL | Title |
+   |------|-----|-------|
+   | Home | / | [title] |
+   | Service | /at-home-dog-training/ | At Home Dog Training |
+   | ... | | |
+   ```
+
+   This condensed table has Type, URL, and Title only — no metadata columns. Skills that need full metadata read `site-inventory/metadata.md` directly.
 
 ### Step 4: ICP and brand (optional)
 

@@ -35,6 +35,14 @@ If client context is loaded:
 - Output directory is set to `[client-path]/deliverables/`
 - All business context is pre-populated from the profile
 
+Follow the instructions in [references/site-inventory-integration.md](../../references/site-inventory-integration.md) to load the site inventory.
+
+If site inventory is available:
+- Show which areas already have pages and which don't
+- Check if a page for the target area already exists before creating a new one
+- Use existing page content as the starting point for optimization/rewrite
+- Internal linking recommendations reference actual page URLs from the inventory
+
 ---
 
 ## Phase 1: Discovery
@@ -51,9 +59,18 @@ Use AskUserQuestion:
 
 If client context is loaded (from Phase 0), service areas are known from profile.
 
+When site inventory is loaded, show the user which areas already have pages (from Area-type rows in metadata.md) and which service areas from the profile don't have pages yet — this helps them choose what to create.
+
 - [List known service areas from profile as options, if available]
 - "Enter a different city/service" (Other) — type a custom combination
 - "Help me choose which cities to target" — run analysis first
+
+After the user selects a target area:
+- Fuzzy-match the target area against existing Area-type pages (match URL slugs and titles)
+- If a match is found, inform the user and offer: "Optimize/rewrite this existing page" vs "Create a new page anyway"
+- If optimizing, read full content from `[client-path]/site-inventory/pages/[slug].md`
+- When generating internal linking suggestions, use actual URLs from the inventory
+- After creating or optimizing, suggest updating the inventory
 
 If no client context:
 - Open text: "What city and service should this page target? (e.g., 'dog training in Alpharetta')"

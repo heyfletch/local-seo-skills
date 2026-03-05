@@ -35,6 +35,14 @@ If client context is loaded:
 - Output directory is set to `[client-path]/deliverables/`
 - All business context is pre-populated from the profile
 
+### Site Inventory
+
+Follow the instructions in [references/site-inventory-integration.md](../../references/site-inventory-integration.md) to load the site inventory.
+
+If site inventory is available:
+- Link GBP predefined services to their corresponding page URLs from the inventory
+- Use actual page URLs as CTA destinations when creating GBP posts
+
 ---
 
 ## Phase 1: Discovery
@@ -92,7 +100,7 @@ Read `${CLAUDE_PLUGIN_ROOT}/skills/local-seo-gbp/references/gbp-optimization-che
 
 Create TaskCreate items for each checklist section:
 - Profile foundation
-- Predefined services
+- Predefined services — if site inventory is loaded, match each GBP service to its corresponding Service-type page URL from the inventory
 - Photos & video
 - "Open Now" optimization
 - Map pin verification
@@ -105,7 +113,7 @@ Read `${CLAUDE_PLUGIN_ROOT}/skills/local-seo-gbp/references/gbp-posting-strategy
 
 Create TaskCreate items for:
 - Monthly goal and theme assignment
-- Post batch generation (12-16 posts)
+- Post batch generation (12-16 posts) — if site inventory is loaded, use actual page URLs from the inventory as CTA destinations instead of asking or guessing
 - Image suggestions for each post
 - Schedule assignment
 

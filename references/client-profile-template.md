@@ -22,19 +22,10 @@ deliverables_completed: []
 [List of services offered]
 
 ## Existing Site Pages
-[Auto-discovered from sitemap.xml during onboarding. Grouped by type.]
+**Inventory:** [site-inventory/metadata.md](site-inventory/metadata.md) (N pages, crawled YYYY-MM-DD)
 
-### Service Pages
-| URL | Page Title |
-|-----|-----------|
-
-### Area Pages
-| URL | Page Title |
-|-----|-----------|
-
-### Other Pages
-| URL | Page Title |
-|-----|-----------|
+| Type | URL | Title |
+|------|-----|-------|
 
 ## Service Areas
 [Cities/regions served]

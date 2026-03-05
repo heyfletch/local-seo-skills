@@ -41,10 +41,17 @@ If client context is loaded:
 
 Follow the instructions in [references/analytics-integration.md](../../references/analytics-integration.md) — "For audit skill" section.
 
+Follow the instructions in [references/site-inventory-integration.md](../../references/site-inventory-integration.md) to load the site inventory.
+
 If analytics data is available:
 - Phase 2 Category H (Analytics & ROI Tracking) uses real GA4 data instead of asking the user
 - Phase 2 Categories A-G use GSC indexing/ranking data to verify findings
 - "Current monthly organic traffic" in the information needed list is pre-filled from GA4
+
+If site inventory is available:
+- On-page checks use actual title/meta/H1/schema data from every page instead of spot-checking
+- Gap detection cross-references services list against existing service pages
+- Thin content detection uses word counts from the inventory
 
 ---
 
@@ -134,6 +141,18 @@ For the "Technical SEO deep dive" scope, also read `${CLAUDE_PLUGIN_ROOT}/skills
 | Analytics Audit | H: Analytics & ROI Tracking | — |
 
 For each category: research using available tools (WebSearch, WebFetch, DataForSEO MCP, Ahrefs MCP), score 0-100, and flag specific issues with actionable recommendations.
+
+### On-Page Checks with Site Inventory
+
+When site inventory is available, enhance Category C (On-Page / Website) with full-site analysis:
+
+1. Read `[client-path]/site-inventory/metadata.md` for the full page metadata table
+2. Check every page's title, meta description, H1, and schema for issues (missing, duplicate, too short/long, missing keywords)
+3. Cross-reference the client's services list (from profile) against Service-type pages in the inventory — flag any service without a dedicated page
+4. Cross-reference service areas against Area-type pages — flag any area without a dedicated page
+5. Flag pages with word count under 300 (excluding contact, privacy, terms pages)
+6. Flag pages with `noindex` that appear to be important content pages
+7. When a page has a Content link in the inventory (`[view](pages/slug.md)`), read the full content for deeper analysis
 
 ---
 

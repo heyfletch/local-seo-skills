@@ -35,6 +35,14 @@ If client context is loaded:
 - Business name, website, GBP URL, services, and service areas are pre-populated
 - Check if a voice profile exists at `[client-path]/voice-profile.md`
 
+### Site Inventory
+
+Follow the instructions in [references/site-inventory-integration.md](../../references/site-inventory-integration.md) to load the site inventory.
+
+If site inventory is available:
+- Service names and area names are pre-loaded from the inventory (Phase 2 can skip WebFetch discovery)
+- Keywords are derived from actual page titles rather than scraped navigation
+
 ---
 
 ## Phase 1: Review Intake & Voice Calibration
@@ -110,7 +118,12 @@ DO NOT skip keyword discovery. The SEO value-add is what differentiates this fro
 
 ### Step 1: Scan the business website
 
-Use WebFetch on the business website URL (homepage). Look for:
+If site inventory is loaded, skip WebFetch discovery for service and area names. Instead:
+- Extract service keywords from Service-type page titles in the inventory
+- Extract location keywords from Area-type page titles in the inventory
+- Still WebFetch the homepage only if needed for differentiators, taglines, or specialties not captured in page titles
+
+If site inventory is NOT loaded, use WebFetch on the business website URL (homepage). Look for:
 - Navigation links to identify service pages and area pages
 - Service names and descriptions
 - Service areas / cities served
