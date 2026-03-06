@@ -1,0 +1,19 @@
+{
+  "hooks": [
+    {
+      "id": "pre-session-auto-pull",
+      "trigger": "session-start",
+      "action": "execute-script",
+      "script": "./.claude/hooks/pre-session-pull.sh",
+      "description": "Auto-pull latest changes from GitHub when starting a Claude Code session"
+    },
+    {
+      "id": "approve-on-message",
+      "trigger": "user-message",
+      "pattern": "^approved$",
+      "action": "execute-script",
+      "script": "./.claude/scripts/approve.sh",
+      "description": "When you say 'approved' as a standalone word, bump version, update changelog, commit and push"
+    }
+  ]
+}
