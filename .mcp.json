@@ -25,6 +25,10 @@
         "GSC_SKIP_OAUTH": "true"
       },
       "disabled": true
+    },
+    "asana": {
+      "type": "sse",
+      "url": "https://mcp.asana.com/sse"
     }
   }
 }
